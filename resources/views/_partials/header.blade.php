@@ -17,10 +17,10 @@
         </div>
         </div>
         <!-- /Search -->
-{{-- 
+
         <ul class="navbar-nav flex-row align-items-center ms-auto">
         <!-- Language -->
-        <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
+        {{-- <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
             <i class="fi fi-us fis rounded-circle fs-3 me-1"></i>
             </a>
@@ -50,15 +50,15 @@
                 </a>
             </li>
             </ul>
-        </li>
+        </li> --}}
         <!--/ Language -->
 
         <!-- Style Switcher -->
-        <li class="nav-item me-2 me-xl-0">
+        {{-- <li class="nav-item me-2 me-xl-0">
             <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
             <i class="bx bx-sm"></i>
             </a>
-        </li>
+        </li> --}}
         <!--/ Style Switcher -->
 
         <!-- Quick links  -->
@@ -379,7 +379,7 @@
             </li>
             </ul>
         </li>
-        <!--/ Notification --> --}}
+        <!--/ Notification -->
 
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
