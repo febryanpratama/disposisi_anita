@@ -17,7 +17,7 @@
         </div>
         </div>
         <!-- /Search -->
-
+{{-- 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
         <!-- Language -->
         <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
@@ -379,7 +379,7 @@
             </li>
             </ul>
         </li>
-        <!--/ Notification -->
+        <!--/ Notification --> --}}
 
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
