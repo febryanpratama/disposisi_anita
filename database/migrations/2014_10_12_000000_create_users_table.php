@@ -20,6 +20,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('avatar')->default('default.png');
+            $table->enum('is_active', ['Aktif', 'Tidak Aktif'])->default('Tidak Aktif');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

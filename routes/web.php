@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuratController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,14 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('/{surat_id}/verifikasi', 'verifikasi');
         Route::get('/{surat_id}/tolak', 'tolak');
         Route::get('/{surat_id}/diterima', 'diterima');
+    });
+
+    Route::group([
+        'prefix' => 'pengguna',
+        'controller' => PenggunaController::class
+    ], function () {
+        Route::get('/', 'index');
+        Route::post('/', 'store');
     });
 });
 

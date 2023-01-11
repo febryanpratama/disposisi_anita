@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('tanggal_distribusi');
             $table->string('gambar_surat');
             $table->enum('status', ['Dikirim', 'Verifikasi', 'Diterima', 'Ditolak']);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
