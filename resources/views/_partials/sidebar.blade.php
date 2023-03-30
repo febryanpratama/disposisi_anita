@@ -50,6 +50,8 @@
 
     <div class="menu-inner-shadow"></div>
 
+    
+    @hasrole('Admin')
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item">
@@ -77,7 +79,6 @@
         </li>
         <!-- Cards -->
         
-        @role('Admin')
         {{-- <li class="menu-item active" style="">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-user"></i>
@@ -119,7 +120,6 @@
                 <div data-i18n="Profil">Profil</div>
             </a>
         </li>
-        @endrole
         
         <li class="menu-item">
             <form action="{{ route('logout') }}" method="POST">
@@ -132,4 +132,286 @@
         </li>
         
     </ul>
+    @endrole
+
+    @hasrole('Verifikator')
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item">
+            <a href="{{ url('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+
+        <!-- Apps & Pages -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Management Surat</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('verifikator/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Data Surat">Data Surat</div>
+            </a>
+        </li>
+
+        <!-- Components -->
+        {{-- <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Manajemen</span>
+        </li> --}}
+        <!-- Cards -->
+        
+        {{-- <li class="menu-item active" style="">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="cards-basic.html" class="menu-link">
+                        <div data-i18n="Walikota">Walikota</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-advance.html" class="menu-link">
+                        <div data-i18n="Pemohon">Pemohon</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-statistics.html" class="menu-link">
+                        <div data-i18n="Setda">Setda</div>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="cards-analytics.html" class="menu-link">
+                        <div data-i18n="Verifikator">Verifikator</div>
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
+        {{-- <li class="menu-item">
+            <a href="{{ url('admin/pengguna') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ url('admin/profil') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Profil">Profil</div>
+            </a>
+        </li> --}}
+        
+        <li class="menu-item">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn  btn-danger-outline form-control menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Logout">Logout</div>
+                </button>
+            </form>
+        </li>
+        
+    </ul>
+    @endrole
+    @hasrole('Setda')
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item">
+            <a href="{{ url('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+
+        <!-- Apps & Pages -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Management Surat</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('setda/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Data Surat">Data Surat</div>
+            </a>
+        </li>
+
+        <!-- Components -->
+        {{-- <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Manajemen</span>
+        </li> --}}
+        <!-- Cards -->
+        
+        {{-- <li class="menu-item active" style="">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="cards-basic.html" class="menu-link">
+                        <div data-i18n="Walikota">Walikota</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-advance.html" class="menu-link">
+                        <div data-i18n="Pemohon">Pemohon</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-statistics.html" class="menu-link">
+                        <div data-i18n="Setda">Setda</div>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="cards-analytics.html" class="menu-link">
+                        <div data-i18n="Verifikator">Verifikator</div>
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
+        {{-- <li class="menu-item">
+            <a href="{{ url('admin/pengguna') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ url('admin/profil') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Profil">Profil</div>
+            </a>
+        </li> --}}
+        
+        <li class="menu-item">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn  btn-danger-outline form-control menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Logout">Logout</div>
+                </button>
+            </form>
+        </li>
+        
+    </ul>
+    @endrole
+    @hasrole('Walikota')
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item">
+            <a href="{{ url('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+
+        <!-- Apps & Pages -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Management Surat</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('walikota/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Data Surat">Data Surat</div>
+            </a>
+        </li>
+
+        <!-- Components -->
+        {{-- <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Manajemen</span>
+        </li> --}}
+        <!-- Cards -->
+        
+        {{-- <li class="menu-item active" style="">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="cards-basic.html" class="menu-link">
+                        <div data-i18n="Walikota">Walikota</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-advance.html" class="menu-link">
+                        <div data-i18n="Pemohon">Pemohon</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="cards-statistics.html" class="menu-link">
+                        <div data-i18n="Setda">Setda</div>
+                    </a>
+                </li>
+                <li class="menu-item active">
+                    <a href="cards-analytics.html" class="menu-link">
+                        <div data-i18n="Verifikator">Verifikator</div>
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
+        {{-- <li class="menu-item">
+            <a href="{{ url('admin/pengguna') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Pengguna">Pengguna</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ url('admin/profil') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Profil">Profil</div>
+            </a>
+        </li> --}}
+        
+        <li class="menu-item">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn  btn-danger-outline form-control menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Logout">Logout</div>
+                </button>
+            </form>
+        </li>
+        
+    </ul>
+    @endrole
+    
+    @role('Pemohon')
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item">
+            <a href="{{ url('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+
+        <!-- Apps & Pages -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Management Surat</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('pemohon/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Permohonan Surat">Permohonan Surat</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn  btn-danger-outline form-control menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Logout">Logout</div>
+                </button>
+            </form>
+        </li>
+        
+    </ul>
+    @endrole
 </aside>

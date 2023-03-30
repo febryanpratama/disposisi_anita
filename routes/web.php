@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Pemohon\SuratController as PemohonSuratController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Setda\SetdaController;
 use App\Http\Controllers\SuratController;
+use App\Http\Controllers\Verifikator\VerifikatorSuratController;
+use App\Http\Controllers\Walikota\WalikotaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +28,8 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/register', [AuthController::class, 'storeData']);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -53,6 +60,72 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
     ], function () {
         Route::get('/', 'index');
         Route::post('/', 'store');
+    });
+});
+
+
+Route::group([
+    'prefix' => 'pemohon',
+    'middleware' => ['auth', 'role:Pemohon']
+], function () {
+    // Route::get('')
+    Route::group([
+        'prefix' => 'surat',
+        'controller' => PemohonSuratController::class,
+    ], function () {
+        Route::get('/', 'index');
+        Route::post('/', 'inputSurat');
+    });
+});
+
+Route::group([
+    'prefix' => 'verifikator',
+    'middleware' => ['auth', 'role:Verifikator']
+], function () {
+    Route::group([
+        'prefix' => 'surat',
+        'controller' => VerifikatorSuratController::class
+    ], function () {
+        Route::get('/', 'index');
+        // Route:
+        Route::get('/{id}', 'detail');
+        Route::get('/{id}/setuju', 'setuju');
+        Route::get('/{id}/tolak', 'tolak');
+    });
+});
+
+
+// Setda
+Route::group([
+    'prefix' => 'setda',
+    'middleware' => ['auth', 'role:Setda']
+], function () {
+    Route::group([
+        'prefix' => 'surat',
+        'controller' => SetdaController::class
+    ], function () {
+        Route::get('/', 'index');
+        // Route:
+        Route::get('/{id}', 'detail');
+        Route::get('/{id}/setuju', 'setuju');
+        Route::get('/{id}/tolak', 'tolak');
+    });
+});
+
+// Walikota
+Route::group([
+    'prefix' => 'walikota',
+    'middleware' => ['auth', 'role:Walikota']
+], function () {
+    Route::group([
+        'prefix' => 'surat',
+        'controller' => WalikotaController::class
+    ], function () {
+        Route::get('/', 'index');
+        // Route:
+        Route::get('/{id}', 'detail');
+        Route::get('/{id}/setuju', 'setuju');
+        Route::get('/{id}/tolak', 'tolak');
     });
 });
 

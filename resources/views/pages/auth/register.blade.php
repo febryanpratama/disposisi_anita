@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-bordered" data-assets-path="{{ asset('') }}assets/" data-template="vertical-menu-template-bordered">
-    <!-- Mirrored from pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/vertical-menu-template-bordered/auth-login-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2022 12:03:03 GMT -->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-        <title>Login Basic - Pages | Frest - Bootstrap Admin Template</title>
+        <title>Register Basic - Pages | Frest - Bootstrap Admin Template</title>
 
         <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
         <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 admin, bootstrap 5 design, bootstrap 5" />
@@ -42,18 +41,24 @@
         <!-- Page CSS -->
         <!-- Page -->
         <link rel="stylesheet" href="{{ asset('') }}assets/vendor/css/pages/page-auth.css" />
+
+        <style>
+          .hide {
+            display: none;
+          }
+        </style>
         <!-- Helpers -->
-        <script src="{{ asset('') }}assets/vendor/js/helpers.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/js/helpers.js"></script> --}}
 
         <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
         <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-        <script src="{{ asset('') }}assets/vendor/js/template-customizer.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/js/template-customizer.js"></script> --}}
         <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-        <script src="{{ asset('') }}assets/js/config.js"></script>
+        {{-- <script src="{{ asset('') }}assets/js/config.js"></script> --}}
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-        <script>
+        {{-- <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> --}}
+        {{-- <script>
             window.dataLayer = window.dataLayer || [];
 
             function gtag() {
@@ -61,7 +66,7 @@
             }
             gtag("js", new Date());
             gtag("config", "GA_MEASUREMENT_ID");
-        </script>
+        </script> --}}
         <!-- Custom notification for demo -->
         <!-- beautify ignore:end -->
     </head>
@@ -71,8 +76,8 @@
 
         <div class="container-xxl">
             <div class="authentication-wrapper authentication-basic container-p-y">
-                <div class="authentication-inner py-4">
-                    <!-- Register -->
+                <div class="authentication-inner col-md-12">
+                    <!-- Register Card -->
                     <div class="card">
                         <div class="card-body">
                             <!-- Logo -->
@@ -118,68 +123,79 @@
                                 </a>
                             </div>
                             <!-- /Logo -->
-                            <h4 class="mb-2">Welcome to Frest! 👋</h4>
-                            <p class="mb-4">Please sign-in to your account and start the adventure</p>
+                            <h4 class="mb-2 text-center">Adventure starts here 🚀</h4>
+                            <p class="mb-4 text-center">Make your app management easy and fun!</p>
 
-                            <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email or Username</label>
-                                    <input type="text" class="form-control" id="email" name="email" :value="old('email')" placeholder="Enter your email or username" autofocus />
+                            <form  class="mb-3" action="{{ url('auth/register') }}" method="POST" novalidate>
+                              @csrf
+                              <div class="row">
+                                <div class="col-md-6 col-sm-12 mb-2">
+                                  <label for="">Jenis Pemohon</label>
+                                  <select name="jenis_pemohon" class="form-control" name="jenis_pemohon" id="jenis_pemohon" required>
+                                    <option value="" selected disabled> == Pilih == </option>
+                                    <option value="Individu">Individu</option>
+                                    <option value="Organisasi">Organisasi</option>
+                                  </select>
                                 </div>
-                                <div class="mb-3 form-password-toggle">
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-label" for="password">Password</label>
-                                        <a href="auth-forgot-password-basic.html">
-                                            <small>Forgot Password?</small>
-                                        </a>
-                                    </div>
-                                    <div class="input-group input-group-merge">
-                                        <input type="password" id="password" class="form-control" type="password"
-                                name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
-                                        <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                    </div>
+
+                                <div class="col-md-6 col-sm-12 mb-2 hide" id="namaPemohon">
+                                  <label for="">Nama Pemohon</label>
+                                  <input type="text" class="form-control" name="nama_pemohon" placeholder="Nama Pemohon" required>
                                 </div>
-                                <div class="mb-3">
+                                <div class="col-md-6 col-sm-12 mb-2 hide" id="namaOrganisasi">
+                                  <label for="">Nama Organisasi</label>
+                                  <input type="text" class="form-control" name="nama_organisasi" placeholder="Nama Organisasi" required>
+                                </div>
+  
+                                <div class="col-md-6 col-sm-12 mb-2 hide" id="identitasPemohon">
+                                  <label for="">NIK Pemohon</label>
+                                  <input type="text" class="form-control" name="identitas_pemohon" placeholder="Nama Organisasi" required>
+                                </div>
+                                <div class="col-md-6 col-sm-12 mb-2 hide" id="identitasOrganisasi">
+                                  <label for="">Nomor Organisasi</label>
+                                  <input type="text" class="form-control" name="identitas_organisasi" placeholder="Nama Organisasi" required>
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-12 mb-2">
+                                  <label for="">Alamat</label>
+                                  <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                  <label for="">Nomor Telpon</label>
+                                  <input type="number" class="form-control" name="telpon" id="">
+                                </div>
+                                
+                                <div class="col-md-6 col-sm-12 mb-2">
+                                  <label for="">Email</label>
+                                  <input type="email" class="form-control" name="email" placeholder="Email Pengguna" required>
+                                </div>
+                                <div class="col-md-6 col-sm-12 mb-2">
+                                  <label for="">Password</label>
+                                  <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                </div>
+                              </div>
+
+                                <div class="mb-3 mt-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="remember-me" />
-                                        <label class="form-check-label" for="remember-me">
-                                            Remember Me
+                                        <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+                                        <label class="form-check-label" for="terms-conditions">
+                                            I agree to
+                                            <a href="javascript:void(0);">privacy policy & terms</a>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                                </div>
+                                <button type="submit" class="btn btn-outline-info form-control">
+                                    Sign up
+                                </button>
+                                {{-- <button type="submit" class ="btn btn-outline-info form-control">
+                                    Sign up
+                                </button> --}}
                             </form>
 
-                            <p class="text-center">
-                                <span>New on our platform?</span>
-                                <a href="{{ url("auth/register") }}">
-                                    <span>Create an account</span>
-                                </a>
-                            </p>
-
-                            <div class="divider my-4">
-                                <div class="divider-text">or</div>
-                            </div>
-
-                            <div class="d-flex justify-content-center">
-                                <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
-                                    <i class="tf-icons bx bxl-facebook"></i>
-                                </a>
-
-                                <a href="javascript:;" class="btn btn-icon btn-label-google-plus me-3">
-                                    <i class="tf-icons bx bxl-google-plus"></i>
-                                </a>
-
-                                <a href="javascript:;" class="btn btn-icon btn-label-twitter">
-                                    <i class="tf-icons bx bxl-twitter"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
-                    <!-- /Register -->
+                    <!-- Register Card -->
                 </div>
             </div>
         </div>
@@ -193,29 +209,50 @@
         <!-- Core JS -->
         <!-- build:js assets/vendor/js/core.js -->
         <script src="{{ asset('') }}assets/vendor/libs/jquery/jquery.js"></script>
-        <script src="{{ asset('') }}assets/vendor/libs/popper/popper.js"></script>
-        <script src="{{ asset('') }}assets/vendor/js/bootstrap.js"></script>
-        <script src="{{ asset('') }}assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/popper/popper.js"></script>
+        <script src="{{ asset('') }}assets/vendor/js/bootstrap.js"></script> --}}
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> --}}
 
-        <script src="{{ asset('') }}assets/vendor/libs/hammer/hammer.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/hammer/hammer.js"></script> --}}
 
-        <script src="{{ asset('') }}assets/vendor/libs/i18n/i18n.js"></script>
-        <script src="{{ asset('') }}assets/vendor/libs/typeahead-js/typeahead.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/i18n/i18n.js"></script> --}}
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/typeahead-js/typeahead.js"></script> --}}
 
-        <script src="{{ asset('') }}assets/vendor/js/menu.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/js/menu.js"></script> --}}
         <!-- endbuild -->
 
         <!-- Vendors JS -->
-        <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script>
-        <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script>
-        <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script>
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js"></script> --}}
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js"></script> --}}
+        {{-- <script src="{{ asset('') }}assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js"></script> --}}
 
         <!-- Main JS -->
-        <script src="{{ asset('') }}assets/js/main.js"></script>
+        {{-- <script src="{{ asset('') }}assets/js/main.js"></script> --}}
 
         <!-- Page JS -->
-        <script src="{{ asset('') }}assets/js/pages-auth.js"></script>
+        {{-- <script src="{{ asset('') }}assets/js/pages-auth.js"></script> --}}
+
+        <script>
+          $('#jenis_pemohon').on('change', function(){
+            // console.log("data")
+            let value = $(this).val()
+            // console.log(value)
+            if(value == 'Individu'){
+              $('#namaPemohon').removeClass('hide')
+              $('#identitasPemohon').removeClass('hide')
+              $('#namaOrganisasi').addClass('hide')
+              $('#identitasOrganisasi').addClass('hide')
+            }else{
+              $('#namaPemohon').addClass('hide')
+              $('#identitasPemohon').addClass('hide')
+              $('#namaOrganisasi').removeClass('hide')
+              $('#identitasOrganisasi').removeClass('hide')
+
+            }
+            // console.log(value)
+          })
+        </script>
     </body>
 
-    <!-- Mirrored from pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/vertical-menu-template-bordered/auth-login-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2022 12:03:03 GMT -->
+    <!-- Mirrored from pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/vertical-menu-template-bordered/auth-register-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2022 12:03:04 GMT -->
 </html>
