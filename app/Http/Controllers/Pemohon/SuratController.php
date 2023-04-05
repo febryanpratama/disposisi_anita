@@ -21,7 +21,7 @@ class SuratController extends Controller
         // return "ok";
         $response = $this->SuratPemohonService->getData();
 
-        return view('pages.pemohon.surat.index', [
+        return view('pages.pemohon.Surat.index', [
             'data' => $response['data']
         ]);
     }
