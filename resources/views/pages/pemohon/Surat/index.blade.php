@@ -37,6 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{--  --}}
                         @foreach ($data as $item=>$key)
                             <tr class="text-center">
                                 <td>{{ $item+1 }}</td>
