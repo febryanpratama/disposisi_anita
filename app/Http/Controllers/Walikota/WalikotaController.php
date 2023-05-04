@@ -16,11 +16,23 @@ class WalikotaController extends Controller
     {
         $this->walikotaService = $walikotaService;
     }
-    public function index()
+    public function indexIndividu()
     {
-        $title = "List Data Surat";
+        $title = "List Data Pengajuan Individu";
 
-        $response = $this->walikotaService->getData();
+        $response = $this->walikotaService->getDataIndividu();
+
+        return view('pages.walikota.surat.index', [
+            'title' => $title,
+            'data' => $response['data']
+        ]);
+    }
+
+    public function indexOrganisasi()
+    {
+        $title = "List Data Pengajuan Organisasi";
+
+        $response = $this->walikotaService->getDataOrganisasi();
 
         return view('pages.walikota.surat.index', [
             'title' => $title,
@@ -54,5 +66,33 @@ class WalikotaController extends Controller
         } else {
             return back()->withErrors($response['message']);
         }
+    }
+
+    public function historiPengajuan()
+    {
+        $response = $this->walikotaService->historiPengajuan();
+        // dd($data);
+
+        return view('pages.walikota.surat.histori', [
+            'data' => $response['data']
+        ]);
+    }
+    public function caridaftarpenerima()
+    {
+        $response = $this->walikotaService->historiPengajuan();
+        // dd($data);
+
+        return view('pages.walikota.surat.penerima', [
+            'data' => $response['data']
+        ]);
+    }
+
+    public function cariHistoriPengajuan(Request $request)
+    {
+        // dd($request->all());
+        $response = $this->walikotaService->historiPengajuan($request->tahun);
+        return view('pages.walikota.surat.histori', [
+            'data' => $response['data']
+        ]);
     }
 }

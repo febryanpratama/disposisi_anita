@@ -112,4 +112,26 @@ class SuratService
             ];
         }
     }
+
+
+    static function detail($surat_id)
+    {
+        $proposal = Proposal::with('user', 'log', 'user.detail')->where('id', $surat_id)->where('user_id', Auth::user()->id)->first();
+        // dd($proposal);
+
+        if (!$proposal) {
+            # code...
+            return [
+                'status' => false,
+                'message' => 'Data Proposal Tidak Ditemukan',
+                'data' => null,
+            ];
+        }
+
+        return [
+            'status' => true,
+            'message' => 'Data Surat Berhasil Diambil',
+            'data' => $proposal,
+        ];
+    }
 }

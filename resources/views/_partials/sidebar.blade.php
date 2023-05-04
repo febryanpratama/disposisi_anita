@@ -64,12 +64,12 @@
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Management Surat</span>
+            <span class="menu-header-text">Management Pengajuan</span>
         </li>
         <li class="menu-item">
             <a href="{{ url('admin/surat') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Data Surat">Data Surat</div>
+                <div data-i18n="Data Surat">Pengajuan</div>
             </a>
         </li>
 
@@ -308,17 +308,44 @@
             </a>
         </li>
 
+        <li class="menu-item">
+            <a href="{{ url('walikota/daftar-penerima') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Daftar Penerima">Daftar Penerima</div>
+            </a>
+        </li>
+
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Management Surat</span>
+            <span class="menu-header-text">Manajemen Pengajuan</span>
         </li>
         <li class="menu-item">
-            <a href="{{ url('walikota/surat') }}" class="menu-link">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-check-shield"></i>
+              <div data-i18n="Pengajuan">Pengajuan</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="{{ url('walikota/individu') }}" class="menu-link">
+                  <div data-i18n="Individu">Individu</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="{{ url('walikota/organisasi') }}" class="menu-link">
+                  <div data-i18n="Organisasi">Organisasi</div>
+                </a>
+              </li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a href="{{ url('walikota/histori-pengajuan') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Data Surat">Data Surat</div>
+                <div data-i18n="Histori Pengajuan">Histori Pengajuan</div>
             </a>
         </li>
+    
 
         <!-- Components -->
         {{-- <li class="menu-header small text-uppercase">

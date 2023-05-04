@@ -39,4 +39,19 @@ class SuratController extends Controller
 
         return back()->withSuccess($response['message']);
     }
+
+    public function detail($surat_id)
+    {
+        $response = $this->SuratPemohonService->detail($surat_id);
+
+        if ($response['status'] == false) {
+            # code...
+            return back()->withErrors($response['message']);
+        }
+
+        // dd("owa");
+        return view('pages.pemohon.Surat.detail', [
+            'data' => $response['data']
+        ]);
+    }
 }

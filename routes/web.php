@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Pemohon\SuratController as PemohonSuratController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProfileController;
@@ -23,11 +24,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/', function () {
-    // return view('welcome');
-    return redirect('/login');
-});
+Route::group([
+    'prefix' => '/',
+    'controller' => FrontController::class,
+], function () {
 
+    Route::get('/', 'indexLanding');
+});
 Route::get('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/register', [AuthController::class, 'storeData']);
 Route::get('/dashboard', function () {
@@ -75,6 +78,7 @@ Route::group([
     ], function () {
         Route::get('/', 'index');
         Route::post('/', 'inputSurat');
+        Route::get('/{id}', 'detail');
     });
 });
 
@@ -115,17 +119,40 @@ Route::group([
 // Walikota
 Route::group([
     'prefix' => 'walikota',
+    'controller' => WalikotaController::class,
     'middleware' => ['auth', 'role:Walikota']
 ], function () {
     Route::group([
-        'prefix' => 'surat',
-        'controller' => WalikotaController::class
+        'prefix' => 'individu',
     ], function () {
-        Route::get('/', 'index');
+        Route::get('/', 'indexIndividu');
         // Route:
         Route::get('/{id}', 'detail');
         Route::get('/{id}/setuju', 'setuju');
         Route::get('/{id}/tolak', 'tolak');
+    });
+
+    Route::group([
+        'prefix' => 'organisasi',
+    ], function () {
+        Route::get('/', 'indexOrganisasi');
+        // Route:
+        Route::get('/{id}', 'detail');
+        Route::get('/{id}/setuju', 'setuju');
+        Route::get('/{id}/tolak', 'tolak');
+    });
+
+    Route::group([
+        'prefix' => 'daftar-penerima'
+    ], function () {
+        Route::get('/', 'caridaftarpenerima');
+        Route::post('/', 'cariHistoriPengajuan');
+    });
+    Route::group([
+        'prefix' => 'histori-pengajuan'
+    ], function () {
+        Route::get('/', 'historiPengajuan');
+        Route::post('/', 'cariHistoriPengajuan');
     });
 });
 
