@@ -46,8 +46,8 @@
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
                                 <td>{{ $key->jumlah_biaya }}</td>
                                 <td>
-                                    @if ($key->status == 'Verifikator')
-                                        <span class="badge bg-danger">Sedang ditinjau Verifikator</span>
+                                    @if ($key->status == 'TU Umum')
+                                        <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
                                         <span class="badge bg-warning">Sedang Ditinjau Setda</span>
                                     @else

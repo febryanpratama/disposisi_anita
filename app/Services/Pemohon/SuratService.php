@@ -44,6 +44,7 @@ class SuratService
 
         if ($validator->fails()) {
             # code...
+            dd($validator);
             return [
                 'status' => false,
                 'message' => $validator->errors()->first(),
@@ -126,7 +127,7 @@ class SuratService
                 'lampiran_proposal' => $lampiran_proposal ?? null,
                 'surat_permohonan' => $surat_permohonan ?? null,
                 'rekening' => $rekening ?? null,
-                'status' => 'Setda'
+                'status' => 'TU Umum'
             ]);
 
             LogProposal::create([

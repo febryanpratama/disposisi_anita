@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LogProposal;
+use App\Models\Proposal;
 use App\Models\Surat;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,7 +14,10 @@ class SuratController extends Controller
     //
     public function index()
     {
-        $data = Surat::get();
+        $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'TU Umum')->where('is_status', '2')->get();
+        // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+
+        // dd($data);
         return view('admin.surat.index', [
             'data' => $data
         ]);
@@ -82,10 +87,23 @@ class SuratController extends Controller
     }
     public function diterima($surat_id)
     {
-        $surat = Surat::find($surat_id);
-        $surat->status = 'Diterima';
-        $surat->save();
+        $surat = Proposal::where('id', $surat_id)->first();
 
-        return back()->withSuccess('Surat berhasil Diterima');
+        if (!$surat) {
+            return back()->withError('Data Tidak Ditemukan');
+        }
+
+        $surat->update([
+            'status' => 'Setda'
+        ]);
+
+        LogProposal::create([
+            'proposal_id' => $surat->id,
+            'status' => 'Setda',
+            'tanggal' => Carbon::now(),
+            'deskripsi' => 'Proposal telah diverifikasi oleh TU Umum'
+        ]);
+
+        return back()->withSuccess('Surat berhasil Diverifikasi TU Umum');
     }
 }

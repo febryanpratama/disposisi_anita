@@ -53,8 +53,8 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         Route::post('/', 'store');
 
         Route::get('/{surat_id}/verifikasi', 'verifikasi');
+        Route::get('/{surat_id}/setuju', 'diterima');
         Route::get('/{surat_id}/tolak', 'tolak');
-        Route::get('/{surat_id}/diterima', 'diterima');
     });
 
     Route::group([
