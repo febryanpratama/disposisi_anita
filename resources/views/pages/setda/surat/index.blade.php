@@ -9,16 +9,14 @@
     <!-- DataTable with Buttons -->
     <div class="card">
         <div class="card-header d-flex justify-content-end">
-            <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
+            {{-- <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
                 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 10px;height: 10px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
                 Contoh Surat
             </a>
-            {{-- <button type="button" class="btn btn-danger m-1" title="Untuh Surat" >
-            </button> --}}
-            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button>
+            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button> --}}
         </div>
         <div class="card-body">
             <div class="table-responsive pt-0">
@@ -84,7 +82,9 @@
                                             </svg>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="{{ url('setda/surat/'.$key->id.'/setuju') }}">Setuju</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#setuju{{ $key->id }}">Setuju</a></li>
+                                            {{-- <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button> --}}
+
                                             <li><a class="dropdown-item" href="{{ url('setda/surat/'.$key->id.'/tolak') }}">Tolak</a></li>
                                         </ul>
                                     </div>
@@ -109,6 +109,57 @@
 
 
     <!--/ DataTable with Buttons -->
+    @foreach ($data as $it=>$k)
+        <div class="modal fade" id="setuju{{ $k->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+                <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="text-center mb-4">
+                            <h3>Validasi Pengajuan</h3>
+                            <p>Updating user details will receive a privacy audit.</p>
+                        </div>
+                        <form id="editUserForm" class="row g-3" method="POST" action="{{ url('setda/surat/'.$k->id.'/setuju') }}" enctype="multipart/form-data">
+                            @csrf
+                            {{-- <input type="hidden" name="user_id" value="{{ auth()->user()->id }}"> --}}
+                            {{-- <div class="col-12 col-md-6">
+                                <label class="form-label" for="modalEditUserFirstName">Nomor Surat</label>
+                                <input type="text" id="modalEditUserFirstName" name="nomor_surat" class="form-control" placeholder="SKEP-187299-2022" />
+                            </div> --}}
+                            <div class="col-12">
+                                <h5>Detail Kegiatan</h5>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="modalEditUserLastName">Uraian Usulan</label>
+                                <input type="text" id="modalEditUserLastName" name="uraian_usulan" class="form-control" placeholder="Uraian Usulan" />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="modalEditUserName">Jumlah Barang yang disetujui</label>
+                                <input type="text" id="modalEditUserName" name="jumlah" class="form-control" placeholder="Jumlah Barang yang disetujui" />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="modalEditUserEmail">Usulan Besaran Nominal</label>
+                                <input type="number" id="modalEditUserEmail" name="nominal_usulan" class="form-control" placeholder="Usulan Besaran Nominal" />
+                            </div>
+                            
+                            
+                            <hr>
+                            <h5>Bukti Pendukung</h5>
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserEmail">Foto Bukti Pendukung <span class="text-danger">*</span></label>
+                                <input type="file" name="bukti_pendukung[]" class="form-control" multiple placeholder="" />
+                            </div>
+
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                                <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <!--/ Multilingual -->
 </div>

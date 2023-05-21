@@ -80,6 +80,14 @@ Route::group([
         Route::post('/', 'inputSurat');
         Route::get('/{id}', 'detail');
     });
+
+    Route::group([
+        'prefix' => 'profil',
+        'controller' => PemohonSuratController::class
+    ], function () {
+        Route::get('/', 'indexProfil');
+        Route::post('/', 'editProfil');
+    });
 });
 
 Route::group([
@@ -102,8 +110,12 @@ Route::group([
 // Setda
 Route::group([
     'prefix' => 'setda',
-    'middleware' => ['auth', 'role:Setda']
+    'middleware' => ['auth', 'role:Setda'],
+    'controller' => SetdaController::class
 ], function () {
+
+    Route::get('/individu', 'indexIndividu');
+    Route::get('/organisasi', 'indexOrganisasi');
     Route::group([
         'prefix' => 'surat',
         'controller' => SetdaController::class
@@ -111,8 +123,8 @@ Route::group([
         Route::get('/', 'index');
         // Route:
         Route::get('/{id}', 'detail');
-        Route::get('/{id}/setuju', 'setuju');
-        Route::get('/{id}/tolak', 'tolak');
+        Route::POST('/{id}/setuju', 'setuju');
+        // Route::get('/{id}/tolak', 'tolak');
     });
 });
 

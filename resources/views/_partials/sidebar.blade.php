@@ -1,7 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="index.html" class="app-brand-link">
-            <span class="app-brand-logo demo">
+            <img src="{{ asset('images/Hibsos.png') }}" style="width: 200px; height: 170px" alt="">
+            {{-- <span class="app-brand-logo demo">
                 <svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>icon</title>
                     <defs>
@@ -37,7 +38,7 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2">Frest</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">Frest</span> --}}
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -229,13 +230,25 @@
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Management Surat</span>
+            <span class="menu-header-text">Manajemen Pengajuan</span>
         </li>
         <li class="menu-item">
-            <a href="{{ url('setda/surat') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Data Surat">Data Surat</div>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-check-shield"></i>
+              <div data-i18n="Pengajuan">Pengajuan</div>
             </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="{{ url('setda/individu') }}" class="menu-link">
+                  <div data-i18n="Individu">Individu</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="{{ url('setda/organisasi') }}" class="menu-link">
+                  <div data-i18n="Organisasi">Organisasi</div>
+                </a>
+              </li>
+            </ul>
         </li>
 
         <!-- Components -->
@@ -421,14 +434,22 @@
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Management Surat</span>
+            <span class="menu-header-text">Manajemen Pengajuan</span>
         </li>
         <li class="menu-item">
             <a href="{{ url('pemohon/surat') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Permohonan Surat">Permohonan Surat</div>
+                <div data-i18n="Permohonan Surat">Permohonan Pengajuan</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{ url('pemohon/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Profil Pemohon">Profil Pemohon</div>
+            </a>
+        </li>
+
+      
         <li class="menu-item">
             <form action="{{ route('logout') }}" method="POST">
                 @csrf

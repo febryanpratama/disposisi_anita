@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('surat_keterangan')->nullable();
             $table->string('surat_rekomendasi')->nullable();
             $table->enum('status', ['Verifikator', 'Setda', 'Walikota']);
+            $table->enum('is_status', ['1', '0', '2'])->default('1')->after('status');
             $table->softDeletes();
             $table->timestamps();
         });

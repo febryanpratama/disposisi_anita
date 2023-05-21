@@ -35,6 +35,11 @@ class SuratService
             'dokumen_proposal' => 'required|file|mimes:pdf,docx|max:2048',
             'surat_keterangan' => 'nullable|file|mimes:pdf,docx|max:2048',
             'surat_rekomendasi' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'surat_permohonan' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'lampiran_proposal' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'kepengurusan' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'rab' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'rekening' => 'nullable|file|mimes:pdf,docx|max:2048'
         ]);
 
         if ($validator->fails()) {
@@ -72,8 +77,41 @@ class SuratService
                 $file->move($tujuan_upload, $surat_rekomendasi);
             }
 
+            if (array_key_exists('rekening', $data)) {
+                $file = $data['rekening'];
+                $rekening = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'rekening';
+                $file->move($tujuan_upload, $rekening);
+            }
+            if (array_key_exists('rab', $data)) {
+                $file = $data['rab'];
+                $rab = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'rab';
+                $file->move($tujuan_upload, $rab);
+            }
+            if (array_key_exists('kepengurusan', $data)) {
+                $file = $data['kepengurusan'];
+                $kepengurusan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'kepengurusan';
+                $file->move($tujuan_upload, $kepengurusan);
+            }
+
+            if (array_key_exists('lampiran_proposal', $data)) {
+                $file = $data['lampiran_proposal'];
+                $lampiran_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'lampiran_proposal';
+                $file->move($tujuan_upload, $lampiran_proposal);
+            }
+            if (array_key_exists('surat_permohonan', $data)) {
+                $file = $data['surat_permohonan'];
+                $surat_permohonan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'surat_permohonan';
+                $file->move($tujuan_upload, $surat_permohonan);
+            }
+
             $proposal = Proposal::create([
                 'user_id' => $data['user_id'],
+                'tahun_anggaran' => $data['tahun_anggaran'],
                 'judul_permohonan' => $data['judul_permohonan'],
                 'deskripsi_permohonan' => $data['deskripsi_permohonan'],
                 'tanggal_pelaksanaan' => $data['tanggal_pelaksanaan'],
@@ -83,7 +121,12 @@ class SuratService
                 'dokumen_proposal' => $dokumen_proposal,
                 'surat_keterangan' => $surat_keterangan ?? null,
                 'surat_rekomendasi' => $surat_rekomendasi ?? null,
-                'status' => 'Verifikator'
+                'rab' => $rab ?? null,
+                'kepengurusan' => $kepengurusan ?? null,
+                'lampiran_proposal' => $lampiran_proposal ?? null,
+                'surat_permohonan' => $surat_permohonan ?? null,
+                'rekening' => $rekening ?? null,
+                'status' => 'Setda'
             ]);
 
             LogProposal::create([
@@ -103,7 +146,7 @@ class SuratService
         } catch (\Throwable $th) {
             //throw $th;
 
-            dd($th->getMessage());
+            // dd($th->getMessage());
             DB::rollback();
             return [
                 'status' => false,

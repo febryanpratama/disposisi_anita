@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('proposals', function (Blueprint $table) {
-            //
-            $table->enum('is_status', ['1', '0', '2'])->default('1')->after('status');
+        Schema::create('detail_proposals', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -26,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('proposals', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('detail_proposals');
     }
 };

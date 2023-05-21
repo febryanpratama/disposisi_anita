@@ -118,6 +118,15 @@
                             <h5>Detail Kegiatan</h5>
                         </div>
                         <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserLastName">Tahun Anggaran</label>
+                            <select name="tahun_anggaran" class="form-control" id="">
+                                <option value="" selected disabled> == Pilih == </option>
+                                @for ($i = 2022; $i < 2030; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserLastName">Judul Permohonan</label>
                             <input type="text" id="modalEditUserLastName" name="judul_permohonan" class="form-control" placeholder="Judul Permohonan" />
                         </div>
@@ -206,11 +215,31 @@
                         <hr>
                         <h5>Lampiran</h5>
                         <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Surat Permohonan <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="surat_permohonan" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Dokumen Proposal <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="dokumen_proposal" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Surat Keterangan</label>
+                            <label class="form-label" for="modalEditUserEmail">Lampiran Proposal <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="lampiran_proposal" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Susunan Kepengurusan Kepanitiaan <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="kepengurusan" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Rancangan Anggaran Biaya <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="rab" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Foto Rekening Bantuan Penerima <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="rekening" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Surat Keterangan Desa</label>
                             <input type="file" id="modalEditUserEmail" name="surat_keterangan" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
