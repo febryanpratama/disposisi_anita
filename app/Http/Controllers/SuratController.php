@@ -22,6 +22,26 @@ class SuratController extends Controller
             'data' => $data
         ]);
     }
+    public function indexIndividu()
+    {
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->where('status', 'TU Umum')->where('is_status', '2')->get();
+        // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+
+        // dd($data);
+        return view('admin.surat.index', [
+            'data' => $data
+        ]);
+    }
+    public function indexOrganisasi()
+    {
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->where('status', 'TU Umum')->where('is_status', '2')->get();
+        // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+
+        // dd($data);
+        return view('admin.surat.index', [
+            'data' => $data
+        ]);
+    }
 
     public function store(Request $request)
     {
