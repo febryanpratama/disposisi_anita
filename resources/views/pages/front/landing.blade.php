@@ -2778,21 +2778,27 @@
                                                                     id="menu-item-547"
                                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-540 current_page_item menu-item-547"
                                                                 >
-                                                                    <a href="https://febryancaesarpratama.com/" aria-current="page" class="menu-link">Beranda</a>
+                                                                    <a href="{{ url('/') }}" aria-current="page" class="menu-link">Beranda</a>
+                                                                </li>
+                                                                <li
+                                                                    id="menu-item-548"
+                                                                    class="menu-item  page_item page-item-540 current_page_item menu-item-548"
+                                                                >
+                                                                    <a href="#"  class="menu-link">Profil</a>
                                                                 </li>
                                                                 <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-150">
-                                                                    <a href="https://febryancaesarpratama.com/contact/" class="menu-link">Layanan Publik</a>
+                                                                    <a href="#" class="menu-link">Layanan Publik</a>
                                                                     <button class="ast-menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu Toggle</span><span class="ast-icon icon-arrow"></span></button>
                                                                     <ul class="sub-menu">
                                                                         <li id="menu-item-727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727">
-                                                                            <a href="https://febryancaesarpratama.com/services/" class="menu-link">Pengajuan Bantuan Sosial</a>
+                                                                            <a href="#" class="menu-link">Pengajuan Bantuan Sosial</a>
                                                                         </li>
                                                                         <li id="menu-item-729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-729">
-                                                                            <a href="https://febryancaesarpratama.com/projects/" class="menu-link">Pengajuan HIBAH</a>
+                                                                            <a href="#" class="menu-link">Pengajuan HIBAH</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
-                                                                <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-150">
+                                                                {{-- <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-150">
                                                                     <a href="https://febryancaesarpratama.com/contact/" class="menu-link">PROSEDUR</a>
                                                                     <button class="ast-menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu Toggle</span><span class="ast-icon icon-arrow"></span></button>
                                                                     <ul class="sub-menu">
@@ -2803,7 +2809,7 @@
                                                                             <a href="https://febryancaesarpratama.com/projects/" class="menu-link">Pengajuan HIBAH</a>
                                                                         </li>
                                                                     </ul>
-                                                                </li>
+                                                                </li> --}}
                                                                 <li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-705">
                                                                     <a href="#" class="menu-link">Hubungi Kami</a>
                                                                 </li>
@@ -3116,7 +3122,7 @@
                                                         </div>
                                                         <div class="elementor-element elementor-element-453e782 elementor-widget elementor-widget-heading" data-id="453e782" data-element_type="widget" data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
-                                                                <h2 class="elementor-heading-title elementor-size-default">BADAN KEUANGAN DAERAH KOTA PONTIANAK</h2>
+                                                                <h2 class="elementor-heading-title elementor-size-default" style="font-size: 3.5rem">SEKRETARIAT DAERAH <br>KOTA PONTIANAK</h2>
                                                             </div>
                                                         </div>
                                                         <div
@@ -3383,7 +3389,7 @@
                                                     <div class="elementor-widget-wrap elementor-element-populated">
                                                         <div class="elementor-element elementor-element-903dcf2 elementor-widget elementor-widget-heading" data-id="903dcf2" data-element_type="widget" data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
-                                                                <h3 class="elementor-heading-title elementor-size-default">BKD KOTA PONTIANAK</h3>
+                                                                <h3 class="elementor-heading-title elementor-size-default">SETDA KOTA PONTIANAK</h3>
                                                             </div>
                                                         </div>
                                                         <div
@@ -3433,8 +3439,7 @@
                                                                     }
                                                                 </style>
                                                                 <p>
-                                                                    Dinas Tenaga Kerja Provinsi Kalimantan Barat merupakan Perangkat Daerah yang mempunyai Tugas Pokok Membantu Gubernur melaksanakan Urusan Pemerintahan yang menjadi
-                                                                    Kewenangan Daerah dan Tugas Pembantuan di Bidang Hubungan Industrial Pengupahan dan Jaminan Sosial dan Bidang Pelatihan, Penempatan dan Perluasan Kesempatan Kerja.&nbsp;
+                                                                    Sekretariat Daerah Kota Pontianak adalah unsur pelaksana pemerintah daerah yang berada di bawah dan bertanggung jawab kepada Kepala Daerah..&nbsp;
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -3588,10 +3593,10 @@
                                                             data-widget_type="text-editor.default"
                                                         >
                                                             <div class="elementor-widget-container">
-                                                                <p>Disnakertrans Prov. Kalbar</p>
-                                                                <p>Jalan A. Yani No. 6A, Pontianak Tenggara 78124</p>
-                                                                <p>(0561) 712630 / (0561) 712630</p>
-                                                                <p>disnakertrans@kalbarprov.go.id</p>
+                                                                <p>SETDA Kota Pontianak</p>
+                                                                <p>Jalan Rahadi Usman, Pontianak 78111</p>
+                                                                <p> (0561) 732570-733040</p>
+                                                                <p>admin@setda.pontianak.go.id</p>
                                                             </div>
                                                         </div>
                                                         <div
@@ -3705,12 +3710,11 @@
                                                 </div>
                                             </div>
                                         </section>
-                                        <section
+                                        {{-- <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-dc3091a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                             data-id="dc3091a"
                                             data-element_type="section"
-                                            data-settings='{"background_background":"classic"}'
-                                        >
+                                            data-settings='{"background_background":"classic"}'>
                                             <div class="elementor-container elementor-column-gap-default">
                                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-17370d1" data-id="17370d1" data-element_type="column">
                                                     <div class="elementor-widget-wrap elementor-element-populated">
@@ -3722,8 +3726,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                        <section
+                                        </section> --}}
+                                        {{-- <section
                                             class="elementor-section elementor-top-section elementor-element elementor-element-92330a7 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                             data-id="92330a7"
                                             data-element_type="section"
@@ -3919,7 +3923,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
+                                        </section> --}}
                                     </div>
                                 </div>
                             </article>
@@ -3938,7 +3942,7 @@
                                 <aside class="footer-widget-area widget-area site-footer-focus-item" data-section="sidebar-widgets-footer-widget-1" aria-label="Footer Widget 1">
                                     <div class="footer-widget-area-inner site-info-inner">
                                         <section id="block-9" class="widget widget_block widget_text">
-                                            <p class="has-text-align-center">Jalan A.Yani No 6A, Pontianak Tenggara, Kalimantan Barat, ID| Telepon / Fax : &nbsp;(0561) 712630 / (0561) 712630 | Email: disnakertrans@kalbarprov.go.id</p>
+                                            <p class="has-text-align-center"> di Jalan Rahadi Usman Pontianak, Kalimantan Barat, ID| Telepon / Fax : &nbsp;(0561) 732570-733040 | Email: admin@setda.pontianak.go.id</p>
                                         </section>
                                     </div>
                                 </aside>
