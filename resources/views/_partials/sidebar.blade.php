@@ -252,12 +252,12 @@
             </a>
         </li>
 
-        <li class="menu-item">
+        {{-- <li class="menu-item">
             <a href="{{ url('walikota/daftar-penerima') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Daftar Penerima">Daftar Penerima</div>
             </a>
-        </li>
+        </li> --}}
 
 
         <!-- Apps & Pages -->
