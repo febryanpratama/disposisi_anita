@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="py-3 breadcrumb-wrapper mb-4"><span class="text-muted fw-light">Extended UI /</span> Basic Timeline</h4>
+    <h4 class="py-3 breadcrumb-wrapper mb-4"><span class="text-muted fw-light">Pengajuan /</span> Detail Proposal</h4>
 
     <div class="row gy-4">
          <div class="col-md-12 col-lg-7 mb-4 order-2 order-lg-0">
@@ -73,12 +73,12 @@
                     </div>
                     <span>{{ $data->deskripsi_permohonan }}</span>
                 </div>
-                <div class="card-footer border-top">
+                {{-- <div class="card-footer border-top">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item"><i class="bx bx-check"></i> 74 Tasks</li>
                         <li class="list-inline-item"><i class="bx bx-chat"></i> 678 Comments</li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -172,6 +172,45 @@
                 </div>
             </div>
         </div>       
+    </div>
+    <div class="row gy-4">
+        <div class="col-md-12 col-lg-7 mb-4 order-2 order-lg-0">
+            <div class="card h-100">
+                <div class="row">
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Dokumen Proposal</b>
+                            <br>
+                            <a href="{{ url('dokumen_proposal/'.$data->dokumen_proposal) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('dokumen_proposal/'.$data->dokumen_proposal) }}" type="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Surat Keterangan</b>
+                            <br>
+                            <a href="{{ url('dokumen_proposal/'.$data->surat_keterangan) }}" target="_blank">Lihat Disini</a>
+
+                            <br>
+                            <embed src="{{ asset('dokumen_proposal/'.$data->surat_keterangan) }}" type="">
+                            {{-- <a href="">Lihat Disini</a> --}}
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Surat Rekomendasi</b>
+                            <br>
+                            <a href="{{ url('dokumen_proposal/'.$data->surat_rekomendasi) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('dokumen_proposal/'.$data->surat_rekomendasi) }}" type="">
+                            {{-- <a href="">Lihat Disini</a> --}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>

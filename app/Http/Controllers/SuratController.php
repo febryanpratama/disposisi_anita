@@ -24,8 +24,8 @@ class SuratController extends Controller
     }
     public function indexIndividu()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->where('status', 'TU Umum')->where('is_status', '2')->get();
-        // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->where('status', 'TU Umum')->get();
+        // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);
         return view('admin.surat.index', [
@@ -34,12 +34,20 @@ class SuratController extends Controller
     }
     public function indexOrganisasi()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->where('status', 'TU Umum')->where('is_status', '2')->get();
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->where('status', 'TU Umum')->get();
         // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);
         return view('admin.surat.index', [
             'data' => $data
+        ]);
+    }
+    public function detail($surat_id)
+    {
+        $proposal = Proposal::with('user', 'log', 'user.detail')->where('id', $surat_id)->first();
+
+        return view('admin.surat.detail', [
+            'data' => $proposal
         ]);
     }
 

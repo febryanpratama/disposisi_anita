@@ -45,17 +45,18 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
 
-    // Route::group([
-    //     'prefix' => 'surat',
-    //     'controller' => SuratController::class
-    // ], function () {
-    //     Route::get('/', 'index');
-    //     Route::post('/', 'store');
+    Route::group([
+        'prefix' => 'surat',
+        'controller' => SuratController::class
+    ], function () {
+        // Route::get('/', 'index');
+        // Route::post('/', 'store');
 
-    //     Route::get('/{surat_id}/verifikasi', 'verifikasi');
-    //     Route::get('/{surat_id}/setuju', 'diterima');
-    //     Route::get('/{surat_id}/tolak', 'tolak');
-    // });
+        Route::get('/{surat_id}/detail', 'detail');
+        Route::get('/{surat_id}/verifikasi', 'verifikasi');
+        Route::get('/{surat_id}/setuju', 'diterima');
+        Route::get('/{surat_id}/tolak', 'tolak');
+    });
     Route::get('individu', [SuratController::class, 'indexIndividu']);
     Route::get('organisasi', [SuratController::class, 'indexOrganisasi']);
 

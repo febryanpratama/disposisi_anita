@@ -127,7 +127,8 @@ class SuratService
                 'lampiran_proposal' => $lampiran_proposal ?? null,
                 'surat_permohonan' => $surat_permohonan ?? null,
                 'rekening' => $rekening ?? null,
-                'status' => 'TU Umum'
+                'status' => 'TU Umum',
+                'is_status' => '1'
             ]);
 
             LogProposal::create([
@@ -147,7 +148,7 @@ class SuratService
         } catch (\Throwable $th) {
             //throw $th;
 
-            // dd($th->getMessage());
+            dd($th->getMessage());
             DB::rollback();
             return [
                 'status' => false,

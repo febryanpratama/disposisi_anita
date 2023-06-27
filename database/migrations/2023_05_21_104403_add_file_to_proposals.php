@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('proposals', function (Blueprint $table) {
             //
-            $table->string('surat_permohonan');
+            $table->string('surat_permohonan')->nullable();
             $table->string('lampiran_proposal');
             $table->string('kepengurusan');
             $table->string('rab');

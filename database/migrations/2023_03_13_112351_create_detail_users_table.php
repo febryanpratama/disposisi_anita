@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('detail_users', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('nama');
-            $table->string('identitas');
-            $table->string('alamat');
+            $table->string('nama')->nullable();
+            $table->string('identitas')->nullable();
+            $table->string('alamat')->nullable();
             $table->enum('jenis_pemohon', ['Individu', 'Organisasi']);
             $table->softDeletes();
             $table->timestamps();

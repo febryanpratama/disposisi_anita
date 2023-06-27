@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('dokumen_proposal')->nullable();
             $table->string('surat_keterangan')->nullable();
             $table->string('surat_rekomendasi')->nullable();
-            $table->enum('status', ['Verifikator', 'Setda', 'Walikota']);
-            $table->enum('is_status', ['1', '0', '2'])->default('1')->after('status');
+            $table->enum('status', ['TU Umum', 'Verifikator', 'Setda', 'Walikota']);
+            $table->enum('is_status', ['1', '0', '2'])->default('1');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -2735,12 +2735,12 @@
                                                         <img
                                                             width="120"
                                                             height="120"
-                                                            src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker-120x120.png"
+                                                            src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png"
                                                             class="custom-logo"
                                                             alt=""
                                                             decoding="async"
                                                             loading="lazy"
-                                                            srcset="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
+                                                            srcset="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
                                                             sizes="(max-width: 120px) 100vw, 120px"
                                                         />
                                                     </a>
@@ -2748,12 +2748,12 @@
                                                         <img
                                                             width="120"
                                                             height="120"
-                                                            src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker-120x120.png"
+                                                            src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png"
                                                             class="custom-logo"
                                                             alt=""
                                                             decoding="async"
                                                             loading="lazy"
-                                                            srcset="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
+                                                            srcset="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 1x, https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 2x"
                                                             sizes="(max-width: 120px) 100vw, 120px"
                                                         />
                                                     </a>
@@ -2799,7 +2799,7 @@
                                                                     </ul>
                                                                 </li>
                                                                 {{-- <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-150">
-                                                                    <a href="https://febryancaesarpratama.com/contact/" class="menu-link">PROSEDUR</a>
+                                                                    <a href="#" class="menu-link">PROSEDUR</a>
                                                                     <button class="ast-menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu Toggle</span><span class="ast-icon icon-arrow"></span></button>
                                                                     <ul class="sub-menu">
                                                                         <li id="menu-item-727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727">
@@ -2847,12 +2847,12 @@
                                                     <img
                                                         width="120"
                                                         height="120"
-                                                        src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker-120x120.png"
+                                                        src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png"
                                                         class="custom-logo"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcset="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
+                                                        srcset="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
                                                         sizes="(max-width: 120px) 100vw, 120px"
                                                     />
                                                 </a>
@@ -2860,12 +2860,12 @@
                                                     <img
                                                         width="120"
                                                         height="120"
-                                                        src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker-120x120.png"
+                                                        src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png"
                                                         class="custom-logo"
                                                         alt=""
                                                         decoding="async"
                                                         loading="lazy"
-                                                        srcset="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
+                                                        srcset="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/white-logo@2x.png 2x"
                                                         sizes="(max-width: 120px) 100vw, 120px"
                                                     />
                                                 </a>
@@ -2934,7 +2934,7 @@
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-606"><a href="https://febryancaesarpratama.com/berita/" class="menu-link">Berita</a></li>
                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-694"><a href="https://febryancaesarpratama.com/category/info-publik/" class="menu-link">Info Publik</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-150">
-                                                    <a href="https://febryancaesarpratama.com/contact/" class="menu-link">Layanan Publik</a>
+                                                    <a href="#" class="menu-link">Layanan Publik</a>
                                                     <button class="ast-menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu Toggle</span><span class="ast-icon icon-arrow"></span></button>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-727">
@@ -2947,7 +2947,7 @@
                                                 </li>
                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-695"><a href="https://febryancaesarpratama.com/category/prosedur/" class="menu-link">Prosedur</a></li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-578"><a href="https://febryancaesarpratama.com/about/" class="menu-link">PPID Pembantu</a></li>
-                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-705"><a href="https://febryancaesarpratama.com/contact/" class="menu-link">Hubungi Kami</a></li>
+                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-705"><a href="#" class="menu-link">Hubungi Kami</a></li>
                                             </ul>
                                         </div>
                                     </nav>
@@ -3004,7 +3004,7 @@
                                                                         font-size: 59px;
                                                                     }
                                                                 </style>
-                                                                <h3 class="elementor-heading-title elementor-size-default">Explore the Colourful World</h3>
+                                                                <h3 class="elementor-heading-title elementor-size-default" style="text-transform: uppercase">Hibah dan Bantuan Sosial</h3>
                                                             </div>
                                                         </div>
                                                         <div
@@ -3133,7 +3133,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-button-wrapper">
-                                                                    <a href="https://febryancaesarpratama.com/contact/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+                                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-sm" role="button">
                                                                         <span class="elementor-button-content-wrapper">
                                                                             <span class="elementor-button-text">Hubungi kami</span>
                                                                         </span>
@@ -3743,11 +3743,11 @@
                                                                         decoding="async"
                                                                         width="300"
                                                                         height="300"
-                                                                        src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png"
+                                                                        src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png"
                                                                         class="attachment-large size-large wp-image-11"
                                                                         alt=""
                                                                         loading="lazy"
-                                                                        srcset="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/logo@2x.png 2x"
+                                                                        srcset="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png 1x, https://febryancaesarpratama.com/wp-content/uploads/2020/01/logo@2x.png 2x"
                                                                         sizes="(max-width: 300px) 100vw, 300px"
                                                                     />
                                                                 </a>

@@ -53,6 +53,7 @@ class AuthController extends Controller
                 'nama' => $nama,
                 'identitas' => $identitas,
                 'alamat' => $request->alamat,
+                'no_telp' => $request->no_telp,
                 'jenis_pemohon' => $request->jenis_pemohon,
             ]);
 

@@ -127,7 +127,7 @@
                                     <p class="mb-2">{{ $item->deskripsi }}</p>
                                     <div class="d-flex flex-wrap">
                                         <div class="avatar me-3">
-                                            <img src="../../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
+                                            <img src="{{ asset('') }}assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                                         </div>
                                         <div>
                                             <h6 class="mb-0">Admin</h6>

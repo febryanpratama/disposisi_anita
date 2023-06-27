@@ -125,7 +125,7 @@
 
                                 <div class="col-md-6 col-sm-12">
                                   <label for="">Nomor Telpon</label>
-                                  <input type="number" class="form-control" name="telpon" id="">
+                                  <input type="number" class="form-control" name="no_telp" id="">
                                 </div>
                                 
                                 <div class="col-md-6 col-sm-12 mb-2">

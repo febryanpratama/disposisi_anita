@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::table('detail_users', function (Blueprint $table) {
             //
-            $table->string('no_telp');
-            $table->string('nama_pimpinan');
-            $table->string('bank');
-            $table->string('no_rek');
-            $table->string('nama_pemilik_rek');
+            $table->string('no_telp')->nullable();
+            $table->string('nama_pimpinan')->nullable();
+            $table->string('bank')->nullable();
+            $table->string('no_rek')->nullable();
+            $table->string('nama_pemilik_rek')->nullable();
         });
     }
 
