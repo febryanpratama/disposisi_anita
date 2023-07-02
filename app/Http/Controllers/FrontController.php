@@ -9,6 +9,6 @@ class FrontController extends Controller
     //
     public function indexLanding()
     {
-        return view('pages.front.landing');
+        return view('layouts.base_front');
     }
 }
