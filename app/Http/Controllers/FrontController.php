@@ -40,7 +40,7 @@ class FrontController extends Controller
 
         // return response()->json($results);
 
-        $response = Http::post('https://console.zenziva.net/reguler/api/sendsms/', [
+        $results = Http::post('https://console.zenziva.net/reguler/api/sendsms/', [
             'userkey' => $userkey,
             'passkey' => $passkey,
             'to' => '088744882202',
@@ -48,7 +48,10 @@ class FrontController extends Controller
             // 'to' => $telepon,
             // 'message' => $message
         ]);
+        // dd($results);
 
-        return response()->json($response);
+        // $response = $results->body();
+
+        return response()->json($results->body());
     }
 }
