@@ -40,13 +40,13 @@ class FrontController extends Controller
 
         // return response()->json($results);
 
-        $results = Http::post('https://console.zenziva.net/reguler/api/sendsms/', [
+        $results = Http::withoutVerifying()->withoutVerifying()->post('https://console.zenziva.net/reguler/api/sendsms/', [
             'userkey' => $userkey,
             'passkey' => $passkey,
-            'to' => '088744882202',
-            'message' => 'Haki Tessstt'
-            // 'to' => $telepon,
-            // 'message' => $message
+            // 'to' => '088744882202',
+            // 'message' => 'Haki Tessstt'
+            'to' => $telepon,
+            'message' => $message
         ]);
         // dd($results);
 
