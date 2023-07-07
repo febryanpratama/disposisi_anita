@@ -12,12 +12,12 @@ class FrontController extends Controller
         return view('layouts.base_front');
     }
 
-    public function sendsms($no_telpon = '088744882202', $messages = 'Halo')
+    public function sendsms(Request $request)
     {
         $userkey = '59d153f6a599';
         $passkey = '695fdb3a186c34dca5d8255a';
-        $telepon = $no_telpon;
-        $message = $messages;
+        $telepon = $request['no_telpon'];
+        $message = $request['messages'];
         $url = 'https://console.zenziva.net/reguler/api/sendsms/';
         $curlHandle = curl_init();
         curl_setopt($curlHandle, CURLOPT_URL, $url);
