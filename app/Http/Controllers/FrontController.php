@@ -2,12 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proposal;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class FrontController extends Controller
 {
     //
+
+    public function index()
+    {
+        $proses = Proposal::whereIn('is_status', ['1', '2'])->count();
+        $setuju = Proposal::whereNotIn('is_status', ['1'])->count();
+        $all = Proposal::count();
+
+        $total = Proposal::whereIn('is_status', ['1', '2'])->sum('jumlah_biaya');
+
+        $user = User::count();
+        return view('dashboard', [
+            'setuju' => $setuju,
+            'proses' => $proses,
+            'all' => $all,
+            'total' => $total,
+            'pengguna' => $user
+        ]);
+    }
     public function indexLanding()
     {
         return view('layouts.base_front');
