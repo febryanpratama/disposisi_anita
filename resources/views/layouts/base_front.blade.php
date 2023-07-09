@@ -56,9 +56,9 @@
                                     <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="80" alt="LOGO">
                                 </div>
                                 <div class="col-md-8 m-5 ">
-                                    <p class="p-5" style="color: white; font-size: 20px; padding-top: 15px; font-weight: bold; letter-spacing: 2px">
+                                    <p class="p-2" style="color: white; font-size: 18px; padding-top: 3px; font-weight: bold; letter-spacing: 2px">
                                         SEKRETARIAT <br>
-                                        DAERAH
+                                        DAERAH <br> KOTA PONTIANAK
                                     </p>
                                 </div>
                             </div>

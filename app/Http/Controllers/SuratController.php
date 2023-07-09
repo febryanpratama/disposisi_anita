@@ -24,7 +24,7 @@ class SuratController extends Controller
     }
     public function indexIndividu()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->where('status', 'TU Umum')->get();
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->get();
         // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);
@@ -34,7 +34,7 @@ class SuratController extends Controller
     }
     public function indexOrganisasi()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->where('status', 'TU Umum')->get();
+        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->get();
         // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);

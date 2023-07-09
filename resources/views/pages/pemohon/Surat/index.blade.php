@@ -3,22 +3,22 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 breadcrumb-wrapper mb-4">
-        <span class="text-muted fw-light">DataTables /</span> Basic
+        <span class="text-muted fw-light">Pengajuan </span> Proposal
     </h4>
 
     <!-- DataTable with Buttons -->
     <div class="card">
         <div class="card-header d-flex justify-content-end">
-            <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-outline-danger m-1" title="Untuh Surat" >
+            <a href="{{ asset('exampledoc/BerkasProposal.rar') }}" class="btn btn-outline-danger m-1" title="Untuh Surat" >
                 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 10px;height: 10px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
-                Contoh Surat
+                Berkas Pengajuan Proposal
             </a>
             {{-- <button type="button" class="btn btn-danger m-1" title="Untuh Surat" >
             </button> --}}
-            <button type="button" class="btn btn-outline-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button>
+            <button type="button" class="btn btn-outline-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Proposal </button>
         </div>
         <div class="card-body">
             <div class="table-responsive pt-0">
@@ -104,7 +104,7 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="text-center mb-4">
-                        <h3>Ajukan Permohonan Surat</h3>
+                        <h3>Ajukan Permohonan Proposal</h3>
                         <p>Updating user details will receive a privacy audit.</p>
                     </div>
                     <form id="editUserForm" class="row g-3" method="POST" action="{{ url('pemohon/surat') }}" enctype="multipart/form-data">
@@ -115,7 +115,7 @@
                             <input type="text" id="modalEditUserFirstName" name="nomor_surat" class="form-control" placeholder="SKEP-187299-2022" />
                         </div> --}}
                         <div class="col-12">
-                            <h5>Detail Kegiatan</h5>
+                            <h5>Detail Proposal</h5>
                         </div>
                         {{-- <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserLastName">Tahun Anggaran</label>
@@ -127,12 +127,12 @@
                             </select>
                         </div> --}}
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserLastName">Judul Permohonan</label>
-                            <input type="text" id="modalEditUserLastName" name="judul_permohonan" class="form-control" placeholder="Judul Permohonan" />
+                            <label class="form-label" for="modalEditUserLastName">Judul Proposal</label>
+                            <input type="text" id="modalEditUserLastName" name="judul_permohonan" class="form-control" placeholder="Judul Proposal" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserName">Deskripsi Permohonan</label>
-                            <input type="text" id="modalEditUserName" name="deskripsi_permohonan" class="form-control" placeholder="Deskripsi Permohonan" />
+                            <label class="form-label" for="modalEditUserName">Deskripsi Proposal</label>
+                            <input type="text" id="modalEditUserName" name="deskripsi_permohonan" class="form-control" placeholder="Deskripsi Proposal" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Tanggal Pelaksanaan</label>
@@ -215,36 +215,32 @@
                         <hr>
                         <h5>Lampiran</h5>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Surat Permohonan <span class="text-danger">*</span></label>
-                            <input type="file" id="modalEditUserEmail" name="surat_permohonan" class="form-control" placeholder="" />
-                        </div>
-                        <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Dokumen Proposal <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="dokumen_proposal" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Lampiran Proposal <span class="text-danger">*</span></label>
-                            <input type="file" id="modalEditUserEmail" name="lampiran_proposal" class="form-control" placeholder="" />
+                            <label class="form-label" for="modalEditUserEmail">Surat Keterangan Domisili <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="surat_keterangan_domisili" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Susunan Kepengurusan Kepanitiaan <span class="text-danger">*</span></label>
-                            <input type="file" id="modalEditUserEmail" name="kepengurusan" class="form-control" placeholder="" />
+                            <label class="form-label" for="modalEditUserEmail">Surat Rekomendasi Kecamatan <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="surat_rekomendasi_kecamatan" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Rancangan Anggaran Biaya <span class="text-danger">*</span></label>
-                            <input type="file" id="modalEditUserEmail" name="rab" class="form-control" placeholder="" />
+                            <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Tidak Konflik Internal <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="surat_pernyataan_konflik" class="form-control" placeholder="" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Tidak Duplikasi Biaya <span class="text-danger">*</span></label>
+                            <input type="file" id="modalEditUserEmail" name="surat_duplikasi_biaya" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Foto Rekening Bantuan Penerima <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="rekening" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Surat Keterangan Desa</label>
-                            <input type="file" id="modalEditUserEmail" name="surat_keterangan" class="form-control" placeholder="" />
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Surat Rekomendasi</label>
-                            <input type="file" id="modalEditUserEmail" name="surat_rekomendasi" class="form-control" placeholder="" />
+                            <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Lembaga / Organisasi</label>
+                            <input type="file" id="modalEditUserEmail" name="surat_pernyataan_lembaga" class="form-control" placeholder="" />
                         </div>
                         <div class="col-12 text-center mt-4">
                             <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>

@@ -77,7 +77,7 @@
                         <div class="card-body">
                             <!-- Logo -->
                             <div class="app-brand justify-content-center">
-                                <img src="https://febryancaesarpratama.com/wp-content/uploads/2023/06/Disnaker-120x120.png" alt="">
+                                <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" alt="">
                             </div>
                             <!-- /Logo -->
                             <h4 class="mb-2">Selamat Datang di HIBSOS Pontianak 👋</h4>

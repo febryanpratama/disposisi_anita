@@ -188,23 +188,60 @@
                     </div>
                     <div class="col-md-4 mx-4">
                         <div class="card-body">
-                            <b>Surat Keterangan</b>
+                            <b>Surat Keterangan Domisili</b>
                             <br>
-                            <a href="{{ url('dokumen_proposal/'.$data->surat_keterangan) }}" target="_blank">Lihat Disini</a>
+                            <a href="{{ url('surat_keterangan_domisili/'.$data->surat_keterangan_domisili) }}" target="_blank">Lihat Disini</a>
 
                             <br>
-                            <embed src="{{ asset('dokumen_proposal/'.$data->surat_keterangan) }}" type="">
+                            <embed src="{{ asset('surat_keterangan_domisili/'.$data->surat_keterangan_domisili) }}" type="">
                             {{-- <a href="">Lihat Disini</a> --}}
                         </div>
                     </div>
                     <div class="col-md-4 mx-4">
                         <div class="card-body">
-                            <b>Surat Rekomendasi</b>
+                            <b>Surat Duplikasi Biaya</b>
                             <br>
-                            <a href="{{ url('dokumen_proposal/'.$data->surat_rekomendasi) }}" target="_blank">Lihat Disini</a>
+                            <a href="{{ url('surat_duplikasi_biaya/'.$data->surat_duplikasi_biaya) }}" target="_blank">Lihat Disini</a>
+
                             <br>
-                            <embed src="{{ asset('dokumen_proposal/'.$data->surat_rekomendasi) }}" type="">
+                            <embed src="{{ asset('surat_duplikasi_biaya/'.$data->surat_duplikasi_biaya) }}" type="">
                             {{-- <a href="">Lihat Disini</a> --}}
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Surat Pernyataan Tidak Konflik</b>
+                            <br>
+                            <a href="{{ url('surat_pernyataan_konflik/'.$data->surat_pernyataan_konflik) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('surat_pernyataan_konflik/'.$data->surat_pernyataan_konflik) }}" type="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Surat Rekomendasi Kecamatan</b>
+                            <br>
+                            <a href="{{ url('surat_rekomendasi_kecamatan/'.$data->surat_rekomendasi_kecamatan) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('surat_rekomendasi_kecamatan/'.$data->surat_rekomendasi_kecamatan) }}" type="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Foto Rekening</b>
+                            <br>
+                            <a href="{{ url('rekening/'.$data->rekening) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('rekening/'.$data->rekening) }}" type="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-4">
+                        <div class="card-body">
+                            <b>Surat Pernyataan Lembaga</b>
+                            <br>
+                            <a href="{{ url('surat_pernyataan_lembaga/'.$data->surat_pernyataan_lembaga) }}" target="_blank">Lihat Disini</a>
+                            <br>
+                            <embed src="{{ asset('surat_pernyataan_lembaga/'.$data->surat_pernyataan_lembaga) }}" type="">
                         </div>
                     </div>
 

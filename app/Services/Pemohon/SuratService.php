@@ -33,13 +33,12 @@ class SuratService
             'lokasi_pelaksanaan' => 'required',
             'jumlah_biaya' => 'required|numeric',
             'dokumen_proposal' => 'required|file|mimes:pdf,docx|max:2048',
-            'surat_keterangan' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'surat_rekomendasi' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'surat_permohonan' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'lampiran_proposal' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'kepengurusan' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'rab' => 'nullable|file|mimes:pdf,docx|max:2048',
-            'rekening' => 'nullable|file|mimes:pdf,docx|max:2048'
+            'surat_keterangan_domisili' => 'required|file|mimes:pdf,docx|max:2048',
+            'surat_rekomendasi_kecamatan' => 'required|file|mimes:pdf,docx|max:2048',
+            'surat_pernyataan_konflik' => 'required|file|mimes:pdf,docx|max:2048',
+            'surat_duplikasi_biaya' => 'required|file|mimes:pdf,docx|max:2048',
+            'rekening' => 'required|file|mimes:pdf,docx|max:2048',
+            'surat_pernyataan_lembaga' => 'nullable|file|mimes:pdf,docx|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -56,7 +55,6 @@ class SuratService
 
         try {
             //code...
-
             if (array_key_exists('dokumen_proposal', $data)) {
                 $file = $data['dokumen_proposal'];
                 $dokumen_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
@@ -64,17 +62,17 @@ class SuratService
                 $file->move($tujuan_upload, $dokumen_proposal);
             }
 
-            if (array_key_exists('surat_keterangan', $data)) {
-                $file = $data['surat_keterangan'];
+            if (array_key_exists('surat_keterangan_domisili', $data)) {
+                $file = $data['surat_keterangan_domisili'];
                 $surat_keterangan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'surat_keterangan';
+                $tujuan_upload = 'surat_keterangan_domisili';
                 $file->move($tujuan_upload, $surat_keterangan);
             }
 
-            if (array_key_exists('surat_rekomendasi', $data)) {
-                $file = $data['surat_rekomendasi'];
+            if (array_key_exists('surat_rekomendasi_kecamatan', $data)) {
+                $file = $data['surat_rekomendasi_kecamatan'];
                 $surat_rekomendasi = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'surat_rekomendasi';
+                $tujuan_upload = 'surat_rekomendasi_kecamatan';
                 $file->move($tujuan_upload, $surat_rekomendasi);
             }
 
@@ -84,30 +82,24 @@ class SuratService
                 $tujuan_upload = 'rekening';
                 $file->move($tujuan_upload, $rekening);
             }
-            if (array_key_exists('rab', $data)) {
-                $file = $data['rab'];
+            if (array_key_exists('surat_pernyataan_konflik', $data)) {
+                $file = $data['surat_pernyataan_konflik'];
                 $rab = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'rab';
+                $tujuan_upload = 'surat_pernyataan_konflik';
                 $file->move($tujuan_upload, $rab);
             }
-            if (array_key_exists('kepengurusan', $data)) {
-                $file = $data['kepengurusan'];
+            if (array_key_exists('surat_duplikasi_biaya', $data)) {
+                $file = $data['surat_duplikasi_biaya'];
                 $kepengurusan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'kepengurusan';
+                $tujuan_upload = 'surat_duplikasi_biaya';
                 $file->move($tujuan_upload, $kepengurusan);
             }
 
-            if (array_key_exists('lampiran_proposal', $data)) {
-                $file = $data['lampiran_proposal'];
+            if (array_key_exists('surat_pernyataan_lembaga', $data)) {
+                $file = $data['surat_pernyataan_lembaga'];
                 $lampiran_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'lampiran_proposal';
+                $tujuan_upload = 'surat_pernyataan_lembaga';
                 $file->move($tujuan_upload, $lampiran_proposal);
-            }
-            if (array_key_exists('surat_permohonan', $data)) {
-                $file = $data['surat_permohonan'];
-                $surat_permohonan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
-                $tujuan_upload = 'surat_permohonan';
-                $file->move($tujuan_upload, $surat_permohonan);
             }
 
             $proposal = Proposal::create([
@@ -120,13 +112,12 @@ class SuratService
                 'jumlah_biaya' => $data['jumlah_biaya'],
                 'jenis_pemohon' => Auth::user()->detail->jenis_pemohon,
                 'dokumen_proposal' => $dokumen_proposal,
-                'surat_keterangan' => $surat_keterangan ?? null,
-                'surat_rekomendasi' => $surat_rekomendasi ?? null,
-                'rab' => $rab ?? null,
-                'kepengurusan' => $kepengurusan ?? null,
-                'lampiran_proposal' => $lampiran_proposal ?? null,
-                'surat_permohonan' => $surat_permohonan ?? null,
+                'surat_keterangan_domisili' => $surat_keterangan ?? null,
+                'surat_rekomendasi_kecamatan' => $surat_rekomendasi ?? null,
+                'surat_pernyataan_konflik' => $rab ?? null,
+                'surat_duplikasi_biaya' => $kepengurusan ?? null,
                 'rekening' => $rekening ?? null,
+                'surat_pernyataan_lembaga' => $lampiran_proposal ?? null,
                 'status' => 'TU Umum',
                 'is_status' => '2'
             ]);
@@ -142,13 +133,13 @@ class SuratService
 
             return [
                 'status' => true,
-                'message' => 'Data Proposal Berhasil Disimpan',
+                'message' => 'Pengajuan Proposal Berhasil Disimpan',
                 'data' => null,
             ];
         } catch (\Throwable $th) {
             //throw $th;
 
-            dd($th->getMessage());
+            // dd($th->getMessage());
             DB::rollback();
             return [
                 'status' => false,

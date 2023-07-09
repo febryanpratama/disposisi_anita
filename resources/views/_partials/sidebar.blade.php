@@ -408,12 +408,12 @@
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Manajemen Pengajuan</span>
+            <span class="menu-header-text">Manajemen Proposal</span>
         </li>
         <li class="menu-item">
             <a href="{{ url('pemohon/surat') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Permohonan Surat">Permohonan Pengajuan</div>
+                <div data-i18n="Pengajuan Proposal">Pengajuan Proposal</div>
             </a>
         </li>
         <li class="menu-item">

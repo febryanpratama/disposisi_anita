@@ -30,7 +30,7 @@
                             <th class="text-center">Tanggal Pelaksanaan</th>
                             <th class="text-center">Lokasi Pelaksanaan</th>
                             <th class="text-center">Biaya</th>
-                            <th class="text-center">Lokasi Surat</th>
+                            {{-- <th class="text-center">Lokasi Surat</th> --}}
                             <th class="text-center">Status Surat</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -54,7 +54,7 @@
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
                                     @endif
                                 </td>
-                                <td>
+                                {{-- <td>
                                     @switch($key->is_status)
                                         @case(1)
                                             <span class="badge bg-success">Setuju</span>
@@ -68,13 +68,14 @@
                                             <span class="badge bg-warning">Sedang Ditinjau</span>
                                             
                                     @endswitch
-                                </td>
-                                <td class="d-flex">
+                                </td> --}}
+                                <td >
                                     <a href="{{ url('admin/surat/'.$key->id.'/detail') }}" class="btn btn-primary btn-sm m-1" title="Detail Surat">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
                                         </svg>
                                     </a>
+                                    @if ($key->status == 'TU Umum')
                                     <div class="dropdown m-1">
                                         <button class="btn btn-light btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -89,6 +90,8 @@
                                             <li><a class="dropdown-item" href="{{ url('setda/surat/'.$key->id.'/tolak') }}">Tolak</a></li>
                                         </ul>
                                     </div>
+                                        
+                                    @endif
                                     {{-- <form action="{{ url('pemohon/surat/'.$key->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
