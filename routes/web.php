@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\Pemohon\SuratController as PemohonSuratController;
@@ -126,17 +127,41 @@ Route::group([
         Route::get('/', 'index');
         // Route:
         Route::get('/{id}', 'detail');
-        Route::POST('/{id}/setuju', 'setuju');
+        Route::post('/{id}/setuju', 'setuju');
+        Route::post('/{surat_id}/anggota', 'anggota');
         // Route::get('/{id}/tolak', 'tolak');
+    });
+
+
+    Route::group([
+        'prefix' => 'anggota',
+        'controller' => SetdaController::class,
+    ], function () {
+        Route::get('/', 'indexAnggota');
+        Route::post('/', 'postAnggota');
     });
 });
 
+
+Route::group([
+    'prefix' => 'anggota',
+    'middleware' => ['auth', 'role:Anggota'],
+    'controller' => AnggotaController::class,
+], function () {
+    Route::prefix('surat')->group(function () {
+        Route::get('/', 'indexSurat');
+        Route::get('/{surat_id}', 'detailSurat');
+        Route::post('/{surat_id}/foto-lapangan', 'inputDataLapangan');
+    });
+});
 // Walikota
 Route::group([
     'prefix' => 'walikota',
     'controller' => WalikotaController::class,
     'middleware' => ['auth', 'role:Walikota']
 ], function () {
+
+    Route::get('surat/{surat_id}', 'detailSurat');
     Route::group([
         'prefix' => 'individu',
     ], function () {

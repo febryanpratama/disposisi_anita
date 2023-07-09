@@ -296,50 +296,6 @@
     
 </div>
 
-<div class="modal fade" id="addUser" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-simple modal-edit-user">
-        <div class="modal-content p-3 p-md-5">
-            <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="text-center mb-4">
-                    <h3>Tambahkan Anggota Lapangan</h3>
-                    <p>Tambhkan user details will receive a privacy audit.</p>
-                </div>
-                <form id="editUserForm" class="row g-3" method="POST" action="{{ url('setda/surat/'.$surat_id.'/anggota') }}" enctype="multipart/form-data">
-                    @csrf
-                    
-                    <div class="col-12 col-md-12">
-                        <label class="form-label" for="modalEditUserLastName">Nama Anggota</label>
-                        <select name="anggota_id" class="form-control" id="">
-                            <option value="" selected disabled> == Pilih == </option>
-                            @foreach ($anggota as $item)
-                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    {{-- <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserName">NIP Anggota</label>
-                        <input type="number" id="modalEditUserName" name="nip" class="form-control" placeholder="NIP Anggota" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserName">Email Anggota</label>
-                        <input type="email" id="modalEditUserName" name="email" class="form-control" placeholder="Email Anggota" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserName">Password</label>
-                        <input type="password" id="modalEditUserName" name="password" class="form-control" placeholder="Password" />
-                    </div> --}}
-
-
-                    <div class="col-12 text-center mt-4">
-                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 @section('script')

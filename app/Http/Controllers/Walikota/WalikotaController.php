@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Walikota;
 
 use App\Http\Controllers\Controller;
+use App\Models\Proposal;
 use App\Services\Walikota\WalikotaService;
 use Illuminate\Http\Request;
 
@@ -93,6 +94,18 @@ class WalikotaController extends Controller
         $response = $this->walikotaService->historiPengajuan($request->tahun);
         return view('pages.walikota.surat.histori', [
             'data' => $response['data']
+        ]);
+    }
+
+    public function detailSurat($surat_id)
+    {
+
+        // dd($surat_id);
+        $data = Proposal::with('log', 'user', 'user.detail', 'anggota')->where('id', $surat_id)->first();
+
+        return view('pages.walikota.surat.detail', [
+            'data' => $data,
+            'surat_id' => $surat_id
         ]);
     }
 }

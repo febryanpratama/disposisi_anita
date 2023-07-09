@@ -137,33 +137,6 @@
                                 </div>
                             </li>
                         @endforeach
-                        {{-- <li class="timeline-item timeline-item-transparent ps-4">
-                            <span class="timeline-point timeline-point-info"></span>
-                            <div class="timeline-event pb-0">
-                                <div class="timeline-header mb-1">
-                                    <h6 class="mb-0">Create a new project for client</h6>
-                                    <small class="text-muted">2 Day Ago</small>
-                                </div>
-                                <p class="mb-2">5 team members in a project</p>
-                                <div class="d-flex align-items-center avatar-group">
-                                    <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" aria-label="Vinnie Mostowy">
-                                        <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </div>
-                                    <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" aria-label="Marrie Patty">
-                                        <img src="../../assets/img/avatars/12.png" alt="Avatar" class="rounded-circle" />
-                                    </div>
-                                    <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" aria-label="Jimmy Jackson">
-                                        <img src="../../assets/img/avatars/9.png" alt="Avatar" class="rounded-circle" />
-                                    </div>
-                                    <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" aria-label="Kristine Gill">
-                                        <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </div>
-                                    <div class="avatar avatar-sm pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" aria-label="Nelson Wilson">
-                                        <img src="../../assets/img/avatars/14.png" alt="Avatar" class="rounded-circle" />
-                                    </div>
-                                </div>
-                            </div>
-                        </li> --}}
                         <li class="timeline-end-indicator">
                             <i class="bx bx-check-circle"></i>
                         </li>
@@ -256,11 +229,15 @@
                                             <img src="../../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                                         </div>
                                         <div>
-                                            <h6 class="mb-0">Admin</h6>
+                                            <h6 class="mb-0">Admin Setda</h6>
                                             <span>Hibsos Pontianak</span>
                                         </div>
                                     </div>
                                 </div>
+                                @if ($data->foto->isEmpty())
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addData"> Tambah Data Lapangan</button>
+                                    
+                                @endif
                             </li>
                             <li class="timeline-end-indicator">
                                 <i class="bx bx-check-circle"></i>
@@ -296,26 +273,21 @@
     
 </div>
 
-<div class="modal fade" id="addUser" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="addData" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-simple modal-edit-user">
         <div class="modal-content p-3 p-md-5">
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="text-center mb-4">
-                    <h3>Tambahkan Anggota Lapangan</h3>
+                    <h3>Tambahkan Data Foto Lapangan</h3>
                     <p>Tambhkan user details will receive a privacy audit.</p>
                 </div>
-                <form id="editUserForm" class="row g-3" method="POST" action="{{ url('setda/surat/'.$surat_id.'/anggota') }}" enctype="multipart/form-data">
+                <form id="editUserForm" class="row g-3" method="POST" action="{{ url('anggota/surat/'.$surat_id.'/foto-lapangan') }}" enctype="multipart/form-data">
                     @csrf
-                    
+                    <input type="hidden" name="surat_id" value="{{ $surat_id }}">
                     <div class="col-12 col-md-12">
-                        <label class="form-label" for="modalEditUserLastName">Nama Anggota</label>
-                        <select name="anggota_id" class="form-control" id="">
-                            <option value="" selected disabled> == Pilih == </option>
-                            @foreach ($anggota as $item)
-                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                            @endforeach
-                        </select>
+                        <label class="form-label" for="modalEditUserLastName">Foto Lapangan</label>
+                        <input type="file" class="form-control" name="foto_lapangan[]" multiple> 
                     </div>
                     {{-- <div class="col-12 col-md-6">
                         <label class="form-label" for="modalEditUserName">NIP Anggota</label>
@@ -340,6 +312,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 
 @section('script')

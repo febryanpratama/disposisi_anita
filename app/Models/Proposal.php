@@ -21,4 +21,14 @@ class Proposal extends Model
     {
         return $this->hasMany(LogProposal::class);
     }
+
+    public function anggota()
+    {
+        return $this->belongsTo(Anggota::class);
+    }
+
+    public function foto()
+    {
+        return $this->hasMany(FotoLapangan::class);
+    }
 }

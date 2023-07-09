@@ -2,12 +2,15 @@
 
 namespace App\Services\Setda;
 
+use App\Models\Anggota;
 use App\Models\BuktiPendukung;
 use App\Models\LogProposal;
 use App\Models\Proposal;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class SetdaService
 {
@@ -116,7 +119,7 @@ class SetdaService
 
     static function detailSurat($surat_id)
     {
-        $data = Proposal::with('log', 'user', 'user.detail')->where('id', $surat_id)->first();
+        $data = Proposal::with('log', 'user', 'user.detail', 'anggota')->where('id', $surat_id)->first();
 
         if (!$data) {
             return [
@@ -130,5 +133,58 @@ class SetdaService
             "message" => "Data Berhasil Ditemukan",
             "data" => $data
         ];
+    }
+
+    static function postAnggota($data)
+    {
+        $validator = Validator::make($data, [
+            'nama' => 'required',
+            'nip' => 'required|unique:anggotas,nip',
+            'email' => 'required|unique:users,email',
+            'password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return [
+                'status' => false,
+                'message' => $validator->errors()->first()
+            ];
+        }
+
+        DB::beginTransaction();
+
+        try {
+            //code...
+            $user = User::create([
+                'name' => $data['nama'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'is_active' => '1'
+            ]);
+
+            $user->assignRole('Anggota');
+
+            $anggota = Anggota::create([
+                'user_id' => $user->id,
+                'nip' => $data['nip'],
+                'nama' => $data['nama'],
+            ]);
+
+            DB::commit();
+
+            return [
+                'status' => true,
+                'message' => 'Data Berhasil Ditambahkan',
+                'data' => $anggota
+            ];
+        } catch (\Throwable $th) {
+            //throw $th;
+
+            DB::rollBack();
+            return [
+                'status' => false,
+                'message' => 'Terjadi Error Pada Server'
+            ];
+        }
     }
 }

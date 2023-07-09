@@ -112,7 +112,7 @@ class SuratService
 
             $proposal = Proposal::create([
                 'user_id' => $data['user_id'],
-                'tahun_anggaran' => $data['tahun_anggaran'],
+                // 'tahun_anggaran' => $data['tahun_anggaran'],
                 'judul_permohonan' => $data['judul_permohonan'],
                 'deskripsi_permohonan' => $data['deskripsi_permohonan'],
                 'tanggal_pelaksanaan' => $data['tanggal_pelaksanaan'],
@@ -128,7 +128,7 @@ class SuratService
                 'surat_permohonan' => $surat_permohonan ?? null,
                 'rekening' => $rekening ?? null,
                 'status' => 'TU Umum',
-                'is_status' => '1'
+                'is_status' => '2'
             ]);
 
             LogProposal::create([

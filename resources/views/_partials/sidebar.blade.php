@@ -182,6 +182,17 @@
             </ul>
         </li>
 
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Manajemen Pengguna</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('setda/anggota') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Anggota">Anggota</div>
+            </a>
+        </li>
+
         <!-- Components -->
         {{-- <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Manajemen</span>
@@ -239,7 +250,39 @@
                 </button>
             </form>
         </li>
+
         
+        
+    </ul>
+    @endrole
+
+    @hasrole('Anggota')
+    <ul class="menu-inner py-1">
+        <li class="menu-item">
+            <a href="{{ url('dashboard') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Dashboard">Dashboard</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Manajemen Pengajuan</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('anggota/surat') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Proposal">Proposal</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn  btn-danger-outline form-control menu-link">
+                    <i class="menu-icon tf-icons bx bx-file"></i>
+                    <div data-i18n="Logout">Logout</div>
+                </button>
+            </form>
+        </li>
     </ul>
     @endrole
     @hasrole('Walikota')

@@ -50,8 +50,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="main_logo" href="index-2.html">
-                            <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="80" alt="LOGO">
+                        <a class="main_logo" href="{{ url('/') }}">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="80" alt="LOGO">
+                                </div>
+                                <div class="col-md-8 m-5 ">
+                                    <p class="p-5" style="color: white; font-size: 20px; padding-top: 15px; font-weight: bold; letter-spacing: 2px">
+                                        SEKRETARIAT <br>
+                                        DAERAH
+                                    </p>
+                                </div>
+                            </div>
+                            
                         </a>
                     </div>
 
