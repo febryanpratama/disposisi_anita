@@ -3,22 +3,13 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 breadcrumb-wrapper mb-4">
-        <span class="text-muted fw-light">DataTables /</span> Basic
+        <span class="text-muted fw-light">List /</span> Pengajuan Proposal
     </h4>
 
     <!-- DataTable with Buttons -->
     <div class="card">
         <div class="card-header d-flex justify-content-end">
-            <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
-                
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 10px;height: 10px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>
-                Contoh Surat
-            </a>
-            {{-- <button type="button" class="btn btn-danger m-1" title="Untuh Surat" >
-            </button> --}}
-            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button>
+
         </div>
         <div class="card-body">
             <div class="table-responsive pt-0">
@@ -48,12 +39,14 @@
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
                                 <td>{{ $key->jumlah_biaya }}</td>
                                 <td>
-                                    @if ($key->status == 'Verifikator')
-                                        <span class="badge bg-danger">Sedang ditinjau Verifikator</span>
+                                    @if ($key->status == 'TU Umum')
+                                        <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
                                         <span class="badge bg-warning">Sedang Ditinjau Setda</span>
-                                    @else
+                                    @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
+                                    @else
+                                    <span class="badge bg-success">Selesai</span>
                                     @endif
                                 </td>
                                 <td>

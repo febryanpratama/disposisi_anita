@@ -41,6 +41,8 @@
         <!-- Page CSS -->
         <!-- Page -->
         <link rel="stylesheet" href="{{ asset('') }}assets/vendor/css/pages/page-auth.css" />
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
 
         <style>
           .hide {
@@ -82,7 +84,7 @@
                         <div class="card-body">
                             <!-- Logo -->
                             <div class="app-brand justify-content-center">
-                                <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" alt="">
+                                <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="150rem" alt="">
                             </div>
                             <!-- /Logo -->
                             <h4 class="mb-2">Selamat Datang di HIBSOS Pontianak 👋</h4>
@@ -213,6 +215,32 @@
             }
             // console.log(value)
           })
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+          $(document).ready(function() {
+            // $('#example').DataTable();
+
+            @if (session('success'))
+            Swal.fire(
+              'Great !',
+              '{{ session("success") }}',
+              'success'
+            )
+            // swal("Great !", "{{ session('success') }}", "success");
+            @endif ()
+            
+            @if (session('errors'))
+            Swal.fire(
+              'Oh No !',
+              '{{ session("errors") }}',
+              'error'
+            )
+            // swal("Oh No !", "{{ session('errors') }}", "errors");
+            @endif ()
+
+          });
         </script>
     </body>
 

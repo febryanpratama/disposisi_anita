@@ -10,6 +10,7 @@
    <!-- User Sidebar -->
    <div class="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
       <!-- User Card -->
+      {{-- {{ dd($data) }} --}}
       <div class="card mb-4">
          <div class="card-body">
             <div class="user-avatar-section">
@@ -42,8 +43,8 @@
             <div class="info-container">
                <ul class="list-unstyled">
                   <li class="mb-3">
-                     <span class="fw-bold me-2">Nama Pimpinan:</span>
-                     <span>{{ $data->nama_pimpinan }}</span>
+                     <span class="fw-bold me-2">Nama:</span>
+                     <span>{{ $data->detail->nama }}</span>
                   </li>
                   <li class="mb-3">
                      <span class="fw-bold me-2">Email:</span>
@@ -119,90 +120,34 @@
       <!-- /Project table -->
       <!-- Activity Timeline -->
       <div class="card mb-4">
-         <h5 class="card-header">User Activity Timeline</h5>
+         <h5 class="card-header">DETAIL USER</h5>
          <div class="card-body">
-            <ul class="timeline">
-               <li class="timeline-item timeline-item-transparent">
-                  <span class="timeline-point timeline-point-primary"></span>
-                  <div class="timeline-event">
-                     <div class="timeline-header mb-1">
-                        <h6 class="mb-0">12 Invoices have been paid</h6>
-                        <small class="text-muted">12 min ago</small>
-                     </div>
-                     <p class="mb-2">Invoices have been paid to the company</p>
-                     <div class="d-flex">
-                        <a href="javascript:void(0)" class="me-3">
-                        <img src="../../assets/img/icons/misc/pdf.png" alt="PDF image" width="20" class="me-2">
-                        <span class="fw-bold text-body">invoices.pdf</span>
-                        </a>
-                     </div>
-                  </div>
-               </li>
-               <li class="timeline-item timeline-item-transparent">
-                  <span class="timeline-point timeline-point-warning"></span>
-                  <div class="timeline-event">
-                     <div class="timeline-header mb-1">
-                        <h6 class="mb-0">Client Meeting</h6>
-                        <small class="text-muted">45 min ago</small>
-                     </div>
-                     <p class="mb-2">Project meeting with john @10:15am</p>
-                     <div class="d-flex flex-wrap">
-                        <div class="avatar me-3">
-                           <img src="../../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
-                        </div>
-                        <div>
-                           <h6 class="mb-0">Lester McCarthy (Client)</h6>
-                           <span>CEO of PIXINVENT</span>
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class="timeline-item timeline-item-transparent">
-                  <span class="timeline-point timeline-point-info"></span>
-                  <div class="timeline-event">
-                     <div class="timeline-header mb-1">
-                        <h6 class="mb-0">Create a new project for client</h6>
-                        <small class="text-muted">2 Day Ago</small>
-                     </div>
-                     <p class="mb-2">5 team members in a project</p>
-                     <div class="d-flex align-items-center avatar-group">
-                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                           data-bs-placement="top" title="Vinnie Mostowy">
-                           <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
-                        </div>
-                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                           data-bs-placement="top" title="Marrie Patty">
-                           <img src="../../assets/img/avatars/12.png" alt="Avatar" class="rounded-circle">
-                        </div>
-                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                           data-bs-placement="top" title="Jimmy Jackson">
-                           <img src="../../assets/img/avatars/9.png" alt="Avatar" class="rounded-circle">
-                        </div>
-                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                           data-bs-placement="top" title="Kristine Gill">
-                           <img src="../../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
-                        </div>
-                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
-                           data-bs-placement="top" title="Nelson Wilson">
-                           <img src="../../assets/img/avatars/14.png" alt="Avatar" class="rounded-circle">
-                        </div>
-                     </div>
-                  </div>
-               </li>
-               <li class="timeline-item timeline-item-transparent">
-                  <span class="timeline-point timeline-point-success"></span>
-                  <div class="timeline-event">
-                     <div class="timeline-header mb-1">
-                        <h6 class="mb-0">Design Review</h6>
-                        <small class="text-muted">5 days Ago</small>
-                     </div>
-                     <p class="mb-0">Weekly review of freshly prepared design for our new app.</p>
-                  </div>
-               </li>
-               <li class="timeline-end-indicator">
-                  <i class="bx bx-check-circle"></i>
-               </li>
-            </ul>
+            <div class="row">
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Nama Lengkap</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->nama }}">
+               </div>
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Nomor Identitas</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->identitas }}">
+               </div>
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Alamat</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->alamat }}">
+               </div>
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Nama Lengkap</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->nama }}">
+               </div>
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Nama Lengkap</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->nama }}">
+               </div>
+               <div class="col-md-6 mt-2">
+                  <label for="" class="control-label">Nama Lengkap</label>
+                  <input type="text" class="form-control mt-1" value="{{ $data->detail->nama }}">
+               </div>
+            </div>
          </div>
       </div>
       <!-- /Activity Timeline -->
@@ -238,18 +183,20 @@
                <h3>Edit User Information</h3>
                <p>Updating user details will receive a privacy audit.</p>
             </div>
-            <form id="editUserForm" class="row g-3" method="POST" action="{{ url('pemohon/profil') }}">
+            <form id="editUserForm" class="row g-3" method="POST" action="{{ url('pemohon/profil') }}" enctype="multipart/form-data">
                 @csrf
                <div class="col-12 col-md-6">
-                  <label class="form-label" for="modalEditUserFirstName">Nama Organisasi / Individu</label>
+                  <label class="form-label" for="modalEditUserFirstName">Nama Lengkap</label>
                   <input type="text" id="modalEditUserFirstName" name="nama" value="{{ $data->detail->nama }}"
                      class="form-control" placeholder="Nama" required />
                </div>
-               <div class="col-12 col-md-6">
-                  <label class="form-label" for="modalEditUserLastName">Nama Pimpinan</label>
-                  <input type="text" id="modalEditUserLastName" name="nama_pimpinan" value="{{ $data->detail->nama_pimpinan }}" class="form-control"
-                     placeholder="Doe" required />
-               </div>
+               @if ($data->jenis_pemohon == 'Organisasi')
+                  <div class="col-12 col-md-6">
+                     <label class="form-label" for="modalEditUserLastName">Nama Pimpinan</label>
+                     <input type="text" id="modalEditUserLastName" name="nama_pimpinan" value="{{ $data->detail->nama_pimpinan }}" class="form-control"
+                        placeholder="Doe" required />
+                  </div>
+               @endif
                <div class="col-12 col-md-6">
                   <label class="form-label" for="modalEditUserLastName">Nomor Identitas</label>
                   <input type="text" id="modalEditUserLastName" name="identitas" value="{{ $data->detail->identitas }}" class="form-control"
@@ -292,6 +239,16 @@
                 <div class="col-12 col-md-6">
                     <label class="form-label" for="modalEditTaxID">Alamat</label>
                     <input type="text" id="modalEditTaxID" name="alamat" value="{{ $data->detail->alamat }}"
+                    class="form-control modal-edit-tax-id" placeholder="Alamat" required />
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="modalEditTaxID">Foto Identitas</label>
+                    <input type="file" id="modalEditTaxID" name="foto_identitas" value=""
+                    class="form-control modal-edit-tax-id" placeholder="Alamat" required />
+                </div>
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="modalEditTaxID">Foto Data 1</label>
+                    <input type="file" id="modalEditTaxID" name="foto_1" value=""
                     class="form-control modal-edit-tax-id" placeholder="Alamat" required />
                 </div>
                 <div class="col-12 text-center mt-4">

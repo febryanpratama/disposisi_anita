@@ -53,6 +53,8 @@
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -77,7 +79,7 @@
                         <div class="card-body">
                             <!-- Logo -->
                             <div class="app-brand justify-content-center">
-                                <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" alt="">
+                                <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="150rem"  alt="">
                             </div>
                             <!-- /Logo -->
                             <h4 class="mb-2">Selamat Datang di HIBSOS Pontianak 👋</h4>
@@ -153,6 +155,32 @@
 
         <!-- Page JS -->
         <script src="{{ asset('') }}assets/js/pages-auth.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+          $(document).ready(function() {
+            // $('#example').DataTable();
+
+            @if (session('success'))
+            Swal.fire(
+              'Great !',
+              '{{ session("success") }}',
+              'success'
+            )
+            // swal("Great !", "{{ session('success') }}", "success");
+            @endif ()
+            
+            @if (session('errors'))
+            Swal.fire(
+              'Oh No !',
+              '{{ session("errors") }}',
+              'error'
+            )
+            // swal("Oh No !", "{{ session('errors') }}", "errors");
+            @endif ()
+
+          });
+        </script>
     </body>
 
     <!-- Mirrored from pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/vertical-menu-template-bordered/auth-login-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2022 12:03:03 GMT -->

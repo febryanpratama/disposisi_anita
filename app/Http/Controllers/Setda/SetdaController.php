@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Setda;
 
 use App\Http\Controllers\Controller;
 use App\Models\Anggota;
+use App\Models\LogProposal;
 use App\Models\Proposal;
 use App\Services\Setda\SetdaService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SetdaController extends Controller
 {
@@ -66,6 +69,59 @@ class SetdaController extends Controller
         ]);
     }
 
+    public function ubah(Request $request, $surat_id)
+    {
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'surat_id' => 'required|numeric|exists:proposals,id',
+            'status' => 'required|in:Diterima,Ditolak',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
+        // dd($request->all());
+        if ($request->status == 'Diterima') {
+            $proposal = Proposal::where('id', $surat_id)->update([
+                'uraian_usulan' => $request['catatan'],
+                // 'jumlah' => $request['jumlah'],
+                'nominal_usulan' => $request['nominal_disetujui'],
+                'status' => 'Walikota'
+            ]);
+
+            // dd($proposal);
+
+
+            LogProposal::create([
+                'proposal_id' => $surat_id,
+                'catatan' => $request->catatan ?? null,
+                'name' => 'KESRA',
+                'tanggal' => Carbon::now(),
+                'deskripsi' => 'Proposal telah diterima oleh KESRA'
+            ]);
+
+            return back()->withSuccess('Berhasil Mengubah Data');
+        } else {
+            $proposal = Proposal::where('id', $surat_id)->update([
+                // 'uraian_usulan' => $request['catatan'],
+                // 'jumlah' => $request['jumlah'],
+                // 'nominal_usulan' => $request['nominal'],
+                'status' => 'Ditolak'
+            ]);
+
+            LogProposal::create([
+                'proposal_id' => $surat_id,
+                'catatan' => $request->catatan ?? null,
+                'name' => 'KESRA',
+                'tanggal' => Carbon::now(),
+                'deskripsi' => 'Proposal telah ditolak oleh KESRA'
+            ]);
+
+            return back()->withSuccess('Berhasil Mengubah Data');
+        }
+    }
+
     public function setuju(Request $request, $surat_id)
     {
         // dd($request->all());
@@ -110,6 +166,17 @@ class SetdaController extends Controller
         } else {
             return back()->withErrors($response['message']);
         }
+    }
+
+    public function indexPertanggungjawaban()
+    {
+        $title = "List Data Pertanggungjawaban";
+        $response = $this->setdaService->getDataPertanggungjawaban();
+
+        return view('pages.setda.pertanggunjawaban.index', [
+            'title' => $title,
+            'data' => $response['data']
+        ]);
     }
 
     public function indexAnggota()

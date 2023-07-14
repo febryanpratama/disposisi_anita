@@ -20,6 +20,21 @@ class FrontController extends Controller
         $total = Proposal::whereIn('is_status', ['1', '2'])->sum('jumlah_biaya');
 
         $user = User::count();
+
+        if (auth()->user()->hasRole('Pemohon')) {
+
+            $proposal = Proposal::with('log')->where('user_id', auth()->user()->id)->orderBy('created_at', "DESC")->first();
+            // dd('admin');
+            // dd($proposal);
+            return view('dashboard', [
+                'setuju' => $setuju,
+                'proses' => $proses,
+                'all' => $all,
+                'total' => $total,
+                'pengguna' => $user,
+                'proposal' => $proposal
+            ]);
+        }
         return view('dashboard', [
             'setuju' => $setuju,
             'proses' => $proses,

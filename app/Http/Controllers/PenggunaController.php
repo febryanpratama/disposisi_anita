@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Services\PenggunaService;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,20 @@ class PenggunaController extends Controller
         // dd($response);
         return view('admin.pengguna.index', [
             'data' => $response
+        ]);
+    }
+
+    public function detail($pengguna_id)
+    {
+        // dd($pengguna_id);
+        $data = User::with('detail')->where('id', $pengguna_id)->first();
+        // dd($data);
+        if (!$data) {
+            return back()->with('error', 'Data tidak ditemukan');
+        }
+
+        return view('admin.pengguna.detail', [
+            'data' => $data
         ]);
     }
 

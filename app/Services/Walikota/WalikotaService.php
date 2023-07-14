@@ -41,6 +41,7 @@ class WalikotaService
         LogProposal::create([
             'proposal_id' => $surat_id,
             'tanggal' => Carbon::now(),
+            'name' => 'Admin Walikota',
             'deskripsi' => 'Surat Disetujui oleh Walikota'
         ]);
 

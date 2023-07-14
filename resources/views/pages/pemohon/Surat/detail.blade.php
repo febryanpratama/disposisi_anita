@@ -66,12 +66,15 @@
                         </div>
                     </div>
                     <div class="d-flex flex-column flex-grow-1">
-                        <span class="text-nowrap d-block mb-1">Progress Pengajuan {{ $data->judul_permohonan }}</span>
-                        <div class="progress w-100 mb-3" style="height: 8px;">
+                        <span class="text-nowrap d-block mb-1"><h5>Judul Pengajuan Proposal</h5></span>
+                        <p>{{ $data->judul_permohonan }}</p>
+                        {{-- <div class="progress w-100 mb-3" style="height: 8px;">
                             <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+                        </div> --}}
+                        
                     </div>
-                    <span>{{ $data->deskripsi_permohonan }}</span>
+                    <span><h5>Deskripsi Pengajuan Proposal</h5></span>
+                    <p>{{ $data->deskripsi_permohonan }}</p>
                 </div>
                 {{-- <div class="card-footer border-top">
                     <ul class="list-inline mb-0">
@@ -116,6 +119,7 @@
                                 </div>
                             </div>
                         </li> --}}
+                        {{-- {{ dd($data->log) }} --}}
                         @foreach ($data->log as $item)
                             <li class="timeline-item timeline-item-transparent ps-4">
                                 <span class="timeline-point timeline-point-warning"></span>
@@ -130,7 +134,7 @@
                                             <img src="../../assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                                         </div>
                                         <div>
-                                            <h6 class="mb-0">Admin</h6>
+                                            <h6 class="mb-0">{{ $item->name }}</h6>
                                             <span>Hibsos Pontianak</span>
                                         </div>
                                     </div>

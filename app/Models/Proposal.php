@@ -19,7 +19,7 @@ class Proposal extends Model
 
     public function log()
     {
-        return $this->hasMany(LogProposal::class);
+        return $this->hasMany(LogProposal::class, 'proposal_id', 'id');
     }
 
     public function anggota()

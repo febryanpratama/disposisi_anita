@@ -84,6 +84,22 @@ class SuratController extends Controller
                 'email' => $request['email']
             ]);
 
+            if ($request['foto_identitas']) {
+                $foto_identitas = $request->file('foto_identitas');
+                $foto_identitas_name = time() . '.' . $foto_identitas->getClientOriginalExtension();
+                $foto_identitas->move(public_path('uploads/foto_identitas'), $foto_identitas_name);
+
+                $foto_identitas = $foto_identitas_name;
+            }
+
+            if ($request['foto_1']) {
+                $foto_1 = $request->file('foto_1');
+                $foto_1_name = time() . '.' . $foto_1->getClientOriginalExtension();
+                $foto_1->move(public_path('uploads/foto_1'), $foto_1_name);
+
+                $foto_1 = $foto_1_name;
+            }
+
             $detailUser = DetailUsers::where('user_id', $user->id)->update([
                 'nama' => $request['nama'],
                 'nama_pimpinan' => $request['nama_pimpinan'],
@@ -93,6 +109,8 @@ class SuratController extends Controller
                 'no_rek' => $request['no_rek'],
                 'nama_pemilik_rek' => $request['nama_pemilik_rek'],
                 'alamat' => $request['alamat'],
+                'foto_identitas' => $foto_identitas ?? null,
+                'foto_1' => $foto_1 ?? null,
             ]);
             DB::commit();
 

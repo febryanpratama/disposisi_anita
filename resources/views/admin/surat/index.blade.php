@@ -50,8 +50,10 @@
                                         <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
                                         <span class="badge bg-warning">Sedang Ditinjau Setda</span>
-                                    @else
+                                    @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
+                                    @else
+                                    <span class="badge bg-success">Selesai</span>
                                     @endif
                                 </td>
                                 {{-- <td>

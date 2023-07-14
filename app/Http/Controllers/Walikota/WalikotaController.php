@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Walikota;
 
 use App\Http\Controllers\Controller;
+use App\Models\LogProposal;
 use App\Models\Proposal;
 use App\Services\Walikota\WalikotaService;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class WalikotaController extends Controller
 {
@@ -41,6 +44,39 @@ class WalikotaController extends Controller
         ]);
     }
 
+    public function ubah(Request $request, $surat_id)
+    {
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'surat_id' => 'required|numeric|exists:proposals,id',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
+        // dd($request->all());
+        $proposal = Proposal::where('id', $surat_id)->update([
+            'catatan_walikota' => $request['catatan_walikota'],
+            // 'jumlah' => $request['jumlah'],
+            'is_status' => '1',
+            'nominal_disetujui_walikota' => $request['nominal_disetujui_walikota'],
+            'status' => 'Selesai'
+        ]);
+
+        // dd($proposal);
+
+
+        LogProposal::create([
+            'proposal_id' => $surat_id,
+            'catatan' => $request->catatan ?? null,
+            'name' => 'Walikota',
+            'tanggal' => Carbon::now(),
+            'deskripsi' => 'Proposal telah disetujui oleh Walikota'
+        ]);
+
+        return back()->withSuccess('Berhasil Mengubah Data');
+    }
     public function setuju($surat_id)
     {
         // $title = "Setujui Surat";

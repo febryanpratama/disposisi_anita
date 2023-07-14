@@ -66,7 +66,7 @@
                                     
                             @endswitch</th>
                             <td>
-                                <a href="">
+                                <a href="{{ url('admin/pengguna/'.$item->id) }}">
                                     <button class="btn btn-sm btn-outline-info">
                                         <i class="fa fa-eye"></i>
                                     </button>

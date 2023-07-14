@@ -125,6 +125,7 @@ class SuratService
             LogProposal::create([
                 'proposal_id' => $proposal->id,
                 'tanggal' => Carbon::now(),
+                'name' => Auth::user()->name,
                 'deskripsi' => "Proposal Baru Dibuat",
             ]);
 
@@ -139,7 +140,7 @@ class SuratService
         } catch (\Throwable $th) {
             //throw $th;
 
-            // dd($th->getMessage());
+            dd($th->getMessage());
             DB::rollback();
             return [
                 'status' => false,

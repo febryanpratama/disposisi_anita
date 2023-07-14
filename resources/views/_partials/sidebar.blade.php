@@ -127,12 +127,12 @@
             </a>
         </li>
 
-        <li class="menu-item">
+        {{-- <li class="menu-item">
             <a href="{{ url('admin/profil') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Profil">Profil</div>
             </a>
-        </li>
+        </li> --}}
         
         <li class="menu-item">
             <form action="{{ route('logout') }}" method="POST">
@@ -180,6 +180,12 @@
                 </a>
               </li>
             </ul>
+        </li>
+        <li class="menu-item">
+            <a href="{{ url('setda/pertanggungjawaban') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Pertanggungjawaban">Pertanggungjawaban</div>
+            </a>
         </li>
 
 
@@ -417,7 +423,7 @@
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ url('pemohon/surat') }}" class="menu-link">
+            <a href="{{ url('pemohon/profil') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Profil Pemohon">Profil Pemohon</div>
             </a>

@@ -26,6 +26,17 @@ class SetdaService
             'data' => $data
         ];
     }
+    static function getDataPertanggungjawaban()
+    {
+        $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Selesai')->where('is_status', '1')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+        // dd($data);
+
+        return [
+            'status' => true,
+            'message' => 'Data Berhasil Diambil',
+            'data' => $data
+        ];
+    }
     static function getDataOrganisasi()
     {
         $data = Proposal::with('user', 'log', 'user.detail')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Organisasi')->get();
@@ -75,9 +86,11 @@ class SetdaService
                     'path_bukti' => $iname
                 ]);
             }
+
             LogProposal::create([
                 'proposal_id' => $surat_id,
                 'tanggal' => Carbon::now(),
+                'name' => 'KESRA',
                 'deskripsi' => 'Surat Disetujui oleh Setda'
             ]);
 

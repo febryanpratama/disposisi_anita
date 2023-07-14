@@ -59,6 +59,7 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('/{surat_id}/verifikasi', 'verifikasi');
         Route::get('/{surat_id}/setuju', 'diterima');
         Route::get('/{surat_id}/tolak', 'tolak');
+        Route::post('/{surat_id}/ubah', 'ubah');
     });
     Route::get('individu', [SuratController::class, 'indexIndividu']);
     Route::get('organisasi', [SuratController::class, 'indexOrganisasi']);
@@ -68,6 +69,7 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         'controller' => PenggunaController::class
     ], function () {
         Route::get('/', 'index');
+        Route::get('/{id}', 'detail');
         Route::post('/', 'store');
     });
 });
@@ -129,9 +131,19 @@ Route::group([
         Route::get('/', 'index');
         // Route:
         Route::get('/{id}', 'detail');
+        Route::post('/{id}/ubah', 'ubah');
         Route::post('/{id}/setuju', 'setuju');
         Route::post('/{surat_id}/anggota', 'anggota');
         // Route::get('/{id}/tolak', 'tolak');
+    });
+
+    Route::group([
+        'prefix' => 'pertanggungjawaban',
+        'controller' => SetdaController::class,
+
+    ], function () {
+        Route::get('/', 'indexPertanggungjawaban');
+        Route::post('/', 'postPertanggungjawaban');
     });
 
 
@@ -164,6 +176,7 @@ Route::group([
 ], function () {
 
     Route::get('surat/{surat_id}', 'detailSurat');
+    Route::post('surat/{id}/ubah', 'ubah');
     Route::group([
         'prefix' => 'individu',
     ], function () {

@@ -113,6 +113,53 @@ class SuratController extends Controller
 
         return back()->withSuccess('Surat berhasil ditolak');
     }
+
+    public function ubah(Request $request)
+    {
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'catatan' => 'nullable|string',
+            'status' => 'required|in:Diterima, Ditolak',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors()->first());
+        }
+        $surat = Proposal::where('id', $request->surat_id)->first();
+
+        if (!$surat) {
+            return back()->withError('Data Tidak Ditemukan');
+        }
+
+        if ($request->status == 'Diterima') {
+            $surat->update([
+                'status' => 'Setda'
+            ]);
+
+            LogProposal::create([
+                'proposal_id' => $surat->id,
+                'catatan' => $request->catatan ?? null,
+                'name' => 'TU Umum',
+                'tanggal' => Carbon::now(),
+                'deskripsi' => 'Proposal telah diverifikasi oleh TU Umum'
+            ]);
+        } else {
+            $surat->update([
+                'status' => 'Ditolak',
+                'is_status' => '0'
+            ]);
+
+            LogProposal::create([
+                'proposal_id' => $surat->id,
+                'catatan' => $request->catatan ?? null,
+                'name' => 'TU Umum',
+                'tanggal' => Carbon::now(),
+                'deskripsi' => 'Proposal ditolak oleh TU Umum'
+            ]);
+        }
+
+        return back()->withSuccess('Status surat berhasil Diperbaharui');
+    }
     public function diterima($surat_id)
     {
         $surat = Proposal::where('id', $surat_id)->first();
@@ -128,6 +175,7 @@ class SuratController extends Controller
         LogProposal::create([
             'proposal_id' => $surat->id,
             'status' => 'Setda',
+            'name' => 'TU Umum',
             'tanggal' => Carbon::now(),
             'deskripsi' => 'Proposal telah diverifikasi oleh TU Umum'
         ]);
