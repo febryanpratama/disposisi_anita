@@ -230,7 +230,7 @@
                   </div> --}}
                   <div class="card">
                      <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title m-0 me-2"><span style="font-weight: 100">Log Proposal</span> {{ $proposal->judul_permohonan }}</h5>
+                        <h5 class="card-title m-0 me-2"><span style="font-weight: 100">Log Proposal</span> {{ @$proposal->judul_permohonan }}</h5>
                         {{-- <div class="dropdown">
                               <button class="btn p-0" type="button" id="timelineWapper" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="bx bx-dots-vertical-rounded"></i>
