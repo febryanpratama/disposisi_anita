@@ -264,27 +264,30 @@
                               </div>
                               </li>
                               --}}
-                              @foreach ($proposal->log as $item)
-                              <li class="timeline-item timeline-item-transparent ps-4">
-                              <span class="timeline-point timeline-point-warning"></span>
-                              <div class="timeline-event pb-2">
-                                 <div class="timeline-header mb-1">
-                                    <h6 class="mb-0">{{ $item->deskripsi }}</h6>
-                                    <small class="text-muted">{{ Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</small>
-                                 </div>
-                                 <p class="mb-2">{{ $item->deskripsi }}</p>
-                                 <div class="d-flex flex-wrap">
-                                    <div class="avatar me-3">
-                                          <img src="{{ asset('') }}assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
+
+                              @if ($proposal != null)
+                                 @foreach ($proposal->log as $item)
+                                 <li class="timeline-item timeline-item-transparent ps-4">
+                                 <span class="timeline-point timeline-point-warning"></span>
+                                 <div class="timeline-event pb-2">
+                                    <div class="timeline-header mb-1">
+                                       <h6 class="mb-0">{{ $item->deskripsi }}</h6>
+                                       <small class="text-muted">{{ Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</small>
                                     </div>
-                                    <div>
-                                          <h6 class="mb-0">{{ $item->name }}</h6>
-                                          <span>Hibsos Pontianak</span>
+                                    <p class="mb-2">{{ $item->deskripsi }}</p>
+                                    <div class="d-flex flex-wrap">
+                                       <div class="avatar me-3">
+                                             <img src="{{ asset('') }}assets/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
+                                       </div>
+                                       <div>
+                                             <h6 class="mb-0">{{ $item->name }}</h6>
+                                             <span>Hibsos Pontianak</span>
+                                       </div>
                                     </div>
                                  </div>
-                              </div>
-                              </li>
-                              @endforeach
+                                 </li>
+                                 @endforeach
+                              @endif
                               {{-- 
                               <li class="timeline-item timeline-item-transparent ps-4">
                               <span class="timeline-point timeline-point-info"></span>
