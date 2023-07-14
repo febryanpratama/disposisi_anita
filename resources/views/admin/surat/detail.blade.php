@@ -34,7 +34,7 @@
                                 @break
                                 @case('Walikota')
                                 <div class="btn btn-info">
-                                    Berhasil Diverifikasi Kesra
+                                    Berhasil Divalidasi Kesra
                                 </div>
                                 @break
                                 @case('Ditolak')
@@ -52,24 +52,25 @@
                <div class="row">
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Nama Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="Nama Pemohon" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->nama }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
-                     <label for="" class="control-label">NIK Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="Nama Pemohon" readonly>
+                     <label for="" class="control-label">Nomor Identitas Pemohon</label>
+                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->identitas }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Alamat Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="Nama Pemohon" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->alamat }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Nomor Telpon Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="Nama Pemohon" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->no_telp }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Identitas Pemohon</label>
-                     <img src="https://cdn.popmama.com/content-images/community/20221018/community-6151307037af4cffa62490fdc39e65b7.jpg" class="img-fluid mt-2" alt="">
+                     <img src="{{ asset('uploads/foto_identitas/'.$data->user->detail->foto_identitas) }}" class="img-fluid mt-2" alt="">
                   </div>
+                  
                </div>
             </div>
          </div>
