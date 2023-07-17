@@ -74,9 +74,9 @@ class WalikotaService
     static function historiPengajuan($tahun = null)
     {
         if (!$tahun) {
-            $data = Proposal::with('user', 'log')->whereYear('created_at', Carbon::now()->year)->where('status', 'Walikota')->whereIn('is_status', ['1', '2'])->get();
+            $data = Proposal::with('user', 'log')->whereYear('created_at', Carbon::now()->year)->whereNotIn('status', ['Setda', 'TU Umum'])->whereIn('is_status', ['1', '2'])->get();
         } else {
-            $data = Proposal::with('user', 'log')->whereYear('created_at', $tahun)->where('status', 'Walikota')->whereIn('is_status', ['1', '2'])->get();
+            $data = Proposal::with('user', 'log')->whereYear('created_at', $tahun)->whereNotIn('status', ['Setda', 'TU Umum'])->whereIn('is_status', ['1', '2'])->get();
         }
         // dd($data);
 
