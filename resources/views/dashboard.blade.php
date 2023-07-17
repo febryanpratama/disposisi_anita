@@ -405,7 +405,7 @@
        var options = {
           series: [jumint, 100000000],
           chart: {
-          width: 380,
+          width: 300,
           type: 'pie',
         },
         labels: ['Realisasi Hibah', 'Total Anggaran'],
@@ -413,7 +413,7 @@
           breakpoint: 480,
           options: {
             chart: {
-              width: 200
+              width: 100
             },
             legend: {
               position: 'bottom'
@@ -445,7 +445,7 @@
 
       var options = {
           series: [{
-          name: 'Net Profit',
+          name: 'Pengajuan',
           data: [januari, februari, maret, april, mei, juni, juli, agustus, september, oktober, november, desember]
         }],
           chart: {

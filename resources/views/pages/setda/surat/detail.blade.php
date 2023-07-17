@@ -9,14 +9,15 @@
         @if ($data->status  == 'Setda')
 
             @if ($data->anggota_id == null)
-                @if ($data->foto == null)
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahFoto">Tambahkan Bukti Lapangan</button>
-                @else
+            {{-- {{ dd($data->foto->isNotEmpty()) }} --}}
+                @if ($data->foto->isNotEmpty())
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Status Pengajuan</button>
+                @else
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahFoto">Tambahkan Bukti Lapangan</button>
                 @endif
             @else
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Status Pengajuan</button>
-                @endif
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Status Pengajuan</button>
+            @endif
                 
                 
             @endif
