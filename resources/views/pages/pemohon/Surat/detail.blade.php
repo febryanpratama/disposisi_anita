@@ -98,13 +98,13 @@
                         <div class="card-title mb-0">
                             <h5 class="mb-0">Bukti Pertanggunjawaban</h5>
                             <a href="{{ asset('bukti_pertanggunjawaban/'.$data->bukti_pertanggunjawaban) }}"><small class="text-danger">Download File Pertanggunjawaban</small></a>
-                            <br>
+                            {{-- <br>
                             @if ($data->user->detail->tipe == 'Organisasi')
                             <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}"><small class="text-info"> Blangko Lembar Pertanggungjawaban </small></a>
                             @else
                             <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}"><small class="text-info"> Blangko Lembar Pertanggungjawaban </small></a>
 
-                            @endif
+                            @endif --}}
                         </div>
                         
                     @endif

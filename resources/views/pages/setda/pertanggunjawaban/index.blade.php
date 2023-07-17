@@ -8,8 +8,17 @@
 
     <!-- DataTable with Buttons -->
     <div class="card">
-        <div class="card-header d-flex justify-content-end">
+        <div class="card-header d-flex d-inline-block justify-content-end">
+            <div class="col-md-6">
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}"><small class="text-danger"> Blangko Lembar Pertanggungjawaban Organisasi</small></a>
+            </div>
+            <br>
+            <div class="col-md-6" style="text-align: right">
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}"><small class="text-danger"> Blangko Lembar Pertanggungjawaban Individu</small></a>
+            </div>
+
             {{-- <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
+                
                 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 10px;height: 10px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
