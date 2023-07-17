@@ -391,6 +391,7 @@
    </div>
 </div>
 @endsection
+@role('Admin|Setda|Walikota')
 @section('script')
 <script>
    $(document).ready( function () {
@@ -501,3 +502,4 @@
    });
 </script>
 @endsection
+@endrole
