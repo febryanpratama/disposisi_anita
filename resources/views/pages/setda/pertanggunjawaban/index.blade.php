@@ -10,11 +10,11 @@
     <div class="card">
         <div class="card-header d-flex d-inline-block justify-content-end">
             <div class="col-md-6">
-                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}"><small class="text-danger"> Blangko Lembar Pertanggungjawaban Organisasi</small></a>
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}" class="badge badge-success"><small class=""> Blangko Lembar Pertanggungjawaban Organisasi</small></a>
             </div>
             <br>
             <div class="col-md-6" style="text-align: right">
-                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}"><small class="text-danger"> Blangko Lembar Pertanggungjawaban Individu</small></a>
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}" class="badge badge-success"><small class=""> Blangko Lembar Pertanggungjawaban Individu</small></a>
             </div>
 
             {{-- <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
