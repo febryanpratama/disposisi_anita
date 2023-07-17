@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 breadcrumb-wrapper mb-4">
-        <span class="text-muted fw-light">DataTables /</span> Basic
+        <span class="text-muted fw-light">Pengajuan /</span> Proposal
     </h4>
 
     <!-- DataTable with Buttons -->
@@ -32,6 +32,7 @@
                             <th class="text-center">Biaya</th>
                             {{-- <th class="text-center">Lokasi Surat</th> --}}
                             <th class="text-center">Status Surat</th>
+                            <th class="text-center">Bukti Pendukung</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -54,6 +55,15 @@
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
                                     @else
                                     <span class="badge bg-success">Selesai</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($key->foto->isNotEmpty())
+
+                                    <span class="badge bg-success">Sudah</span>
+                                    @else
+                                    <span class="badge bg-danger">Belum</span>
+
                                     @endif
                                 </td>
                                 {{-- <td>

@@ -74,11 +74,11 @@ class SetdaController extends Controller
     {
         // dd($request->all());
         if ($request->status == 'Diproses') {
-            $proposal = Proposal::where('is_status', '2')->whereNotIn('status', ['Selesai', 'Ditolak'])->get();
+            $proposal = Proposal::with('foto')->where('is_status', '2')->whereNotIn('status', ['Selesai', 'Ditolak'])->get();
         } else if ($request->status == 'Disetujui') {
-            $proposal = Proposal::where('is_status', '1')->where('status', 'Selesai')->get();
+            $proposal = Proposal::with('foto')->where('is_status', '1')->where('status', 'Selesai')->get();
         } else {
-            $proposal = Proposal::where('is_status', '0')->where('status', 'Ditolak')->get();
+            $proposal = Proposal::with('foto')->where('is_status', '0')->where('status', 'Ditolak')->get();
         }
 
         // dd($proposal);

@@ -17,7 +17,7 @@ class SetdaService
     // 
     static function getDataIndividu()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+        $data = Proposal::with('user', 'log', 'user.detail', 'foto')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
         // dd($data);
 
         return [
@@ -28,7 +28,7 @@ class SetdaService
     }
     static function getDataPertanggungjawaban()
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Selesai')->where('is_status', '1')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
+        $data = Proposal::with('user', 'log', 'user.detail', 'foto')->where('status', 'Selesai')->where('is_status', '1')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
         // dd($data);
 
         return [
