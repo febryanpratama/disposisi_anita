@@ -215,4 +215,6 @@ Route::group([
     });
 });
 
+Route::get('/search', [SetdaController::class, 'status']);
+
 require __DIR__ . '/auth.php';

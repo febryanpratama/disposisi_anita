@@ -49,64 +49,71 @@
                </div>
             </div>
             <div class="col-6 mb-4 mt-3">
-               <div class="card">
-                  <div class="card-body">
-                     <div class="d-flex justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
-                           <div class="avatar">
-                              <span class="avatar-initial bg-label-warning rounded-circle"><i
-                                 class="bx bx-file fs-4"></i></span>
-                           </div>
-                           <div class="card-info">
-                              <h5 class="card-title mb-0 me-2">
-                                 {{ $proses }}
-                              </h5>
-                              <small class="text-muted">Jumlah Pengajuan Proposal Diproses</small>
+               <a href="{{ url("search?status=Diproses") }}">
+                  <div class="card">
+                     <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="avatar">
+                                 <span class="avatar-initial bg-label-warning rounded-circle"><i
+                                    class="bx bx-file fs-4"></i></span>
+                              </div>
+                              <div class="card-info">
+                                 <h5 class="card-title mb-0 me-2">
+                                    {{ $proses }}
+                                 </h5>
+                                 <small class="text-muted">Jumlah Pengajuan Proposal Diprosesss</small>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
+               </a>
             </div>
             <div class="col-6 mb-4 mt-3">
-               <div class="card">
-                  <div class="card-body">
-                     <div class="d-flex justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
-                           <div class="avatar">
-                              <span class="avatar-initial bg-label-success rounded-circle"><i
-                                 class="bx bx-file fs-4"></i></span>
-                           </div>
-                           <div class="card-info">
-                              <h5 class="card-title mb-0 me-2">
-                                 {{ $setuju }}
-                              </h5>
-                              <small class="text-muted">Jumlah Pengajuan Proposal Disetujui</small>
+               <a href="{{ url("search?status=Disetujui") }}">
+                  <div class="card">
+                     <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="avatar">
+                                 <span class="avatar-initial bg-label-success rounded-circle"><i
+                                    class="bx bx-file fs-4"></i></span>
+                              </div>
+                              <div class="card-info">
+                                 <h5 class="card-title mb-0 me-2">
+                                    {{ $setuju }}
+                                 </h5>
+                                 <small class="text-muted">Jumlah Pengajuan Proposal Disetujui</small>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
+               </a>
             </div>
             <div class="col-6 mb-4 mt-3">
-               <div class="card">
-                  <div class="card-body">
-                     <div class="d-flex justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
-                           <div class="avatar">
-                              <span class="avatar-initial bg-label-danger rounded-circle"><i
-                                 class="bx bx-file fs-4"></i></span>
-                           </div>
-                           <div class="card-info">
-                              <h5 class="card-title mb-0 me-2">
-                                 {{ $ditolak }}
-                              </h5>
-                              <small class="text-muted">Jumlah Pengajuan Proposal Ditolak</small>
+               <a href="{{ url("search?status=Ditolak") }}">
+
+                  <div class="card">
+                     <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="avatar">
+                                 <span class="avatar-initial bg-label-danger rounded-circle"><i
+                                    class="bx bx-file fs-4"></i></span>
+                              </div>
+                              <div class="card-info">
+                                 <h5 class="card-title mb-0 me-2">
+                                    {{ $ditolak }}
+                                 </h5>
+                                 <small class="text-muted">Jumlah Pengajuan Proposal Ditolak</small>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
+               </a>
             </div>
             <div class="col-12 mb-4 mt-3">
                <div class="card">

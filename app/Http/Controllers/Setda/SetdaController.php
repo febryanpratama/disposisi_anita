@@ -70,6 +70,24 @@ class SetdaController extends Controller
         ]);
     }
 
+    public function status(Request $request)
+    {
+        // dd($request->all());
+        if ($request->status == 'Diproses') {
+            $proposal = Proposal::where('is_status', '2')->whereNotIn('status', ['Selesai', 'Ditolak'])->get();
+        } else if ($request->status == 'Disetujui') {
+            $proposal = Proposal::where('is_status', '1')->where('status', 'Selesai')->get();
+        } else {
+            $proposal = Proposal::where('is_status', '0')->where('status', 'Ditolak')->get();
+        }
+
+        // dd($proposal);
+        return view('pages.setda.surat.index', [
+            'title' => 'List Data Surat ' . $request->status,
+            'data' => $proposal
+        ]);
+    }
+
     public function ubah(Request $request, $surat_id)
     {
         // dd($request->all());

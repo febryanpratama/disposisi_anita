@@ -42,7 +42,7 @@
                                     @if ($key->status == 'TU Umum')
                                         <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
-                                        <span class="badge bg-warning">Sedang Ditinjau Setda</span>
+                                        <span class="badge bg-warning">Sedang Ditinjau Kesra</span>
                                     @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
                                     @else
