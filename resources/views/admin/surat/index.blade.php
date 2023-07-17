@@ -53,7 +53,7 @@
                                     @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
                                     @else
-                                    <span class="badge bg-success">Selesai</span>
+                                    <span class="badge bg-success">Sudah Disetujui Walikota</span>
                                     @endif
                                 </td>
                                 {{-- <td>
