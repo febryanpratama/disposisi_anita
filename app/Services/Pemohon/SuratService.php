@@ -43,7 +43,7 @@ class SuratService
 
         if ($validator->fails()) {
             # code...
-            dd($validator);
+            // dd($validator);
             return [
                 'status' => false,
                 'message' => $validator->errors()->first(),
@@ -140,11 +140,11 @@ class SuratService
         } catch (\Throwable $th) {
             //throw $th;
 
-            dd($th->getMessage());
+            // dd($th->getMessage());
             DB::rollback();
             return [
                 'status' => false,
-                'message' => 'Data Proposal Gagal Disimpan',
+                'message' => $th->getMessage(),
                 'data' => null,
             ];
         }
