@@ -9,12 +9,25 @@
         @if ($data->status  == 'Setda')
 
             @if ($data->anggota_id == null)
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahAnggota">Tambahkan Anggota</button>
+                @if ($data->foto == null)
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahFoto">Tambahkan Bukti Lapangan</button>
+                @else
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Status Pengajuan</button>
+                @endif
             @else
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Status Pengajuan</button>
+                @endif
+                
+                
             @endif
-            
-        @endif
+            @if ($data->status == 'Selesai')
+                @if ($data->bukti_pertanggunjawaban == null)
+
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pertanggunjawaban">Upload Surat Pertanggunjawaban</button>
+                    
+                @endif
+                
+            @endif
       </div>
    </div>
    <div class="row gy-4">
@@ -341,6 +354,63 @@
                             <option value="{{ $ag->id }}">{{ $ag->nama }}</option>
                         @endforeach
                     </select>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<div class="modal fade" id="tambahFoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Foto Lapangan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <form action="{{ url('setda/surat/'.$data->id.'/foto-lapangan') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="surat_id" value="{{ $data->id }}">
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-md-12 mt-1">
+                    <label for="" class="control-label">
+                        <h6>Foto Lapangan</h6>
+                    </label>
+                    <input type="file" class="form-control" name="foto_lapangan[]" multiple>
+                </div>
+                <small class="text-danger">Foto Lapangan bisa lebih dari 1</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<div class="modal fade" id="pertanggunjawaban" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tambahkan Dokumen Pertanggungjawaban</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <form action="{{ url('setda/pertanggungjawaban') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="surat_id" value="{{ $data->id }}">
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-md-12 mt-1">
+                    <label for="" class="control-label">
+                        <h6>Dokumen Pertanggungjawaban</h6>
+                    </label>
+                    <input type="file" class="form-control" name="bukti_pertanggunjawaban" required>
                 </div>
                 </div>
             </div>

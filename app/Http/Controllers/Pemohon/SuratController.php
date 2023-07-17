@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pemohon;
 
 use App\Http\Controllers\Controller;
 use App\Models\DetailUsers;
+use App\Models\Proposal;
 use App\Models\User;
 use App\Services\Pemohon\SuratService;
 use Illuminate\Http\Request;
@@ -119,5 +120,36 @@ class SuratController extends Controller
             DB::rollBack();
             return back()->withErrors('Gagal Merubah Data Profil');
         }
+    }
+
+    public function storePertanggungjawaban(Request $request)
+    {
+        // dd($request->all());
+        // $response = $this->SuratPemohonService->storePertanggungjawaban($request->all());
+
+        // if ($response['status'] == false) {
+        //     return back()->withErrors($response['message']);
+        // }
+
+        // return back()->withSuccess($response['message']);
+        $surat = Proposal::where('id', $request->surat_id)->first();
+
+        if (!$surat) {
+            return back()->withErrors('Data Surat Tidak Valid');
+        }
+
+        // dd($request->all());
+        if (array_key_exists('bukti_pertanggunjawaban', $request->all())) {
+            $file = $request['bukti_pertanggunjawaban'];
+            $bukti = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+            $tujuan_upload = 'bukti_pertanggunjawaban_pemohon';
+            $file->move($tujuan_upload, $bukti);
+        }
+
+        $surat->update([
+            'bukti_pertanggunjawaban_pemohon' => $bukti,
+        ]);
+
+        return back()->withSuccess('Berhasil Mengupload Bukti Pertanggungjawaban');
     }
 }

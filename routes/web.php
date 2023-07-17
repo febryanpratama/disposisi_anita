@@ -89,6 +89,8 @@ Route::group([
         Route::get('/{id}', 'detail');
     });
 
+    Route::post('pertanggungjawaban', [PemohonSuratController::class, 'storePertanggungjawaban']);
+
     Route::group([
         'prefix' => 'profil',
         'controller' => PemohonSuratController::class
@@ -134,6 +136,8 @@ Route::group([
         Route::post('/{id}/ubah', 'ubah');
         Route::post('/{id}/setuju', 'setuju');
         Route::post('/{surat_id}/anggota', 'anggota');
+        Route::post('/{surat_id}/foto-lapangan', 'fotoLapangan');
+
         // Route::get('/{id}/tolak', 'tolak');
     });
 

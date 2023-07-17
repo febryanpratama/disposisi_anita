@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Setda;
 
 use App\Http\Controllers\Controller;
 use App\Models\Anggota;
+use App\Models\FotoLapangan;
 use App\Models\LogProposal;
 use App\Models\Proposal;
 use App\Services\Setda\SetdaService;
@@ -177,6 +178,51 @@ class SetdaController extends Controller
             'title' => $title,
             'data' => $response['data']
         ]);
+    }
+
+    public function fotoLapangan(Request $request)
+    {
+        // dd($request->all());
+        foreach ($request->foto_lapangan as $item) {
+
+            // dd($item);
+            $iname = time() . "_" . $item->getClientOriginalName() . "." . $item->getClientOriginalExtension();
+            $tujuan_upload = 'file_lapangan';
+            $item->move($tujuan_upload, $iname);
+
+            FotoLapangan::create([
+                'proposal_id' => $request['surat_id'],
+                'foto_lapangan' => $iname
+            ]);
+        }
+
+        return back()->withSuccess('Data Lapangan Berhasil Diinput');
+    }
+
+    public function postPertanggungjawaban(Request $request)
+    {
+
+        // dd($request->all());
+
+        $surat = Proposal::where('id', $request->surat_id)->first();
+
+        if (!$surat) {
+            return back()->withErrors('Data Surat Tidak Valid');
+        }
+
+        // dd($request->all());
+        if (array_key_exists('bukti_pertanggunjawaban', $request->all())) {
+            $file = $request['bukti_pertanggunjawaban'];
+            $bukti = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+            $tujuan_upload = 'bukti_pertanggunjawaban';
+            $file->move($tujuan_upload, $bukti);
+        }
+
+        $surat->update([
+            'bukti_pertanggunjawaban' => $bukti,
+        ]);
+
+        return back()->withSuccess('Berhasil Mengupload Bukti Pertanggungjawaban');
     }
 
     public function indexAnggota()
