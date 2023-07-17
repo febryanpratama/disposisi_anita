@@ -167,6 +167,7 @@
   
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Main JS -->
   <script src="{{ asset('') }}assets/js/main.js"></script>
 
