@@ -181,7 +181,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-6 mb-4 mt-3">
+            {{-- <div class="col-6 mb-4 mt-3">
                <div class="card">
                   <div class="card-body">
                      <div class="d-flex justify-content-between">
@@ -200,7 +200,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> --}}
             <div class="col-6 mb-4 mt-3">
                <div class="card">
                   <div class="card-body">
@@ -221,7 +221,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-6 mb-4 mt-3">
+            {{-- <div class="col-6 mb-4 mt-3">
                <div class="card">
                   <div class="card-body">
                      <div class="d-flex justify-content-between">
@@ -240,7 +240,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> --}}
             <div class="col-12 mb-4 mt-3">
                <div class="card">
                   <div class="card-header">
@@ -340,10 +340,10 @@
                         <div class="card-body">
                            <h4>Realisasi Anggaran Hibah dan Bantuan Sosial</h4>
                            <hr>
-                           <div class="container d-flex justify-container-center">
+                           <div id="chart" ></div>
+                           {{-- <div class="container d-flex justify-container-center"> --}}
                               {{-- <div class="row"> --}}
                                  {{-- <div class="col-md-12"> --}}
-                                       <div id="chart" style="width: 20rem; height: 10rem;"></div>
                                  {{-- </div> --}}
                               {{-- </div> --}}
                            </div>
@@ -410,17 +410,17 @@
       var jumlah = "{{ $total }}"
       var jumint = parseInt(jumlah)
        var options = {
-          series: [jumint, 100000000],
+          series: [jumint, 100000000, jumint, 50000000],
           chart: {
-          width: 300,
+          height: 'auto',
           type: 'pie',
         },
-        labels: ['Realisasi Hibah', 'Total Anggaran'],
+        labels: ['Realisasi Hibsos Individu', 'Total Anggaran Hibsos Individu', 'Realisasi Hibsos Organisasi', 'Total Anggaran Hibsos Organisasi'],
         responsive: [{
-          breakpoint: 480,
+          breakpoint: 500,
           options: {
             chart: {
-              width: 100
+              height: 'auto'
             },
             legend: {
               position: 'bottom'

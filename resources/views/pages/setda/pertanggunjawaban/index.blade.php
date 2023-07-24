@@ -10,11 +10,11 @@
     <div class="card">
         <div class="card-header d-flex d-inline-block justify-content-end">
             <div class="col-md-6">
-                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}" class="badge badge-success"><small class=""> Blangko Lembar Pertanggungjawaban Organisasi</small></a>
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}" class="btn btn-outline-primary"><small class=""> Blangko Lembar Pertanggungjawaban Organisasi</small></a>
             </div>
             <br>
             <div class="col-md-6" style="text-align: right">
-                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}" class="badge badge-success"><small class=""> Blangko Lembar Pertanggungjawaban Individu</small></a>
+                <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}" class="btn btn-outline-info"><small class=""> Blangko Lembar Pertanggungjawaban Individu</small></a>
             </div>
 
             {{-- <a href="{{ asset('exampledoc/contohsurat.pdf') }}" class="btn btn-danger m-1" title="Untuh Surat" >
@@ -80,12 +80,20 @@
                                             
                                     @endswitch
                                 </td> --}}
-                                <td>
-                                    <a href="{{ url('setda/surat/'.$key->id) }}" class="btn btn-primary btn-sm m-1" title="Detail Surat">
+                                <td class="d-flex">
+                                    <a href="{{ url('setda/surat/'.$key->id) }}" class="btn btn-primary btn-sm m-1" title="Detail Proposal">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
                                         </svg>
                                     </a>
+                                    @if ($key->bukti_pertanggunjawaban)
+                                        <a href="{{ asset('bukti_pertanggunjawaban/'.$key->bukti_pertanggunjawaban) }}" target="_blank" class="btn btn-outline-danger btn-sm m-1" title="Cetak SK Pertanggungjawaban">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px;height: 20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+
+                                        </a>
+                                    @endif
                                     @if ($key->status == 'Setda')
                                         <div class="dropdown m-1">
                                             <button class="btn btn-light btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

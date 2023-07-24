@@ -23,7 +23,7 @@
                   </div>
                </div>
             </div>
-            <div class="d-flex justify-content-around flex-wrap my-4 py-3">
+            {{-- <div class="d-flex justify-content-around flex-wrap my-4 py-3">
                <div class="d-flex align-items-start me-4 mt-3 gap-3">
                   <span class="badge bg-label-primary p-2 rounded"><i class='bx bx-check bx-sm'></i></span>
                   <div>
@@ -38,7 +38,7 @@
                      <span>Projects Done</span>
                   </div>
                </div>
-            </div>
+            </div> --}}
             <h5 class="pb-2 border-bottom mb-4">Details</h5>
             <div class="info-container">
                <ul class="list-unstyled">

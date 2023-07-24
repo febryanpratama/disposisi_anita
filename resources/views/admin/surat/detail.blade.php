@@ -43,7 +43,7 @@
                                 </div>
                                 @break
                             @default
-                                
+                                <div class="btn btn-success">Dokumen telah selesai</div>
                         @endswitch
                     </div>
                 </div>

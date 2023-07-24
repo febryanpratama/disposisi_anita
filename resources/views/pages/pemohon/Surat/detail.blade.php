@@ -5,8 +5,8 @@
       <div class="col-md-6">
          <h4 class="py-3 breadcrumb-wrapper mb-4"><span class="text-muted fw-light">Pengajuan /</span> Detail Proposal</h4>
       </div>
-      <div class="col-md-6" style="text-align: right">
-            @if ($data->status == 'Selesai')
+      {{-- <div class="col-md-6" style="text-align: right"> --}}
+            {{-- @if ($data->status == 'Selesai')
             @if ($data->bukti_pertanggunjawaban_pemohon = null)
                 @if ($data->bukti_pertanggunjawaban != null)
 
@@ -16,8 +16,8 @@
                     
                 @endif
                 
-            @endif
-      </div>
+            @endif --}}
+      {{-- </div> --}}
    </div>
    <div class="row gy-4">
       <div class="col-md-6 col-lg-5 mb-4 order-3 order-lg-0">
@@ -94,10 +94,10 @@
                @if ($data->anggota_id != null)
                 <div class="d-flex align-items-center me-3">
                     {{-- <img src="../../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle me-3" width="54" /> --}}
-                    @if ($data->bukti_pertanggunjawaban != null)
-                        <div class="card-title mb-0">
-                            <h5 class="mb-0">Bukti Pertanggunjawaban</h5>
-                            <a href="{{ asset('bukti_pertanggunjawaban/'.$data->bukti_pertanggunjawaban) }}"><small class="text-danger">Download File Pertanggunjawaban</small></a>
+                    {{-- @if ($data->bukti_pertanggunjawaban != null)
+                        <div class="card-title mb-0"> --}}
+                            {{-- <h5 class="mb-0">Bukti Pertanggunjawaban</h5>
+                            <a href="{{ asset('bukti_pertanggunjawaban/'.$data->bukti_pertanggunjawaban) }}"><small class="text-danger">Download File Pertanggunjawaban</small></a> --}}
                             {{-- <br>
                             @if ($data->user->detail->tipe == 'Organisasi')
                             <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIABH_BANTUAN SOSIAL LEMBAGA_ORGANISASI.docx") }}"><small class="text-info"> Blangko Lembar Pertanggungjawaban </small></a>
@@ -105,9 +105,9 @@
                             <a href="{{ asset("contoh-pertanggungjawaban/SURAT PERNYATAAN TANGGUNG JAWAB PENGGUNAAN BELANJA HIBAH _BANTUAN SOSIAL INDIVIDU.docx") }}"><small class="text-info"> Blangko Lembar Pertanggungjawaban </small></a>
 
                             @endif --}}
-                        </div>
+                        {{-- </div> --}}
                         
-                    @endif
+                    {{-- @endif --}}
                 </div>
                @endif
             </div>

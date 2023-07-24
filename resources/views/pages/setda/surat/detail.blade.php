@@ -24,7 +24,7 @@
             @if ($data->status == 'Selesai')
                 @if ($data->bukti_pertanggunjawaban == null)
 
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pertanggunjawaban">Upload Surat Pertanggunjawaban</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pertanggunjawaban">Upload SK Pertanggunjawaban</button>
                     
                 @endif
                 
@@ -104,13 +104,13 @@
                   </div>
                </div>
                @if ($data->anggota_id != null)
-                <div class="d-flex align-items-center me-3">
+                {{-- <div class="d-flex align-items-center me-3"> --}}
                     {{-- <img src="../../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle me-3" width="54" /> --}}
-                    <div class="card-title mb-0">
+                    {{-- <div class="card-title mb-0">
                         <h5 class="mb-0">Petugas Lapangan</h5>
                         <small class="text-muted">Nama Petugas : {{ $data->anggota->nama }}</small>
                     </div>
-                </div>
+                </div> --}}
                @endif
             </div>
             <div class="card-body">

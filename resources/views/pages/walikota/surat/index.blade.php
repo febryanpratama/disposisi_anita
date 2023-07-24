@@ -65,11 +65,19 @@
                                     @endswitch
                                 </td>
                                 <td class="d-flex">
-                                    <a href="{{ url('walikota/surat/'.$key->id) }}" class="btn btn-primary btn-sm m-1" title="Detail Surat">
+                                    <a href="{{ url('walikota/surat/'.$key->id) }}" class="btn btn-primary btn-sm m-1" title="Detail Proposal">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
                                         </svg>
                                     </a>
+                                    @if ($key->bukti_pertanggunjawaban)
+                                        <a href="{{ asset('bukti_pertanggunjawaban/'.$key->bukti_pertanggunjawaban) }}" target="_blank" class="btn btn-outline-danger btn-sm m-1" title="Cetak SK Pertanggungjawaban">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 20px;height: 20px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+
+                                        </a>
+                                    @endif
                                     <div class="dropdown m-1">
                                         <button class="btn btn-light btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

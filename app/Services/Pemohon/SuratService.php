@@ -4,6 +4,7 @@ namespace App\Services\Pemohon;
 
 use App\Models\LogProposal;
 use App\Models\Proposal;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -55,6 +56,25 @@ class SuratService
 
         try {
             //code...
+
+            $check = User::with('detail')->where('id', $data['user_id'])->first();
+
+            if ($check->detail->jenis_pemohon == 'Individu') {
+                // dd("end");
+                $surat = Proposal::where('user_id', $data['user_id'])->where('status', 'Selesai')->first();
+
+                if ($surat) {
+                    # code...
+                    return [
+                        'status' => false,
+                        'message' => 'Anda Sudah Pernah Menerima Hibah / Bantuan Sosial',
+                        'data' => null,
+                    ];
+                }
+            }
+
+
+            // dd($check);
             if (array_key_exists('dokumen_proposal', $data)) {
                 $file = $data['dokumen_proposal'];
                 $dokumen_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();

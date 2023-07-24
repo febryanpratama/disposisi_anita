@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 breadcrumb-wrapper mb-4">
-        <span class="text-muted fw-light">DataTables /</span> Basic
+        <span class="text-muted fw-light">List /</span> Proposal
     </h4>
 
     <!-- DataTable with Buttons -->
@@ -44,12 +44,12 @@
                                 <td>{{ $key->judul_permohonan }}</td>
                                 <td>{{ $key->tanggal_pelaksanaan }}</td>
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
-                                <td>{{ $key->jumlah_biaya }}</td>
+                                <td>{{ number_format($key->jumlah_biaya) }}</td>
                                 <td>
                                     @if ($key->status == 'TU Umum')
                                         <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
-                                        <span class="badge bg-warning">Sedang Ditinjau Setda</span>
+                                        <span class="badge bg-warning">Sedang Ditinjau Kesra</span>
                                     @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
                                     @else
