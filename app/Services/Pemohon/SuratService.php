@@ -40,6 +40,15 @@ class SuratService
             'surat_duplikasi_biaya' => 'required|file|mimes:pdf,docx|max:2048',
             'rekening' => 'required|file|mimes:pdf,docx|max:2048',
             'surat_pernyataan_lembaga' => 'nullable|file|mimes:pdf,docx|max:2048',
+
+            'foto_ktp' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto_kk' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto_tidakmampu' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto_keterangan_dokter' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'bukti_legalitas_lembaga' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'surat_keputusan_pengurus' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto_ktp_sekretaris' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+
         ]);
 
         if ($validator->fails()) {
@@ -74,7 +83,51 @@ class SuratService
             }
 
 
+
             // dd($check);
+            if (array_key_exists('foto_ktp', $data)) {
+                $file = $data['foto_ktp'];
+                $foto_ktp = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'foto_ktp';
+                $file->move($tujuan_upload, $foto_ktp);
+            }
+            if (array_key_exists('foto_kk', $data)) {
+                $file = $data['foto_kk'];
+                $foto_kk = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'foto_kk';
+                $file->move($tujuan_upload, $foto_kk);
+            }
+            if (array_key_exists('foto_tidakmampu', $data)) {
+                $file = $data['foto_tidakmampu'];
+                $foto_tidakmampu = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'foto_tidakmampu';
+                $file->move($tujuan_upload, $foto_tidakmampu);
+            }
+            if (array_key_exists('foto_keterangan_dokter', $data)) {
+                $file = $data['foto_keterangan_dokter'];
+                $foto_keterangan_dokter = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'foto_keterangan_dokter';
+                $file->move($tujuan_upload, $foto_keterangan_dokter);
+            }
+            if (array_key_exists('bukti_legalitas_lembaga', $data)) {
+                $file = $data['bukti_legalitas_lembaga'];
+                $bukti_legalitas_lembaga = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'bukti_legalitas_lembaga';
+                $file->move($tujuan_upload, $bukti_legalitas_lembaga);
+            }
+            if (array_key_exists('surat_keputusan_pengurus', $data)) {
+                $file = $data['surat_keputusan_pengurus'];
+                $surat_keputusan_pengurus = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'surat_keputusan_pengurus';
+                $file->move($tujuan_upload, $surat_keputusan_pengurus);
+            }
+            if (array_key_exists('foto_ktp_sekretaris', $data)) {
+                $file = $data['foto_ktp_sekretaris'];
+                $foto_ktp_sekretaris = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $tujuan_upload = 'foto_ktp_sekretaris';
+                $file->move($tujuan_upload, $foto_ktp_sekretaris);
+            }
+
             if (array_key_exists('dokumen_proposal', $data)) {
                 $file = $data['dokumen_proposal'];
                 $dokumen_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
@@ -136,6 +189,13 @@ class SuratService
                 'surat_rekomendasi_kecamatan' => $surat_rekomendasi ?? null,
                 'surat_pernyataan_konflik' => $rab ?? null,
                 'surat_duplikasi_biaya' => $kepengurusan ?? null,
+                'foto_ktp' => $foto_ktp ?? null,
+                'foto_kk' => $foto_kk ?? null,
+                'foto_tidakmampu' => $foto_tidakmampu ?? null,
+                'foto_keterangan_dokter' => $foto_keterangan_dokter ?? null,
+                'bukti_legalitas_lembaga' => $bukti_legalitas_lembaga ?? null,
+                'surat_keputusan_pengurus' => $surat_keputusan_pengurus ?? null,
+                'foto_ktp_sekretaris' => $foto_ktp_sekretaris ?? null,
                 'rekening' => $rekening ?? null,
                 'surat_pernyataan_lembaga' => $lampiran_proposal ?? null,
                 'status' => 'TU Umum',

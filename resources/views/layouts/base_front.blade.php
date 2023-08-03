@@ -198,7 +198,7 @@
                 <div class="service_bottom text-center">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="service_item">
-                            <i class="fa fa-code"></i>
+                            <i class="fa fa-laptop"></i>
                             <a href="#"><h3>HIBAH</h3></a>
                             <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
                             <a href="#" class="ser_btn">Read More <i class="fa fa-arrow-right"></i></a>
@@ -250,6 +250,22 @@
     </section>
     <!--  Service Part End  -->
 
+
+    <section id="blog_part">
+        <div class="container">
+            <div class="row text-center">
+                <div class="section_head blog_head">
+                    <h2 class="text-black" style="color: black">Alur Pengajuan.</h2>
+                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                   <img src="{{ asset('alur_pengajuan.png') }}" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

@@ -9,7 +9,7 @@
     <!-- DataTable with Buttons -->
     <div class="card">
         <div class="card-header d-flex justify-content-end">
-            <a href="{{ asset('exampledoc/BerkasProposal.rar') }}" class="btn btn-outline-danger m-1" title="Untuh Surat" >
+            <a href="{{ asset('exampledoc/BerkasProposalN.rar') }}" class="btn btn-outline-danger m-1" title="Untuh Surat" >
                 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 10px;height: 10px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -207,6 +207,57 @@
                             @endif</label>
                             <input type="text" class="form-control" value="{{ Auth::user()->detail->alamat }}" readonly disabled>
                         </div>
+                        @if (Auth::user()->detail->jenis_pemohon == 'Individu')
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Foto KTP Pemohon</label>
+                                    <input type="file" class="form-control" name="foto_ktp">
+                                </div>
+                            
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Foto Kartu Keluarga Pemohon</label>
+                                    <input type="file" class="form-control" name="foto_kk">
+                                </div>
+                            
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Surat Keterangan Tidak Mampu Kelurahan</label>
+                                    <input type="file" class="form-control" name="foto_tidakmampu">
+                                </div>
+                            
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Surat Keterangan Dokter</label>
+                                    <input type="file" class="form-control" name="foto_keterangan_dokter">
+                                </div>
+                            
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Surat Keputusan dari Lembaga Berwenang</label>
+                                    <input type="file" class="form-control" name="foto_keterangan_dokter">
+                                </div>
+                            
+                        @else
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Foto Bukti Legalitas Lembaga</label>
+                                    <input type="file" class="form-control" name="bukti_legalitas_lembaga">
+                                </div>
+                             
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Foto Surat Keputusan Pengurus</label>
+                                    <input type="file" class="form-control" name="surat_keputusan_pengurus">
+                                </div>
+                             
+                            
+                                <div class="col-md-6">
+                                    <label for="" class="control-label">Foto KTP Ketua dan Sekretaris</label>
+                                    <input type="file" class="form-control" name="foto_ktp_sekretaris">
+                                </div>
+                             
+                        @endif
 
                         {{-- <div class="col-12 col-md-6 hide" id="organisasi">
                             <label class="form-label" for="modalEditUserEmail">Nama Organisasi</label>
@@ -216,6 +267,7 @@
                             <label class="form-label" for="modalEditUserEmail">Nomor Organisasi</label>
                             <input type="text" id="modalEditUserEmail" name="nama_pemohon" class="form-control" placeholder="Nomor Organisasi" />
                         </div> --}}
+                        
 
                         
                         <hr>
