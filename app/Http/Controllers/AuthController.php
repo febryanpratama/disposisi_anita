@@ -65,7 +65,7 @@ class AuthController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
 
-            dd($th->getMessage());
+            // dd($th->getMessage());
             DB::rollBack();
             return back()->withErrors($th->getMessage());
         }

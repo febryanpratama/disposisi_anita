@@ -21,7 +21,7 @@
                             <th class="text-center">Email</th>
                             <th class="text-center">Tanggal Buat</th>
                             <th class="text-center">Role</th>
-                            <th class="text-center">Status</th>
+                            {{-- <th class="text-center">Status</th> --}}
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -54,7 +54,7 @@
                                         
                                 @endswitch
                             </td>
-                            <th>@switch($item->is_active)
+                            {{-- <th>@switch($item->is_active)
                                 @case('Aktif')
                                     <div class="alert alert-primary">{{ $item->is_active }}</div>
                                     @break
@@ -64,14 +64,14 @@
                                     @break
                                 @default
                                     
-                            @endswitch</th>
+                            @endswitch</th> --}}
                             <td>
                                 <a href="{{ url('admin/pengguna/'.$item->id) }}">
                                     <button class="btn btn-sm btn-outline-info">
                                         <i class="fa fa-eye"></i>
                                     </button>
                                 </a>
-                                <a href="">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#editUser{{ $item->id }}">
                                     <button class="btn btn-sm btn-outline-warning">
                                         <i class="fa fa-edit"></i>
                                     </button>
@@ -89,6 +89,80 @@
             </div>
         </div>
     </div>
+
+    @foreach ($data as $item)
+        <div class="modal fade" id="editUser{{ $item->id }}" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+            <div class="modal-content p-3 p-md-5">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center mb-4">
+                        <h3>Edit Informasi Pengguna</h3>
+                        <p>Ubah Data Informasi Pengguna Anda. </p>
+                    </div>
+                    <form id="editUserForm" class="row g-3" method="POST" action="{{ url('admin/pengguna/ubah') }}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ $item->id }}">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserFirstName">Nama Pengguna</label>
+                            <input type="text" id="modalEditUserFirstName" name="name" class="form-control" value="{{ $item->detail->nama }}" placeholder="Febryan Pratama" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserLastName">Email Pengguna</label>
+                            <input type="text" id="modalEditUserLastName" name="email" class="form-control" value="{{ $item->email }}" placeholder="febryancpratama@gmail.com" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserName">Password</label>
+                            <input type="text" id="modalEditUserName" name="password" class="form-control" placeholder="Password" />
+                            <small class="text-danger">Kosongkan jika tidak mengubah password</small>
+                        </div>
+                        {{-- <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Re-Password</label>
+                            <input type="text" id="modalEditUserEmail" name="re-password" class="form-control" placeholder="Ulangi Password" />
+                        </div> --}}
+                        {{-- <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Role</label>
+                            <select name="role_name" class="form-control" id="">
+                                <option value="" selected disabled> == PILIH == </option>
+                                <option value="Walikota">Walikota</option>
+                                <option value="Pemohon">Pemohon</option>
+                                <option value="Setda">Setda</option>
+                                <option value="Verifikator">Verifikator</option>
+                            </select>
+                        </div> --}}
+                        {{-- <div class="col-12 col-md-6">
+                            <label class="form-label" for="modalEditUserEmail">Is Active</label>
+                            <select name="is_active" class="form-control" id="">
+                                <option value="" selected disabled> == PILIH == </option>
+                                <option value="Aktif" {{ $item->is_active == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                                <option value="Tidak Aktif" {{ $item->is_active == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
+                            </select>
+                        </div> --}}
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="Avatar">Avatar</label>
+                            <input type="file" class="form-control" name="avatar" id="">
+                            <small class="text-danger">Kosongkan jika tidak ingin diubah</small>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="Avatar">Nomor Identitas</label>
+                            <input type="text" class="form-control" name="identitas" value="{{ $item->detail->identitas }}" id="">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="Avatar">Alamat</label>
+                            <input type="text" class="form-control" name="alamat" value="{{ $item->detail->alamat }}" id="">
+                        </div>
+
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                            <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
     <!-- Modal to add new record -->
     <div class="modal fade" id="addUser" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-simple modal-edit-user">

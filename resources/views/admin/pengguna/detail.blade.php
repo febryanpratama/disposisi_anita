@@ -48,28 +48,28 @@
                     </div>
                 </div>
             </div>
-            {{-- {{ dd($data->user->detail) }} --}}
+            {{-- {{ dd($data->detail) }} --}}
             <div class="card-body">
                <div class="row">
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Nama Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->nama }}" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->detail->nama }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Nomor Identitas Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->identitas }}" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->detail->identitas }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Alamat Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->alamat }}" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->detail->alamat }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Nomor Telpon Pemohon</label>
-                     <input type="text" class="form-control mt-2" value="{{ $data->user->detail->no_telp }}" readonly>
+                     <input type="text" class="form-control mt-2" value="{{ $data->detail->no_telp }}" readonly>
                   </div>
                   <div class="col-md-6 mt-3">
                      <label for="" class="control-label">Identitas Pemohon</label>
-                     <img src="{{ asset('uploads/foto_identitas/'.$data->user->detail->foto_identitas) }}" class="img-fluid mt-2" alt="">
+                     <img src="{{ asset('uploads/foto_identitas/'.$data->detail->foto_identitas) }}" class="img-fluid mt-2" alt="">
                   </div>
                </div>
             </div>
@@ -81,8 +81,8 @@
                <div class="d-flex align-items-center me-3">
                   <img src="../../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle me-3" width="54" />
                   <div class="card-title mb-0">
-                     <h5 class="mb-0">{{ $data->user->name }}</h5>
-                     <small class="text-muted">Jenis Pemohon : {{ $data->user->detail->jenis_pemohon }}</small>
+                     <h5 class="mb-0">{{ $data->detail->name }}</h5>
+                     <small class="text-muted">Jenis Pemohon : {{ $data->detail->jenis_pemohon }}</small>
                   </div>
                </div>
                <div class="dropdown btn-pinned">
@@ -128,6 +128,7 @@
                      </ul>
                   </div>
                   --}}
+                  {{-- {{ dd($data)  }}$ --}}
                   <div class="d-flex flex-column me-2">
                      <h6>Jumlah Biaya</h6>
                      <span>Rp. {{ number_format($data->jumlah_biaya) }}</span>
@@ -256,7 +257,7 @@
                         </div>
                         </li>
                         --}}
-                        @foreach ($data->log as $item)
+                        {{-- @foreach ($data->log as $item)
                         <li class="timeline-item timeline-item-transparent ps-4">
                         <span class="timeline-point timeline-point-warning"></span>
                         <div class="timeline-event pb-2">
@@ -276,7 +277,7 @@
                             </div>
                         </div>
                         </li>
-                        @endforeach
+                        @endforeach --}}
                         {{-- 
                         <li class="timeline-item timeline-item-transparent ps-4">
                         <span class="timeline-point timeline-point-info"></span>

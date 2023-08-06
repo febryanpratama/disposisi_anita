@@ -53,7 +53,7 @@
                         <a class="main_logo" href="{{ url('/') }}">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img src="https://setda.pontianak.go.id/storage/settings/May2021/PyErfz6T5IwOwylq43iM.png" width="80" alt="LOGO">
+                                    <img src="{{ asset('front/assets/Setda.png') }}" width="80" alt="LOGO">
                                 </div>
                                 <div class="col-md-8 m-5 ">
                                     <p class="p-2" style="color: white; font-size: 18px; padding-top: 3px; font-weight: bold; letter-spacing: 2px">
@@ -98,14 +98,14 @@
     <!--  Banner Part Start  -->
     <section id="banner_part">
         <div class="slide_active">
-            <div class="banner_item" data-bg-image="https://setda.pontianak.go.id/frontend/assets/images/page-header/bg.jpg">
+            <div class="banner_item" data-bg-image="https://tfamanasek.com/wp-content/uploads/2019/02/Pontianak-h.jpg">
                 <div class="container text-center">
                     <div class="row">
                         <div class="banner_text">
                             <h3>Selamat Datang di <span>HIBSOS</span></h3>
                             <h4><span>HIBAH</span> DAN <span>BANTUAN SOSIAL</span>.</h4>
                             <p>SETDA adalah unsur pelaksana pemerintah daerah yang berada di bawah dan bertanggung jawab kepada Kepala Daerah.</p>
-                            <a href="#" class="multi_button">Know More</a>
+                            {{-- <a href="#" class="multi_button">Know More</a> --}}
                         </div>
                     </div>
                 </div>
@@ -122,18 +122,19 @@
                     </div>
                 </div>
             </div>
-            <div class="banner_item" data-bg-image="https://setda.pontianak.go.id/storage/sliders/March2023/8Rc1bPT1QkyKFPPQqx2L.jpg">
+            {{-- <div class="banner_item" data-bg-image="https://setda.pontianak.go.id/storage/sliders/March2023/8Rc1bPT1QkyKFPPQqx2L.jpg"> --}}
+            {{-- <div class="banner_item" data-bg-image="https://cdn-2.tstatic.net/pontianak/foto/bank/images/kawasan-bundaran-untan_20170607_211330.jpg">
                 <div class="container text-center">
                     <div class="row">
-                        {{-- <div class="banner_text">
+                        <div class="banner_text">
                             <h3>WELCOME on <span>spirit</span></h3>
                             <h4><span>SPIRIT</span> UNIQUE DESIGN WE LOVE IT.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet porro eaque assumenda consequatur asperiores laboriosam debitis, explicabo.</p>
                             <a href="#" class="multi_button">Know More</a>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="banner_arrows">
             <i class="fa fa-angle-left banner_arrow_left"></i>

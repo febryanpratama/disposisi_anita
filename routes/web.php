@@ -71,6 +71,7 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('/', 'index');
         Route::get('/{id}', 'detail');
         Route::post('/', 'store');
+        Route::post('/ubah', 'ubah');
     });
 });
 

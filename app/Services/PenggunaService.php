@@ -10,8 +10,9 @@ class PenggunaService
 {
     public function getPengguna()
     {
-        $data = User::with('roles')->get();
+        $data = User::with('roles', 'detail')->role('Pemohon')->get();
 
+        // dd($data);
         return $data;
     }
     public function storePengguna($data)
