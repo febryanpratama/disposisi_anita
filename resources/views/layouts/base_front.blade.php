@@ -201,16 +201,16 @@
                         <div class="service_item">
                             <i class="fa fa-laptop"></i>
                             <a href="#"><h3>HIBAH</h3></a>
-                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
-                            <a href="#" class="ser_btn">Read More <i class="fa fa-arrow-right"></i></a>
+                            <p>Hibah adalah pemberian uang/barang atau jasa dari Pemerintah Daerah kepada pemerintah pusat atau pemerintah  daerah  lain,  Badan  Usaha Milik Negara/Badan Usaha Milik Daerah, Lembaga dan organisasi kemasyarakatan yang berbadan hukum Indonesia, yang secara spesifik telah ditetapkan peruntukannya, bersifat tidak wajib dan tidak mengikat, serta tidak secara terus yang bertujuan untuk menunjang penyelenggaraan urusan pemerintah daerah</p>
+                            {{-- <a href="#" class="ser_btn">Read More <i class="fa fa-arrow-right"></i></a> --}}
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="service_item">
                             <i class="fa fa-laptop"></i>
                             <a href="#"><h3>BANTUAN</h3></a>
-                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</p>
-                            <a href="#" class="ser_btn">Read More <i class="fa fa-arrow-right"></i></a>
+                            <p>Bantuan sosial adalah pemberian bantuan berupa uang/barang dari pemerintah daerah kepada individu, keluarga, kelompok dan/atau masyarakat yang sifatnya tidak secara terus menerus dan selektif yang bertujuan untuk melindungi dari kemungkinan terjadinya resiko sosial.</p>
+                            {{-- <a href="#" class="ser_btn">Read More <i class="fa fa-arrow-right"></i></a> --}}
                         </div>
                     </div>
                     {{-- <div class="col-md-4 col-sm-6 col-xs-12">
@@ -270,12 +270,30 @@
 
 
 
+    <section id="service_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="section_head service_head">
+                        <h2><span>Informasi</span> Daftar Organisasi</h2>
+                        <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="service_bottom text-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                        <embed src="{{ asset('exampledoc/SK WALIKOTA HIBAH GABUNGAN - RUMAH IBADAH.pdf') }}" type="application/pdf" width="80%" height="500px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--  footer Part Start  -->
     <footer id="footer_part">
         <!--Footer Widgets start-->
-        <div class="footer_widgets">
+        {{-- <div class="footer_widgets">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-3 col-sm-8">
@@ -348,7 +366,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--Footer Bottom start-->
         <div id="footet_bottom">
             <div class="container">
@@ -357,15 +375,15 @@
                         <div class="col-sm-5">
                             <div class="footer_left">
                                 <ul>
-                                    <li>Copyright © 2019 | <a href="#">SPIRIT</a></li>
+                                    <li>Copyright © 2023 | <a href="#">SETDA KOTA PONTIANAK</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-7">
                             <div class="footer_right text-right">
                                 <ul>
-                                    <li>Design by <a href="https://themeforest.net/user/pollexe" target="_blank">Pollexe</a></li>
-                                    <li>Only On <a href="#">Envato Market</a></li>
+                                    <li>Build with love <a href="https://instagram.com/pratamafebryan" target="_blank"></a></li>
+                                    <li>Reach me on <a href="https://instagram.com/pratamafebryan" target="_blank">Febryan Caesar Pratama</a></li>
                                 </ul>
                             </div>
                         </div>
