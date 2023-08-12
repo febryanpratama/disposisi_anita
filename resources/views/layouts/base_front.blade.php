@@ -117,7 +117,7 @@
                             <h3>Selamat Datang di <span>HIBSOS</span></h3>
                             <h4><span>HIBAH</span> DAN <span>BANTUAN SOSIAL</span>.</h4>
                             <p>SETDA adalah unsur pelaksana pemerintah daerah yang berada di bawah dan bertanggung jawab kepada Kepala Daerah.</p>
-                            <a href="#" class="multi_button">Know More</a>
+                            {{-- <a href="#" class="multi_button">Know More</a> --}}
                         </div>
                     </div>
                 </div>
@@ -276,7 +276,7 @@
                 <div class="col-sm-12 text-center">
                     <div class="section_head service_head">
                         <h2><span>Informasi</span> Daftar Organisasi</h2>
-                        <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                        {{-- <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p> --}}
                     </div>
                 </div>
                 <div class="clearfix"></div>
