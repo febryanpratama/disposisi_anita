@@ -86,14 +86,9 @@
                   </div>
                </div>
                <div class="dropdown btn-pinned">
-                  <button class="btn p-0" type="button" id="financoalReport" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="financoalReport">
-                     <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                     <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                     <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                  </div>
+                    
+                    <button class="btn btn-primary">{{ $data->tahun_anggaran }}</button>
+
                </div>
             </div>
             <div class="card-body">
@@ -106,28 +101,6 @@
                      <h6>Tanggal Pelaksanaan</h6>
                      <span class="badge bg-label-danger">{{ Carbon\Carbon::parse($data->tanggal_pelaksanaan)->format('d M Y') }}</span>
                   </div>
-                  {{-- 
-                  <div class="d-flex flex-column me-2">
-                     <h6>Members</h6>
-                     <ul class="list-unstyled me-2 d-flex align-items-center avatar-group mb-0">
-                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" aria-label="Vinnie Mostowy">
-                           <img class="rounded-circle" src="../../assets/img/avatars/5.png" alt="Avatar" />
-                        </li>
-                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" aria-label="Allen Rieske">
-                           <img class="rounded-circle" src="../../assets/img/avatars/12.png" alt="Avatar" />
-                        </li>
-                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" aria-label="Julee Rossignol">
-                           <img class="rounded-circle" src="../../assets/img/avatars/6.png" alt="Avatar" />
-                        </li>
-                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" aria-label="Ellen Wagner">
-                           <img class="rounded-circle" src="../../assets/img/avatars/14.png" alt="Avatar" />
-                        </li>
-                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" aria-label="Darcey Nooner">
-                           <img class="rounded-circle" src="../../assets/img/avatars/10.png" alt="Avatar" />
-                        </li>
-                     </ul>
-                  </div>
-                  --}}
                   <div class="d-flex flex-column me-2">
                      <h6>Jumlah Biaya</h6>
                      <span>Rp. {{ number_format($data->jumlah_biaya) }}</span>
@@ -328,23 +301,45 @@
             <input type="hidden" name="surat_id" value="{{ $data->id }}">
             <div class="modal-body">
                 <div class="row">
-                <div class="col-md-12 mt-1">
-                    <label for="" class="control-label">
-                        <h6>Status Pengajuan</h6>
-                    </label>
-                    <select class="form-select" name="status" aria-label="Default select example">
-                        <option selected>Pilih Status</option>
-                        <option value="Diterima">Diterima</option>
-                        <option value="Ditolak">Ditolak</option>
-                        <option value="Direvisi">Direvisi</option>
-                    </select>
-                </div>
-                <div class="col-md-12 mt-3">
-                    <label for="" class="control-label">
-                        <h6>Catatan</h6>
-                    </label>
-                    <textarea class="form-control" rows="5" name="catatan" placeholder="Catatan"></textarea>
-                </div>
+                    
+                    <div class="col-md-12 mt-1">
+                        <label for="" class="control-label">
+                            <h6>Tahun Anggaran</h6>
+                        </label>
+                        <select class="form-select" name="tahun_anggaran" aria-label="Default select example">
+                            <option selected> == Pilih == </option>
+                            @for ($i = 2020; $i < 2030; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                        </select>
+                    </div>
+                    <div class="col-md-12 mt-1">
+                        <label for="" class="control-label">
+                            <h6>Janis Permohonan</h6>
+                        </label>
+                        <select class="form-select" name="jenis_permohonan" aria-label="Default select example">
+                            <option selected disabled> == Pilih == </option>
+                            <option value="Bantuan Sosial">Bantuan Sosial</option>
+                            <option value="Hibah">Hibah</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="" class="control-label">
+                            <h6>Status Pengajuan</h6>
+                        </label>
+                        <select class="form-select" name="status" aria-label="Default select example">
+                            <option selected>Pilih Status</option>
+                            <option value="Diterima">Diterima</option>
+                            <option value="Ditolak">Ditolak</option>
+                            <option value="Direvisi">Direvisi</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="" class="control-label">
+                            <h6>Catatan</h6>
+                        </label>
+                        <textarea class="form-control" rows="5" name="catatan" placeholder="Catatan"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

@@ -103,14 +103,11 @@
                      <small class="text-muted">Jenis Pemohon : {{ $data->user->detail->jenis_pemohon }}</small>
                   </div>
                </div>
+               <div>
+                   <button class="btn btn-primary">{{ $data->tahun_anggaran }}</button>
+
+               </div>
                @if ($data->anggota_id != null)
-                {{-- <div class="d-flex align-items-center me-3"> --}}
-                    {{-- <img src="../../assets/img/avatars/4.png" alt="Avatar" class="rounded-circle me-3" width="54" /> --}}
-                    {{-- <div class="card-title mb-0">
-                        <h5 class="mb-0">Petugas Lapangan</h5>
-                        <small class="text-muted">Nama Petugas : {{ $data->anggota->nama }}</small>
-                    </div>
-                </div> --}}
                @endif
             </div>
             <div class="card-body">

@@ -65,7 +65,7 @@
 
         <!-- Apps & Pages -->
         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Management Pengajuan</span>
+            <span class="menu-header-text">Management Data</span>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -85,6 +85,15 @@
               </li>
             </ul>
         </li>
+
+        <li class="menu-item">
+            <a href="{{ url('admin/anggaran') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-money"></i>
+                <div data-i18n="Anggaran">Anggaran</div>
+            </a>
+        </li>
+
+        
 
         <!-- Components -->
         <li class="menu-header small text-uppercase">

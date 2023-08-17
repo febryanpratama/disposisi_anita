@@ -1,7 +1,7 @@
 @extends('layouts.base_admin')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-   <div class="row">
+   <div class="row">   
       <div class="col-lg-12 col-md-12 mb-4">
          <div class="row mb-4">
             @role('Admin|Setda|Walikota')
@@ -28,72 +28,73 @@
                   </div>
                </div>
             </div>
+            
          </div>
-         <div class="row">
+         <div class="row mb-4">
             @role('Admin|Setda|Walikota')
-            <div class="col-md-6">
-               <div class="row">
-                  <div class="col-md-12 col-sm-12 mb-4">
-                     <div class="card">
-                        <div class="card-body">
-                           <div class="d-flex justify-content-between">
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="avatar">
-                                    <span class="avatar-initial bg-label-primary rounded-circle"><i
-                                       class="bx bx-user fs-4"></i></span>
-                                 </div>
-                                 <div class="card-info">
-                                    <h5 class="card-title mb-0 me-2">
-                                       {{ $pengguna }}
-                                    </h5>
-                                    <small class="text-muted">Jumlah Pengguna</small>
-                                 </div>
-                              </div>
-                              <div id="conversationChart"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  
-                  <div class="col-md-12 col-sm-12 mb-4">
-                     <div class="card">
-                        <div class="card-body">
-                           <div class="d-flex justify-content-between">
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="avatar">
-                                    <span class="avatar-initial bg-label-warning rounded-circle"><i
-                                       class="bx bx-dollar fs-4"></i></span>
-                                 </div>
-                                 <div class="card-info">
-                                    <h5 class="card-title font-14 mb-0 me-2">
-                                       Rp. {{ number_format($total) }}
-                                    </h5>
-                                    <small class="text-muted ">Total Pengajuan Hibah dan Bansos</small>
-                                 </div>
-                              </div>
-                              <div id="incomeChart"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-   
-               </div>
-            </div>
-            <div class=" col-md-6 col-sm-12 mb-4">
-               <div class="card">
-                  <div class="card-body">
-                     <h4>Realisasi Anggaran Hibah dan Bantuan Sosial</h4>
-                     <hr>
-                     <div id="chart" ></div>
-                     {{-- <div class="container d-flex justify-container-center"> --}}
-                        {{-- <div class="row"> --}}
-                           {{-- <div class="col-md-12"> --}}
-                           {{-- </div> --}}
-                        {{-- </div> --}}
+            
+               <div class="col-md-6 col-sm-12 mb-4">
+                  <div class="card">
+                     <div class="card-body">
+                        <h4>Realisasi Anggaran Bantuan Sosial</h4>
+                        <hr>
+                        <div id="chart" ></div>
                      </div>
                   </div>
                </div>
-            </div>
+               <div class="col-md-6 col-sm-12 mb-4">
+                  <div class="card">
+                     <div class="card-body">
+                        <h4>Realisasi Anggaran Hibah</h4>
+                        <hr>
+                        <div id="charthibah" ></div>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="col-md-6 col-sm-12 mb-4">
+                  <div class="card">
+                     <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="avatar">
+                                 <span class="avatar-initial bg-label-primary rounded-circle"><i
+                                    class="bx bx-user fs-4"></i></span>
+                              </div>
+                              <div class="card-info">
+                                 <h5 class="card-title mb-0 me-2">
+                                    {{ $pengguna }}
+                                 </h5>
+                                 <small class="text-muted">Jumlah Pengguna</small>
+                              </div>
+                           </div>
+                           <div id="conversationChart"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 col-sm-12 mb-4">
+                  <div class="card">
+                     <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                           <div class="d-flex align-items-center gap-3">
+                              <div class="avatar">
+                                 <span class="avatar-initial bg-label-warning rounded-circle"><i
+                                    class="bx bx-dollar fs-4"></i></span>
+                              </div>
+                              <div class="card-info">
+                                 <h5 class="card-title font-14 mb-0 me-2">
+                                    Rp. {{ number_format($total) }}
+                                 </h5>
+                                 <small class="text-muted ">Total Pengajuan Hibah dan Bansos</small>
+                              </div>
+                           </div>
+                           <div id="incomeChart"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            
             
             @endrole
          </div>
@@ -356,6 +357,9 @@
             @endrole
          </div>
       </div>
+
+      {{-- {{ dd($bansos) }} --}}
+
       <div class="col-lg-12 col-md-12">
          <div class="row">
             <div class="col-sm-12 col-12">
@@ -417,15 +421,16 @@
 </script>
 <script>
    $(document).ready(function(){
-      var jumlah = "{{ $total }}"
+      var jumlah = "{{ $realisasibansos }}"
+      var anggaranbansos = parseInt("{{ $bansos }}")
       var jumint = parseInt(jumlah)
        var options = {
-          series: [jumint, 100000000, jumint, 50000000],
+          series: [jumint, anggaranbansos],
           chart: {
           height: 'auto',
           type: 'pie',
         },
-        labels: ['Realisasi Hibsos Individu', 'Total Anggaran Hibsos Individu', 'Realisasi Hibsos Organisasi', 'Total Anggaran Hibsos Organisasi'],
+        labels: ['Realisasi Anggaran Bantuan Sosial', 'Total Anggaran Bantuan Sosial'],
         responsive: [{
           breakpoint: 500,
           options: {
@@ -440,6 +445,35 @@
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+});
+</script>
+<script>
+   $(document).ready(function(){
+      var jumlah = "{{ $realisasihibah }}"
+      var anggaranhibah = "{{ $hibah }}"
+      var jumint = parseInt(jumlah)
+       var options = {
+          series: [jumint, anggaranhibah],
+          chart: {
+          height: 'auto',
+          type: 'pie',
+        },
+        labels: ['Realisasi Anggaran Hibah', 'Total Anggaran Hibah'],
+        responsive: [{
+          breakpoint: 500,
+          options: {
+            chart: {
+              height: 'auto'
+            },
+            legend: {
+              position: 'top'
+            }
+          }
+        }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#charthibah"), options);
         chart.render();
 });
 </script>

@@ -24,6 +24,7 @@
                     <thead>
                         <tr class="text-center">
                             <th class="text-center">No</th>
+                            <th class="text-center">Tahun Anggaran</th>
                             <th class="text-center">Jenis Pemohon</th>
                             <th class="text-center">Nama Pemohon</th>
                             <th class="text-center">Perihal Permohonan</th>
@@ -40,6 +41,7 @@
                         @foreach ($data as $item=>$key)
                             <tr class="text-center">
                                 <td>{{ $item+1 }}</td>
+                                <td>{{ $key->tahun_anggaran }}</td>
                                 <td>{{ $key->jenis_pemohon }}</td>
                                 <td>{{ $key->user->name }}</td>
                                 <td>{{ $key->judul_permohonan }}</td>
@@ -88,7 +90,7 @@
                                         </svg>
                                     </a>
                                     @if ($key->status == 'Setda')
-                                        <div class="dropdown m-1">
+                                        {{-- <div class="dropdown m-1">
                                             <button class="btn btn-light btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
@@ -96,11 +98,9 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#setuju{{ $key->id }}">Setuju</a></li>
-                                                {{-- <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button> --}}
-
                                                 <li><a class="dropdown-item" href="{{ url('setda/surat/'.$key->id.'/tolak') }}">Tolak</a></li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                     @endif
                                     {{-- <form action="{{ url('pemohon/surat/'.$key->id) }}" method="POST" class="d-inline">
                                         @csrf

@@ -268,6 +268,40 @@
         </div>
     </section>
 
+    <section id="blog_part">
+        <div class="container">
+            <div class="row text-center">
+                <div class="section_head blog_head">
+                    <h2 class="text-black" style="color: black">Alur Pengajuan.</h2>
+                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center table-responsive">
+                   
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="text-center">Tahun Anggaran</th>
+                                <th class="text-center">Nominal Realisasi Bantuan Sosial</th>
+                                <th class="text-center">Nominal Realisasi Hibah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for ($i = 2020; $i <= \Carbon\Carbon::now()->format('Y'); $i++)
+                                <tr class="text-center">
+                                    <td class="text-center">{{ $i }}</td>
+                                    <td class="text-center">Rp. {{number_format(App\Helpers\Format::getRealisasiAnggaran('Bantuan Sosial', $i)) }}</td>
+                                    <td class="text-center">Rp. {{ number_format(App\Helpers\Format::getRealisasiAnggaran('Hibah', $i)) }}</td>
+                                </tr>
+                            @endfor
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <section id="service_part">

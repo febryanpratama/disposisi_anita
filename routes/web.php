@@ -73,6 +73,14 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
         Route::post('/', 'store');
         Route::post('/ubah', 'ubah');
     });
+
+    Route::group([
+        'prefix' => 'anggaran',
+        'controller' => SuratController::class
+    ], function () {
+        Route::get('/', 'indexAnggaran');
+        Route::post('/', 'postAnggaran');
+    });
 });
 
 

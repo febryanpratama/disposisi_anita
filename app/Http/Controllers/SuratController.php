@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggaran;
 use App\Models\LogProposal;
 use App\Models\Proposal;
 use App\Models\Surat;
@@ -133,7 +134,9 @@ class SuratController extends Controller
 
         if ($request->status == 'Diterima') {
             $surat->update([
-                'status' => 'Setda'
+                'status' => 'Setda',
+                'tahun_anggaran' => $request->tahun_anggaran ?? null,
+                'jenis_permohonan' => $request->jenis_permohonan
             ]);
 
             LogProposal::create([
@@ -181,5 +184,42 @@ class SuratController extends Controller
         ]);
 
         return back()->withSuccess('Surat berhasil Diverifikasi TU Umum');
+    }
+
+    public function indexAnggaran()
+    {
+
+        $data = Anggaran::get();
+        return view('admin.anggaran.index', [
+            'data' => $data
+        ]);
+    }
+
+    public function postAnggaran(Request $request)
+    {
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'jenis_anggaran' => 'required|string|in:Bantuan Sosial,Hibah',
+            'nominal_anggaran' => 'required|numeric',
+            'tahun_anggaran' => 'required|numeric',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors()->first());
+        }
+
+        $check = Anggaran::where('jenis_anggaran', $request->jenis_anggaran)->where('tahun_anggaran', $request->tahun_anggaran)->first();
+
+        if ($check) {
+            return back()->withErrors('Anggaran sudah ada');
+        }
+
+        Anggaran::create([
+            'jenis_anggaran' => $request['jenis_anggaran'],
+            'nominal_anggaran' => $request['nominal_anggaran'],
+            'tahun_anggaran' => $request['tahun_anggaran'],
+        ]);
+
+        return back()->withSuccess('Anggaran berhasil ditambahkan');
     }
 }

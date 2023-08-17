@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Anggaran;
 use App\Models\Proposal;
 use App\Models\User;
 use Carbon\Carbon;
@@ -70,7 +71,12 @@ class FrontController extends Controller
         $november = Proposal::whereMonth('created_at', '11')->whereYear('created_at', Carbon::now()->year)->count();
         $desember = Proposal::whereMonth('created_at', '12')->whereYear('created_at', Carbon::now()->year)->count();
 
-        // dd($januari);
+        $bansos = Anggaran::where('jenis_anggaran', 'Bantuan Sosial')->where('tahun_anggaran', Carbon::now()->format('Y'))->sum('nominal_anggaran');
+        $hibah = Anggaran::where('jenis_anggaran', 'Hibah')->where('tahun_anggaran', Carbon::now()->format('Y'))->sum('nominal_anggaran');
+
+        $realisasibansos = Proposal::where('jenis_permohonan', 'Bantuan Sosial')->where('status', 'selesai')->sum('nominal_disetujui_walikota');
+        $realisasihibah = Proposal::where('jenis_permohonan', 'Hibah')->where('status', 'selesai')->sum('nominal_disetujui_walikota');
+
         // dd($arr_chart);
         return view('dashboard', [
             'setuju' => $setuju,
@@ -92,6 +98,10 @@ class FrontController extends Controller
             'oktober' => $oktober,
             'november' => $november,
             'desember' => $desember,
+            'bansos' => intval($bansos),
+            'hibah' => intval($hibah),
+            'realisasibansos' => intval($realisasibansos),
+            'realisasihibah' => intval($realisasihibah),
         ]);
     }
     public function indexLanding()

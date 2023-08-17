@@ -17,6 +17,7 @@
                     <thead>
                         <tr class="text-center">
                             <th class="text-center">No</th>
+                            <th class="text-center">Tahun Anggaran</th>
                             <th class="text-center">Jenis Pemohon</th>
                             <th class="text-center">Nama Pemohon</th>
                             <th class="text-center">Perihal Permohonan</th>
@@ -32,6 +33,7 @@
                         @foreach ($data as $item=>$key)
                             <tr class="text-center">
                                 <td>{{ $item+1 }}</td>
+                                <td>{{ $key->tahun_anggaran }}</td>
                                 <td>{{ $key->jenis_pemohon }}</td>
                                 <td>{{ $key->user->name }}</td>
                                 <td>{{ $key->judul_permohonan }}</td>
