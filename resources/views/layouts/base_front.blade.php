@@ -71,18 +71,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="active"><a href="#header_part">Beranda</a></li>
                             <li><a href="#service_part">Profil</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pelayanan Publik
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                    {{-- <a class="" href="#">Action</a> --}}
-                                    <a class="" href="#">PENGAJUAN HIBAH</a>
-                                    {{-- <div class="dropdown-divider"></div> --}}
-                                    <a class="" href="#">PENGAJUAN BANTUAN SOSIAL</a>
-                                </div>
-                            </li>
-                            
+                            <li><a href="#pelayanan_publik">Pelayanan Publik</a></li>
                             <li><a href="{{ url('login') }}">Login</a></li>
                             <li><a href="{{ url('auth/register') }}">Registrasi</a></li>
                         </ul>

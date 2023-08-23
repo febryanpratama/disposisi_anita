@@ -210,21 +210,21 @@
                         @if (Auth::user()->detail->jenis_pemohon == 'Individu')
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Foto KTP Pemohon</label>
+                                    <label for="" class="control-label">Foto KTP Pemohon<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="foto_ktp">
                                     <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Foto Kartu Keluarga Pemohon</label>
+                                    <label for="" class="control-label">Foto Kartu Keluarga Pemohon<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="foto_kk">
                                     <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Surat Keterangan Tidak Mampu Kelurahan</label>
+                                    <label for="" class="control-label">Surat Keterangan Tidak Mampu Kelurahan<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="foto_tidakmampu">
                                     <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
@@ -238,7 +238,7 @@
                             
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Surat Keputusan dari Lembaga Berwenang</label>
+                                    <label for="" class="control-label">Surat Pernyataan Tidak Pernah Menerima Bansos<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="surat_keputusan_lembaga_berwenang">
                                     <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
@@ -246,24 +246,25 @@
                         @else
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Foto Bukti Legalitas Lembaga</label>
+                                    <label for="" class="control-label">Foto Bukti Legalitas Lembaga<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="bukti_legalitas_lembaga">
                                     <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                              
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Foto Surat Keputusan Pengurus</label>
+                                    <label for="" class="control-label">Surat Keputusan Pengurus<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="surat_keputusan_pengurus">
-                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
+                                    <small class="text-danger">tipe file *pdf</small>
                                 </div>
                              
                             
                                 <div class="col-md-6">
-                                    <label for="" class="control-label">Foto KTP Ketua dan Sekretaris</label>
+                                    <label for="" class="control-label">KTP Ketua dan Sekretaris<span class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="foto_ktp_sekretaris">
-                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
+                                    <small class="text-danger">satu file dan tipe file *pdf</small>
                                 </div>
+                                
                              
                         @endif
 

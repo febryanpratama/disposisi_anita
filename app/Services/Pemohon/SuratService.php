@@ -46,8 +46,8 @@ class SuratService
             'foto_tidakmampu' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'foto_keterangan_dokter' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'bukti_legalitas_lembaga' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-            'surat_keputusan_pengurus' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-            'foto_ktp_sekretaris' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'surat_keputusan_pengurus' => 'nullable|file|mimes:pdf,docx|max:2048',
+            'foto_ktp_sekretaris' => 'nullable|file|mimes:pdf|max:2048',
 
         ]);
 
