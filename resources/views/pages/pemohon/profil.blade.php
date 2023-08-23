@@ -74,7 +74,7 @@
                <div class="d-flex justify-content-center pt-3">
                   <a href="javascript:;" class="btn btn-primary me-3" data-bs-target="#editUser"
                      data-bs-toggle="modal">Edit</a>
-                  <a href="javascript:;" class="btn btn-label-danger suspend-user">Suspended</a>
+                  <a href="javascript:;" class="btn btn-label-danger suspend-user">Pemohon</a>
                </div>
             </div>
          </div>
@@ -181,7 +181,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             <div class="text-center mb-4">
                <h3>Edit User Information</h3>
-               <p>Updating user details will receive a privacy audit.</p>
+               {{-- <p>Updating user details will receive a privacy audit.</p> --}}
             </div>
             <form id="editUserForm" class="row g-3" method="POST" action="{{ url('pemohon/profil') }}" enctype="multipart/form-data">
                 @csrf
@@ -246,11 +246,11 @@
                     <input type="file" id="modalEditTaxID" name="foto_identitas" value=""
                     class="form-control modal-edit-tax-id" placeholder="Alamat" required />
                 </div>
-                <div class="col-12 col-md-6">
+                {{-- <div class="col-12 col-md-6">
                     <label class="form-label" for="modalEditTaxID">Foto Data 1</label>
                     <input type="file" id="modalEditTaxID" name="foto_1" value=""
                     class="form-control modal-edit-tax-id" placeholder="Alamat" required />
-                </div>
+                </div> --}}
                 <div class="col-12 text-center mt-4">
                     <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
                     <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal"
