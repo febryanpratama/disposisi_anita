@@ -35,10 +35,10 @@ class SuratService
             'jumlah_biaya' => 'required|numeric',
             'dokumen_proposal' => 'required|file|mimes:pdf,docx|max:2048',
             'surat_keterangan_domisili' => 'required|file|mimes:pdf,docx|max:2048',
-            'surat_rekomendasi_kecamatan' => 'required|file|mimes:pdf,docx|max:2048',
+            'surat_rekomendasi_kecamatan' => 'nullable|file|mimes:pdf,docx|max:2048',
             'surat_pernyataan_konflik' => 'required|file|mimes:pdf,docx|max:2048',
             'surat_duplikasi_biaya' => 'required|file|mimes:pdf,docx|max:2048',
-            'rekening' => 'required|file|mimes:pdf,docx|max:2048',
+            'rekening' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'surat_pernyataan_lembaga' => 'nullable|file|mimes:pdf,docx|max:2048',
 
             'foto_ktp' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',

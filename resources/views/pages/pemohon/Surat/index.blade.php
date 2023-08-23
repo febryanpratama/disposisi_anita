@@ -111,7 +111,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="text-center mb-4">
                         <h3>Ajukan Permohonan Proposal</h3>
-                        <p>Updating user details will receive a privacy audit.</p>
+                        {{-- <p>Updating user details will receive a privacy audit.</p> --}}
                     </div>
                     <form id="editUserForm" class="row g-3" method="POST" action="{{ url('pemohon/surat') }}" enctype="multipart/form-data">
                         @csrf
@@ -212,30 +212,35 @@
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Foto KTP Pemohon</label>
                                     <input type="file" class="form-control" name="foto_ktp">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Foto Kartu Keluarga Pemohon</label>
                                     <input type="file" class="form-control" name="foto_kk">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Surat Keterangan Tidak Mampu Kelurahan</label>
                                     <input type="file" class="form-control" name="foto_tidakmampu">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Surat Keterangan Dokter</label>
                                     <input type="file" class="form-control" name="foto_keterangan_dokter">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Surat Keputusan dari Lembaga Berwenang</label>
-                                    <input type="file" class="form-control" name="foto_keterangan_dokter">
+                                    <input type="file" class="form-control" name="surat_keputusan_lembaga_berwenang">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                             
                         @else
@@ -243,18 +248,21 @@
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Foto Bukti Legalitas Lembaga</label>
                                     <input type="file" class="form-control" name="bukti_legalitas_lembaga">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                              
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Foto Surat Keputusan Pengurus</label>
                                     <input type="file" class="form-control" name="surat_keputusan_pengurus">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                              
                             
                                 <div class="col-md-6">
                                     <label for="" class="control-label">Foto KTP Ketua dan Sekretaris</label>
                                     <input type="file" class="form-control" name="foto_ktp_sekretaris">
+                                    <small class="text-danger">tipe file *jpg,jpeg,png</small>
                                 </div>
                              
                         @endif
@@ -275,31 +283,38 @@
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Dokumen Proposal <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="dokumen_proposal" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *pdf</small>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Surat Keterangan Domisili <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="surat_keterangan_domisili" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *pdf</small>
                         </div>
                         <div class="col-12 col-md-6">
-                            <label class="form-label" for="modalEditUserEmail">Surat Rekomendasi Kecamatan <span class="text-danger">*</span></label>
+                            <label class="form-label" for="modalEditUserEmail">Surat Rekomendasi Kecamatan <span class="text-danger"></span></label>
                             <input type="file" id="modalEditUserEmail" name="surat_rekomendasi_kecamatan" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *pdf</small>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Tidak Konflik Internal <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="surat_pernyataan_konflik" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *pdf</small>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Tidak Duplikasi Biaya <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="surat_duplikasi_biaya" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *pdf</small>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Foto Rekening Bantuan Penerima <span class="text-danger">*</span></label>
                             <input type="file" id="modalEditUserEmail" name="rekening" class="form-control" placeholder="" />
+                            <small class="text-danger">tipe file *jpg,jpeg,png</small>
                         </div>
-                        <div class="col-12 col-md-6">
+                        {{-- <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserEmail">Surat Pernyataan Lembaga / Organisasi</label>
                             <input type="file" id="modalEditUserEmail" name="surat_pernyataan_lembaga" class="form-control" placeholder="" />
-                        </div>
+                            <small class="text-danger">tipe file *pdf</small>
+                        </div> --}}
                         <div class="col-12 text-center mt-4">
                             <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
                             <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
