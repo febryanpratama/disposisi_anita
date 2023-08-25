@@ -201,12 +201,12 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Manajemen Pengguna</span>
         </li>
-        <li class="menu-item">
+        {{-- <li class="menu-item">
             <a href="{{ url('setda/anggota') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Anggota">Anggota</div>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Components -->
         {{-- <li class="menu-header small text-uppercase">
