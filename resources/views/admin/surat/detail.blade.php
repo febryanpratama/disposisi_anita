@@ -187,7 +187,7 @@
                         <br>
                         <a href="{{ url('bukti_legalitas_lembaga/'.$data->bukti_legalitas_lembaga) }}" target="_blank">Lihat Disini</a>
                         <br>
-                        <embed src="{{ asset('bukti_legalitas_lembaga/'.$data->bukti_legalitas_lembaga) }}" type="">
+                        <embed src="{{ asset('bukti_legalitas_lembaga/'.$data->bukti_legalitas_lembaga) }}" class="img-fluid" type="">
                     </div>
                     <div class="col-md-6 mt-2" style="text-align: center">
                         <b>Surat Keputusan Pengurus</b>
