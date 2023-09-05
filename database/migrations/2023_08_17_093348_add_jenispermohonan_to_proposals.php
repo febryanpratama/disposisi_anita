@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('proposals', function (Blueprint $table) {
             //
-            $table->string('jenis_permohonan')->after('tahun_anggaran')->default('Bantuan Sosial');
+            $table->string('jenis_permohonan')->after('tahun_anggaran')->default('');
         });
     }
 

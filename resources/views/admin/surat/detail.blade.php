@@ -87,6 +87,7 @@
                </div>
                <div class="dropdown btn-pinned">
                     
+                    <button class="btn btn-primary">{{ $data->jenis_permohonan }}</button>
                     <button class="btn btn-primary">{{ $data->tahun_anggaran }}</button>
 
                </div>
