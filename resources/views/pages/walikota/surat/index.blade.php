@@ -47,8 +47,10 @@
                                         <span class="badge bg-warning">Sedang Ditinjau Kesra</span>
                                     @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
+                                    @elseif($key->status == 'Ditolak')
+                                        <span class="badge bg-danger">Data Ditolak</span>
                                     @else
-                                    <span class="badge bg-success">Sudah Disetujui Walikota</span>
+                                        <span class="badge bg-success">Sudah Disetujui Walikota</span>
                                     @endif
                                 </td>
                                 <td>

@@ -49,14 +49,16 @@
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
                                 <td>{{ $key->jumlah_biaya }}</td>
                                 <td>
-                                    @if ($key->status == 'TU Umum')
+                                   @if ($key->status == 'TU Umum')
                                         <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
                                     @elseif($key->status == 'Setda')
                                         <span class="badge bg-warning">Sedang Ditinjau Kesra</span>
                                     @elseif($key->status == 'Walikota')
                                         <span class="badge bg-info">Sedang Ditinjai Walikota</span>
+                                    @elseif($key->status == 'Ditolak')
+                                        <span class="badge bg-danger">Data Ditolak</span>
                                     @else
-                                    <span class="badge bg-success">Sudah Disetujui Walikota</span>
+                                        <span class="badge bg-success">Sudah Disetujui Walikota</span>
                                     @endif
                                 </td>
                                 <td>
