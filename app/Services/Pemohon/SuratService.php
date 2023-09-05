@@ -87,90 +87,90 @@ class SuratService
             // dd($check);
             if (array_key_exists('foto_ktp', $data)) {
                 $file = $data['foto_ktp'];
-                $foto_ktp = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $foto_ktp = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'foto_ktp';
                 $file->move($tujuan_upload, $foto_ktp);
             }
             if (array_key_exists('foto_kk', $data)) {
                 $file = $data['foto_kk'];
-                $foto_kk = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $foto_kk = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'foto_kk';
                 $file->move($tujuan_upload, $foto_kk);
             }
             if (array_key_exists('foto_tidakmampu', $data)) {
                 $file = $data['foto_tidakmampu'];
-                $foto_tidakmampu = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $foto_tidakmampu = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'foto_tidakmampu';
                 $file->move($tujuan_upload, $foto_tidakmampu);
             }
             if (array_key_exists('foto_keterangan_dokter', $data)) {
                 $file = $data['foto_keterangan_dokter'];
-                $foto_keterangan_dokter = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $foto_keterangan_dokter = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'foto_keterangan_dokter';
                 $file->move($tujuan_upload, $foto_keterangan_dokter);
             }
             if (array_key_exists('bukti_legalitas_lembaga', $data)) {
                 $file = $data['bukti_legalitas_lembaga'];
-                $bukti_legalitas_lembaga = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $bukti_legalitas_lembaga = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'bukti_legalitas_lembaga';
                 $file->move($tujuan_upload, $bukti_legalitas_lembaga);
             }
             if (array_key_exists('surat_keputusan_pengurus', $data)) {
                 $file = $data['surat_keputusan_pengurus'];
-                $surat_keputusan_pengurus = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $surat_keputusan_pengurus = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_keputusan_pengurus';
                 $file->move($tujuan_upload, $surat_keputusan_pengurus);
             }
             if (array_key_exists('foto_ktp_sekretaris', $data)) {
                 $file = $data['foto_ktp_sekretaris'];
-                $foto_ktp_sekretaris = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $foto_ktp_sekretaris = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'foto_ktp_sekretaris';
                 $file->move($tujuan_upload, $foto_ktp_sekretaris);
             }
 
             if (array_key_exists('dokumen_proposal', $data)) {
                 $file = $data['dokumen_proposal'];
-                $dokumen_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $dokumen_proposal = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'dokumen_proposal';
                 $file->move($tujuan_upload, $dokumen_proposal);
             }
 
             if (array_key_exists('surat_keterangan_domisili', $data)) {
                 $file = $data['surat_keterangan_domisili'];
-                $surat_keterangan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $surat_keterangan = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_keterangan_domisili';
                 $file->move($tujuan_upload, $surat_keterangan);
             }
 
             if (array_key_exists('surat_rekomendasi_kecamatan', $data)) {
                 $file = $data['surat_rekomendasi_kecamatan'];
-                $surat_rekomendasi = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $surat_rekomendasi = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_rekomendasi_kecamatan';
                 $file->move($tujuan_upload, $surat_rekomendasi);
             }
 
             if (array_key_exists('rekening', $data)) {
                 $file = $data['rekening'];
-                $rekening = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $rekening = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'rekening';
                 $file->move($tujuan_upload, $rekening);
             }
             if (array_key_exists('surat_pernyataan_konflik', $data)) {
                 $file = $data['surat_pernyataan_konflik'];
-                $rab = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $rab = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_pernyataan_konflik';
                 $file->move($tujuan_upload, $rab);
             }
             if (array_key_exists('surat_duplikasi_biaya', $data)) {
                 $file = $data['surat_duplikasi_biaya'];
-                $kepengurusan = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $kepengurusan = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_duplikasi_biaya';
                 $file->move($tujuan_upload, $kepengurusan);
             }
 
             if (array_key_exists('surat_pernyataan_lembaga', $data)) {
                 $file = $data['surat_pernyataan_lembaga'];
-                $lampiran_proposal = time() . "_" . $file->getClientOriginalName() . "." . $file->getClientOriginalExtension();
+                $lampiran_proposal = time() . "_" . $file->getClientOriginalName();
                 $tujuan_upload = 'surat_pernyataan_lembaga';
                 $file->move($tujuan_upload, $lampiran_proposal);
             }

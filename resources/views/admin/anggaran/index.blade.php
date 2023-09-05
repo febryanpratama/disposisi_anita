@@ -31,8 +31,8 @@
                                 <td>{{ number_format($item->nominal_anggaran) }}</td>
                                 <td>{{ $item->tahun_anggaran }}</td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-warning">Edit</a>
-                                    <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="#"  data-bs-toggle="modal" data-bs-target="#editAnggaran{{ $item->id }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="#"  data-bs-toggle="modal" data-bs-target="#hapusAnggaran{{ $item->id }}" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                                 
                             </tr>
@@ -42,6 +42,94 @@
             </div>
         </div>
     </div>
+    @foreach ($data as $edit)
+        
+        <div class="modal fade" id="editAnggaran{{ $edit->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-simple modal-edit-user">
+                <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="text-center mb-4">
+                            <h3>Ubah Anggaran</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, delectus?</p>
+                        </div>
+                        <form id="editUserForm" class="row g-3" method="POST" action="{{ url('admin/anggaran/ubah') }}" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="anggaran_id" value="{{ $edit->id }}">
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserFirstName">Jenis Anggaran</label>
+                                <select name="jenis_anggaran" class="form-control" id="">
+                                    <option value="" selected disabled> == Pilih == </option>
+                                    <option value="Bantuan Sosial" {{ $edit->jenis_anggaran == 'Bantuan Sosial' ? 'selected' : '' }}>Bantuan Sosial</option>
+                                    <option value="Hibah" {{ $edit->jenis_anggaran == 'Hibah' ? 'selected' : '' }}>Hibah</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserLastName">Nominal Anggaran</label>
+                                <input type="number" id="modalEditUserLastName" name="nominal_anggaran" value="{{ $edit->nominal_anggaran }}" class="form-control" placeholder="" />
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserName">Tahun Anggaran</label>
+                                <select name="tahun_anggaran" class="form-control" id="">
+                                    <option value="" selected disabled> == Pilih == </option>
+                                    @for ($i = 2020; $i < 2030; $i++)
+                                        <option value="{{ $i }}" {{ $edit->tahun_anggaran == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                                <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="hapusAnggaran{{ $edit->id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-simple modal-edit-user">
+                <div class="modal-content p-3 p-md-5">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="text-center mb-4">
+                            <h3>Hapus Anggaran</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, delectus?</p>
+                        </div>
+                        <form id="editUserForm" class="row g-3" method="POST" action="{{ url('admin/anggaran/delete') }}" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="anggaran_id" value="{{ $edit->id }}">
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserFirstName">Jenis Anggaran</label>
+                                <select name="jenis_anggaran" class="form-control" id="" disabled>
+                                    <option value="" selected disabled> == Pilih == </option>
+                                    <option value="Bantuan Sosial" {{ $edit->jenis_anggaran == 'Bantuan Sosial' ? 'selected' : '' }}>Bantuan Sosial</option>
+                                    <option value="Hibah" {{ $edit->jenis_anggaran == 'Hibah' ? 'selected' : '' }}>Hibah</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserLastName">Nominal Anggaran</label>
+                                <input type="number" id="modalEditUserLastName" name="nominal_anggaran" value="{{ $edit->nominal_anggaran }}" class="form-control" placeholder="" disabled />
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <label class="form-label" for="modalEditUserName">Tahun Anggaran</label>
+                                <select name="tahun_anggaran" class="form-control" id="" disabled>
+                                    <option value="" selected disabled> == Pilih == </option>
+                                    @for ($i = 2020; $i < 2030; $i++)
+                                        <option value="{{ $i }}" {{ $edit->tahun_anggaran == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                                <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <!-- Modal to add new record -->
     <div class="modal fade" id="addUser" tabindex="-1" aria-hidden="true">

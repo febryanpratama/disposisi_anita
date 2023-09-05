@@ -170,8 +170,8 @@
                 <div class="modal-body">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="text-center mb-4">
-                        <h3>Add User Information</h3>
-                        <p>Create user details will receive a privacy audit.</p>
+                        <h3>Tambah Informasi Pengguna</h3>
+                        <p>Tambah data pengguna dengan memasukkan detail informasi pengguna</p>
                     </div>
                     <form id="editUserForm" class="row g-3" method="POST" action="{{ url('admin/pengguna') }}" enctype="multipart/form-data">
                         @csrf

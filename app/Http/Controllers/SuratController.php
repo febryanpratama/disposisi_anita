@@ -120,10 +120,11 @@ class SuratController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'catatan' => 'nullable|string',
-            'status' => 'required|in:Diterima, Ditolak',
+            'status' => 'required|in:Diterima,Ditolak',
         ]);
 
         if ($validator->fails()) {
+            // dd($validator->errors());
             return back()->withErrors($validator->errors()->first());
         }
         $surat = Proposal::where('id', $request->surat_id)->first();
@@ -221,5 +222,46 @@ class SuratController extends Controller
         ]);
 
         return back()->withSuccess('Anggaran berhasil ditambahkan');
+    }
+
+    public function ubahAnggaran(Request $request){
+        $validator = Validator::make($request->all(), [
+            'anggaran_id' => 'required|numeric|exists:anggarans,id',
+            'jenis_anggaran' => 'required|string|in:Bantuan Sosial,Hibah',
+            'nominal_anggaran' => 'required|numeric',
+            'tahun_anggaran' => 'required|numeric',
+        ]);
+
+        if($validator->fails()){
+            return back()->withErrors($validator->errors()->first());
+        }
+
+        $anggaran = Anggaran::where('id', $request->anggaran_id)->update([
+            'jenis_anggaran' => $request['jenis_anggaran'],
+            'nominal_anggaran' => $request['nominal_anggaran'],
+            'tahun_anggaran' => $request['tahun_anggaran'],
+        ]);
+
+        return back()->withSuccess('Anggaran berhasil diubah');
+    }
+
+    public function hapusAnggaran(Request $request){
+        $validator = Validator::make($request->all(), [
+            'anggaran_id' => 'required|numeric|exists:anggarans,id'
+        ]);
+
+        if($validator->fails()){
+            return back()->withErrors($validator->errors()->first());
+        }
+
+        $anggaran = Anggaran::where('id', $request->anggaran_id)->first();
+
+        if(!$anggaran){
+            return back()->withErrors('Data tidak ditemukan');
+        }
+
+        $anggaran->delete();
+
+        return back()->withSuccess('Anggaran berhasil dihapus');
     }
 }

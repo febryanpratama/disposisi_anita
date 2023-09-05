@@ -11,7 +11,7 @@
     <meta name="description" content="Corporate Business Landing template">
     <meta name="keywords" content="web template, business themes, landing page template, responsive, bootstrap, mobile, themeforest template, corporate marketing template, corporate business, business showcase, business porfolio">
 
-    <title>Spirit - Corporate Business Marketing Templates</title>
+    <title>Sekretariat Daerah - Hibah Bantuan Sosial Kota Pontianak</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('') }}base_front/images/favicon.ico">

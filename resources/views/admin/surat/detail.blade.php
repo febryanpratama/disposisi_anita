@@ -183,11 +183,18 @@
                         <embed src="{{ asset('rekening/'.$data->rekening) }}" type="">
                     </div>
                     <div class="col-md-6 mt-2" style="text-align: center">
-                        <b>Surat Pernyataan Lembaga</b>
+                        <b>Bukti Legalitas Lembaga</b>
                         <br>
-                        <a href="{{ url('surat_pernyataan_lembaga/'.$data->surat_pernyataan_lembaga) }}" target="_blank">Lihat Disini</a>
+                        <a href="{{ url('bukti_legalitas_lembaga/'.$data->bukti_legalitas_lembaga) }}" target="_blank">Lihat Disini</a>
                         <br>
-                        <embed src="{{ asset('surat_pernyataan_lembaga/'.$data->surat_pernyataan_lembaga) }}" type="">
+                        <embed src="{{ asset('bukti_legalitas_lembaga/'.$data->bukti_legalitas_lembaga) }}" type="">
+                    </div>
+                    <div class="col-md-6 mt-2" style="text-align: center">
+                        <b>Surat Keputusan Pengurus</b>
+                        <br>
+                        <a href="{{ url('surat_keputusan_pengurus/'.$data->surat_keputusan_pengurus) }}" target="_blank">Lihat Disini</a>
+                        <br>
+                        <embed src="{{ asset('surat_keputusan_pengurus/'.$data->surat_keputusan_pengurus) }}" type="">
                     </div>
                 </div>
             </div>

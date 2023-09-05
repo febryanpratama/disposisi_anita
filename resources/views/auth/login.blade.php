@@ -126,10 +126,6 @@
 
         <!-- / Content -->
 
-        <div class="buy-now">
-            <a href="https://1.envato.market/frest_admin" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-        </div>
-
         <!-- Core JS -->
         <!-- build:js assets/vendor/js/core.js -->
         <script src="{{ asset('') }}assets/vendor/libs/jquery/jquery.js"></script>

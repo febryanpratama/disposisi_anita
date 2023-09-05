@@ -107,7 +107,7 @@
                                   <input type="text" class="form-control" name="nama_pemohon" placeholder="Nama Pemohon" required>
                                 </div>
                                 <div class="col-md-6 col-sm-12 mb-2 hide" id="namaOrganisasi">
-                                  <label for="">Nama Organisasi</label>
+                                  <label for="">Nama Lembaga / Organisasi</label>
                                   <input type="text" class="form-control" name="nama_organisasi" placeholder="Nama Organisasi" required>
                                 </div>
   
@@ -116,7 +116,7 @@
                                   <input type="text" class="form-control" name="identitas_pemohon" placeholder="Nama Organisasi" required>
                                 </div>
                                 <div class="col-md-6 col-sm-12 mb-2 hide" id="identitasOrganisasi">
-                                  <label for="">Nomor Organisasi</label>
+                                  <label for="">Nomor Lembaga / Organisasi</label>
                                   <input type="text" class="form-control" name="identitas_organisasi" placeholder="Nama Organisasi" required>
                                 </div>
                                 

@@ -80,6 +80,8 @@ Route::prefix('admin')->middleware(['auth', 'role:Admin'])->group(function () {
     ], function () {
         Route::get('/', 'indexAnggaran');
         Route::post('/', 'postAnggaran');
+        Route::post('/ubah', 'ubahAnggaran');
+        Route::post('/delete', 'hapusAnggaran');
     });
 });
 
