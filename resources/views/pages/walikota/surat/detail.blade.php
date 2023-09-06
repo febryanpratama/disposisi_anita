@@ -303,7 +303,7 @@
                         <option selected>Pilih Status</option>
                         <option value="Diterima">Diterima</option>
                         <option value="Ditolak">Ditolak</option>
-                        <option value="Direvisi">Direvisi</option>
+                        {{-- <option value="Direvisi">Direvisi</option> --}}
                     </select>
                 </div>
                 <div class="col-md-12 mt-3">
