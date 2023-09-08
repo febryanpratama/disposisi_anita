@@ -15,8 +15,31 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
                 Contoh Surat
-            </a>
-            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button> --}}
+            </a> --}}
+            <form action="">
+                <div class="d-inline-flex">
+                    <div class="col-md-4 mx-1 col-sm-12">
+                        <div class="form-group">
+                            <label for="" class="control-label">Tanggal Mulai</label>
+                            <input type="date" class="form-control" name="tanggal_mulai" placeholder="Tanggal Mulai">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-1 col-sm-12">
+                        <div class="form-group">
+                            <label for="" class="control-label">Tanggal Selesai</label>
+                            <input type="date" class="form-control" name="tanggal_selesai" placeholder="Tanggal Selesai">
+                        </div>
+                    </div>
+                    <div class="col-md-4 mx-1 col-sm-12">
+                        <div class="form-group">
+                            <label for="" class="control-label" style="color: #ffffff">Cari</label>
+                            <button type="submit" class="form-control btn btn-outline-primary"> Cari Data </button>
+                            {{-- <input type="text" class="form-control" placeholder="Tanggal Mulai"> --}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+            {{-- <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#editUser"> + Surat </button> --}}
         </div>
         <div class="card-body">
             <div class="table-responsive pt-0">
@@ -29,6 +52,7 @@
                             <th class="text-center">Perihal Permohonan</th>
                             <th class="text-center">Tanggal Pelaksanaan</th>
                             <th class="text-center">Lokasi Pelaksanaan</th>
+                            <th class="text-center">Tanggal Pengajuan</th>
                             <th class="text-center">Biaya</th>
                             {{-- <th class="text-center">Lokasi Surat</th> --}}
                             <th class="text-center">Status Surat</th>
@@ -44,6 +68,7 @@
                                 <td>{{ $key->judul_permohonan }}</td>
                                 <td>{{ $key->tanggal_pelaksanaan }}</td>
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
+                                <td>{{ Carbon\Carbon::parse($key->created_at)->format('d-m-Y') }}</td>
                                 <td>{{ number_format($key->jumlah_biaya) }}</td>
                                 <td>
                                     @if ($key->status == 'TU Umum')

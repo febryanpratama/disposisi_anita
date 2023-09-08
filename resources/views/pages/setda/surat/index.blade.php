@@ -30,6 +30,7 @@
                             <th class="text-center">Perihal Permohonan</th>
                             <th class="text-center">Tanggal Pelaksanaan</th>
                             <th class="text-center">Lokasi Pelaksanaan</th>
+                            <th class="text-center">Tanggal Pengajuan</th>
                             <th class="text-center">Biaya</th>
                             {{-- <th class="text-center">Lokasi Surat</th> --}}
                             <th class="text-center">Status Surat</th>
@@ -47,6 +48,7 @@
                                 <td>{{ $key->judul_permohonan }}</td>
                                 <td>{{ $key->tanggal_pelaksanaan }}</td>
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
+                                <td>{{ Carbon\Carbon::parse($key->created_at)->format('d-m-Y') }}</td>
                                 <td>{{ $key->jumlah_biaya }}</td>
                                 <td>
                                    @if ($key->status == 'TU Umum')

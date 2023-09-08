@@ -23,9 +23,14 @@ class SuratController extends Controller
             'data' => $data
         ]);
     }
-    public function indexIndividu()
+    public function indexIndividu(Request $request)
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->get();
+        // dd($request->all());
+        if($request->tanggal_mulai && $request->tanggal_selesai){
+            $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_selesai])->get();
+        }else{
+            $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Individu')->get();
+        }
         // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);
@@ -33,9 +38,13 @@ class SuratController extends Controller
             'data' => $data
         ]);
     }
-    public function indexOrganisasi()
+    public function indexOrganisasi(Request $request)
     {
-        $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->get();
+        if($request->tanggal_mulai && $request->tanggal_selesai){
+            $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->whereBetween('created_at', [$request->tanggal_mulai, $request->tanggal_selesai])->get();
+        }else{
+            $data = Proposal::with('user', 'log', 'user.detail')->where('jenis_pemohon', 'Organisasi')->get();
+        }
         // $data = Proposal::with('user', 'log', 'user.detail')->where('status', 'Setda')->where('is_status', '2')->whereRelation('user.detail', 'jenis_pemohon', 'Individu')->get();
 
         // dd($data);
