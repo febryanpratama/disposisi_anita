@@ -175,6 +175,9 @@ class SuratService
                 $file->move($tujuan_upload, $lampiran_proposal);
             }
 
+            $strrepl = str_replace('Rp. ', '', $data['jumlah_biaya']);
+            $strrepl2 = str_replace('.', '', $strrepl);
+
             $proposal = Proposal::create([
                 'user_id' => $data['user_id'],
                 // 'tahun_anggaran' => $data['tahun_anggaran'],
@@ -182,7 +185,7 @@ class SuratService
                 'deskripsi_permohonan' => $data['deskripsi_permohonan'],
                 'tanggal_pelaksanaan' => $data['tanggal_pelaksanaan'],
                 'lokasi_pelaksanaan' => $data['lokasi_pelaksanaan'],
-                'jumlah_biaya' => $data['jumlah_biaya'],
+                'jumlah_biaya' => $strrepl2,
                 'jenis_pemohon' => Auth::user()->detail->jenis_pemohon,
                 'dokumen_proposal' => $dokumen_proposal,
                 'surat_keterangan_domisili' => $surat_keterangan ?? null,

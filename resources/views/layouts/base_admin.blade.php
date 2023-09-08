@@ -204,7 +204,9 @@
   </script>
 
     @yield('script')
+  
 </body>
+
 
 <!-- Mirrored from pixinvent.com/demo/frest-clean-bootstrap-admin-dashboard-template/html/vertical-menu-template-bordered/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Nov 2022 12:02:27 GMT -->
 
