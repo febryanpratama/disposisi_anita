@@ -182,7 +182,7 @@
                     <h4 class="alert-heading">Perhatian!</h4>
                     <p>Sebelum melakukan usulan, mohon dilakukan pengecekan terhadap perlengkapan anda guna melakukan usulan Bantuan Sosial maupun Hibah</p>
                     <hr>
-                    <p class="mb-0"><b>Catatan: </b> Pengajuan permohonan dibuka pada tanggal 01 September 2023 hingga 31 Oktober 2023.</p>
+                    <p class="mb-0"><b>Catatan: </b> Pengajuan permohonan dibuka pada tanggal <span style="color: #db2727">01 September 2023 hingga 31 Oktober 2023.</span></p>
                 </div>
                 <div class="col-sm-12 text-center">
                     <div class="section_head service_head">
