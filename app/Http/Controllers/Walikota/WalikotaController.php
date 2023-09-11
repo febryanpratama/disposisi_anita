@@ -56,11 +56,13 @@ class WalikotaController extends Controller
         }
 
         // dd($request->all());
+        $strrepl = str_replace('Rp. ', '', $request['nominal_disetujui_walikota']);
+        $strrepl2 = str_replace('.', '', $strrepl);
         $proposal = Proposal::where('id', $surat_id)->update([
             'catatan_walikota' => $request['catatan_walikota'],
             // 'jumlah' => $request['jumlah'],
             'is_status' => '1',
-            'nominal_disetujui_walikota' => $request['nominal_disetujui_walikota'],
+            'nominal_disetujui_walikota' => $strrepl2,
             'status' => 'Selesai'
         ]);
 

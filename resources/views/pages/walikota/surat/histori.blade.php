@@ -52,7 +52,7 @@
                                 <td>{{ $key->judul_permohonan }}</td>
                                 <td>{{ $key->tanggal_pelaksanaan }}</td>
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
-                                <td>{{ $key->jumlah_biaya }}</td>
+                                <td>{{ number_format($key->jumlah_biaya) }}</td>
                                 <td>
                                     @if ($key->status == 'Verifikator')
                                         <span class="badge bg-danger">Sedang ditinjau Verifikator</span>

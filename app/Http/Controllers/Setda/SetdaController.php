@@ -102,10 +102,12 @@ class SetdaController extends Controller
 
         // dd($request->all());
         if ($request->status == 'Diterima') {
+            $strrepl = str_replace('Rp. ', '', $request['nominal_disetujui']);
+            $strrepl2 = str_replace('.', '', $strrepl);
             $proposal = Proposal::where('id', $surat_id)->update([
                 'uraian_usulan' => $request['catatan'],
                 // 'jumlah' => $request['jumlah'],
-                'nominal_usulan' => $request['nominal_disetujui'],
+                'nominal_usulan' => $strrepl2,
                 'status' => 'Walikota'
             ]);
 

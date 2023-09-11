@@ -41,7 +41,7 @@
                                 <td>{{ $key->tanggal_pelaksanaan }}</td>
                                 <td>{{ $key->lokasi_pelaksanaan }}</td>
                                 <td>{{ Carbon\Carbon::parse($key->created_at)->format('d-m-Y') }}</td>
-                                <td>{{ $key->jumlah_biaya }}</td>
+                                <td>{{ number_format($key->jumlah_biaya) }}</td>
                                 <td>
                                     @if ($key->status == 'TU Umum')
                                         <span class="badge bg-danger">Sedang Di Verifikasi TU Umum</span>
@@ -84,7 +84,8 @@
 
                                         </a>
                                     @endif
-                                    <div class="dropdown m-1">
+
+                                    {{-- <div class="dropdown m-1">
                                         <button class="btn btn-light btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="width: 15px;height:15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
@@ -94,7 +95,7 @@
                                             <li><a class="dropdown-item" href="{{ url('walikota/surat/'.$key->id.'/setuju') }}">Setuju</a></li>
                                             <li><a class="dropdown-item" href="{{ url('walikota/surat/'.$key->id.'/tolak') }}">Tolak</a></li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
                                     {{-- <form action="{{ url('pemohon/surat/'.$key->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -145,4 +146,5 @@
             // console.log(value)
         })
     </script>
+    
 @endsection

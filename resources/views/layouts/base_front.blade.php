@@ -178,6 +178,12 @@
     <section id="service_part">
         <div class="container">
             <div class="row">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Perhatian!</h4>
+                    <p>Sebelum melakukan usulan, mohon dilakukan pengecekan terhadap perlengkapan anda guna melakukan usulan Bantuan Sosial maupun Hibah</p>
+                    <hr>
+                    <p class="mb-0"><b>Catatan: </b> Pengajuan permohonan dibuka pada tanggal 01 September 2023 hingga 31 Oktober 2023.</p>
+                </div>
                 <div class="col-sm-12 text-center">
                     <div class="section_head service_head">
                         <h2><span>Apa Saja</span> Pelayanan Yang Kami Berikan</h2>

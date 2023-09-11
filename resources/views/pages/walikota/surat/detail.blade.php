@@ -310,7 +310,7 @@
                     <label for="" class="control-label">
                         <h6>Nominal Disetujui</h6>
                     </label>
-                    <input type="number" name="nominal_disetujui_walikota" class="form-control">
+                    <input type="text" id="rupiah" name="nominal_disetujui_walikota" class="form-control">
                 </div>
                 <div class="col-md-12 mt-3">
                     <label for="" class="control-label">
@@ -353,4 +353,33 @@
        // console.log(value)
    })
 </script>
+    <script>
+        var rupiah = document.getElementById('rupiah');
+        $('#rupiah').on('keyup', function(e){
+        //   console.log("ok")
+          rupiah.value = formatRupiah(this.value, 'Rp. ');
+        })
+        // rupiah.on('keyup', function(e){
+        //   // tambahkan 'Rp.' pada saat form di ketik
+        //   // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+        // });
+    
+        /* Fungsi formatRupiah */
+        function formatRupiah(angka, prefix){
+          var number_string = angka.replace(/[^,\d]/g, '').toString(),
+          split   		= number_string.split(','),
+          sisa     		= split[0].length % 3,
+          rupiah     		= split[0].substr(0, sisa),
+          ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+    
+          // tambahkan titik jika yang di input sudah menjadi angka ribuan
+          if(ribuan){
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+          }
+    
+          rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+          return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+    </script>
 @endsection
