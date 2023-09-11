@@ -223,10 +223,11 @@ class SuratController extends Controller
         if ($check) {
             return back()->withErrors('Anggaran sudah ada');
         }
-
+        $strrepl = str_replace('Rp. ', '', $request['nominal_anggaran']);
+        $strrepl2 = str_replace('.', '', $strrepl);
         Anggaran::create([
             'jenis_anggaran' => $request['jenis_anggaran'],
-            'nominal_anggaran' => $request['nominal_anggaran'],
+            'nominal_anggaran' => $strrepl2,
             'tahun_anggaran' => $request['tahun_anggaran'],
         ]);
 
