@@ -187,6 +187,66 @@
                   </div>
                </a>
             </div>
+            <div class="col-4 mb-3 mt-3">
+               <div class="card">
+                  <div class="card-body">
+                     <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                           <div class="avatar">
+                              <span class="avatar-initial bg-label-danger rounded-circle"><i
+                                 class="bx bx-file fs-4"></i></span>
+                           </div>
+                           <div class="card-info">
+                              <h5 class="card-title mb-0 me-2">
+                                 {{ $tuumum }}
+                              </h5>
+                              <small class="text-muted">Jumlah Disposisi Proposal TU Umum</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4 mb-3 mt-3">
+               <div class="card">
+                  <div class="card-body">
+                     <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                           <div class="avatar">
+                              <span class="avatar-initial bg-label-danger rounded-circle"><i
+                                 class="bx bx-file fs-4"></i></span>
+                           </div>
+                           <div class="card-info">
+                              <h5 class="card-title mb-0 me-2">
+                                 {{ $setda }}
+                              </h5>
+                              <small class="text-muted">Jumlah Disposisi Proposal Kesra</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4 mb-3 mt-3">
+               <div class="card">
+                  <div class="card-body">
+                     <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                           <div class="avatar">
+                              <span class="avatar-initial bg-label-danger rounded-circle"><i
+                                 class="bx bx-file fs-4"></i></span>
+                           </div>
+                           <div class="card-info">
+                              <h5 class="card-title mb-0 me-2">
+                                 {{ $walikota }}
+                              </h5>
+                              <small class="text-muted">Jumlah Disposisi Proposal Walikota</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div class="col-12 mb-4 mt-3">
                <div class="card">
                   <div class="card-header">

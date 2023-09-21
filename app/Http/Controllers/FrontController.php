@@ -54,6 +54,9 @@ class FrontController extends Controller
             $ditolak = Proposal::where('is_status', '0')->whereYear('created_at', $request->periode)->count();
             $listProposal = Proposal::with('log')->whereYear('created_at', $request->periode)->orderBy('created_at', "DESC")->limit(5)->get();
     
+            $tuumum = Proposal::where('status', 'TU Umum')->count();
+            $setda = Proposal::where('status', 'Setda')->count();
+            $walikota = Proposal::where('status', 'Walikota')->count();
     
             // $arr_chart = [];
             // for ($i = 1; $i <= 12; $i++) {
@@ -104,6 +107,10 @@ class FrontController extends Controller
                 'hibah' => intval($hibah),
                 'realisasibansos' => intval($realisasibansos),
                 'realisasihibah' => intval($realisasihibah),
+                'tuumum' => $tuumum,
+                'setda' => $setda,
+                'walikota' => $walikota,
+
             ]);
 
         }else{
@@ -164,6 +171,9 @@ class FrontController extends Controller
             $realisasibansos = Proposal::where('jenis_permohonan', 'Bantuan Sosial')->where('status', 'selesai')->sum('nominal_disetujui_walikota');
             $realisasihibah = Proposal::where('jenis_permohonan', 'Hibah')->where('status', 'selesai')->sum('nominal_disetujui_walikota');
     
+            $tuumum = Proposal::where('status', 'TU Umum')->count();
+            $setda = Proposal::where('status', 'Setda')->count();
+            $walikota = Proposal::where('status', 'Walikota')->count();
             // dd($arr_chart);
             return view('dashboard', [
                 'setuju' => $setuju,
@@ -189,6 +199,9 @@ class FrontController extends Controller
                 'hibah' => intval($hibah),
                 'realisasibansos' => intval($realisasibansos),
                 'realisasihibah' => intval($realisasihibah),
+                'tuumum' => $tuumum,
+                'setda' => $setda,
+                'walikota' => $walikota,
             ]);
         }
 
