@@ -252,7 +252,10 @@
             <div class="row text-center">
                 <div class="section_head blog_head">
                     <h2 class="text-black" style="color: black">Alur Pengajuan.</h2>
-                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.</p>
+                    <p>Untuk alur pengajuan permohonan proposal Hibah dan Bantuan Sosial, anda dapat melihat dibawah ini. Selain itu, anda dapat melihat contoh berkas yang harus dipersiapkan dengan menekan tombol <b>download dokumen</b>.</p>
+                    <a href="{{ asset('exampledoc/BerkasProposalN.rar') }}" target="_blank">
+                        <button class="btn btn-outline-info">Download dokumen</button>
+                    </a>
                 </div>
             </div>
             <div class="row">
