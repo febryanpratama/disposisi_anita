@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function detail()
     {
-        return $this->hasOne(DetailUsers::class);
+        return $this->hasOne(DetailUsers::class)->withTrashed();
     }
 
     public function anggota()

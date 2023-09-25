@@ -105,7 +105,7 @@
                         <input type="hidden" name="user_id" value="{{ $item->id }}">
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserFirstName">Nama Pengguna</label>
-                            <input type="text" id="modalEditUserFirstName" name="name" class="form-control" value="{{ $item->detail->nama }}" placeholder="Febryan Pratama" />
+                            <input type="text" id="modalEditUserFirstName" name="name" class="form-control" value="{{ @$item->detail->nama }}" placeholder="Febryan Pratama" />
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="modalEditUserLastName">Email Pengguna</label>
@@ -146,11 +146,11 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="Avatar">Nomor Identitas</label>
-                            <input type="text" class="form-control" name="identitas" value="{{ $item->detail->identitas }}" id="">
+                            <input type="text" class="form-control" name="identitas" value="{{ @$item->detail->identitas }}" id="">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label" for="Avatar">Alamat</label>
-                            <input type="text" class="form-control" name="alamat" value="{{ $item->detail->alamat }}" id="">
+                            <input type="text" class="form-control" name="alamat" value="{{ @$item->detail->alamat }}" id="">
                         </div>
 
                         <div class="col-12 text-center mt-4">
